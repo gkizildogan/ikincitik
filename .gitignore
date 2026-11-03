@@ -5,3 +5,4 @@ data/page_images/
 .ipynb_checkpoints/
 __pycache__/
 ignore_this_pdf.pdf
+plan.md
