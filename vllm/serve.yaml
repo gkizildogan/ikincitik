@@ -1,0 +1,42 @@
+# vLLM serve options for the CS-E page-extraction run. Mounted read-only into
+# the container at /config and loaded with `vllm serve <model> --config ...`.
+# Keys are vLLM CLI flags without the leading "--"; dict values are passed
+# through as JSON.
+#
+# Unlike ../skyrag and ../datacuration this does NOT set language-model-only:
+# vision is the whole point here.
+
+revision: c063053e004e9783631651df95cf55d0bbf88b32
+tokenizer-revision: c063053e004e9783631651df95cf55d0bbf88b32
+served-model-name: RedHatAI/Qwen3.8-27B-INT4
+
+# One page (or page region) image per request. width/height are only used for
+# the startup memory profile: a full cropped page rendered at 150 DPI is
+# 1238 x 1457 px (~1.8k visual tokens at 32 px per token).
+limit-mm-per-prompt:
+  image: {count: 1, width: 1240, height: 1460}
+  video: 0
+# Hard cap on what the image processor accepts (pixels). The checkpoint's
+# default allows 16.7 M px (~16k tokens), far beyond what fits here.
+mm-processor-kwargs:
+  size: {longest_edge: 2097152, shortest_edge: 65536}
+
+# KV cache holds ~41k tokens at 0.85 without speculative decoding -> 4 seqs fit.
+# image ~1.8k + grounding text ~1.5k + previous-page tail ~0.5k + output <= 4k
+max-model-len: 12288
+max-num-seqs: 4
+# 24 GiB card, ~2.9 GiB taken by the desktop; the vision tower (~0.9 GiB bf16)
+# and encoder cache need more than the 0.80 used for text-only serving.
+gpu-memory-utilization: 0.85
+enforce-eager: true
+reasoning-parser: qwen3
+
+# Prompt-lookup (n-gram) speculative decoding is OFF: with it on, this hybrid
+# (Gated DeltaNet + attention) model produced corrupted greedy output on the
+# CS-E 15 page (unclosed **bold**, text copied into the wrong place, a dropped
+# list header), and fidelity fell from ~1.0 to 0.97. To try it again, uncomment.
+# speculative-config:
+#   method: ngram
+#   num_speculative_tokens: 5
+#   prompt_lookup_max: 5
+#   prompt_lookup_min: 2

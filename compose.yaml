@@ -1,0 +1,43 @@
+# vLLM (vision enabled) for page extraction. Reuses the vLLM image and the
+# Qwen3.8-27B weights already on this machine (shared with ../skyrag and
+# ../datacuration via the external volume). Nothing is pulled or downloaded.
+#
+# Only one vLLM fits on the RTX 3090: stop skyrag-vllm / aviation-vllm* first.
+#   docker compose up -d && docker compose logs -f vllm
+# Serve options live in ./vllm/serve.yaml.
+
+services:
+  vllm:
+    image: vllm/vllm-openai@sha256:e4f88a835143cd22aee2397a26ec6bb80b3a4a6fe0c882bcbc63822904766089
+    container_name: ikincitik-vllm
+    restart: "no"
+    ipc: host
+    environment:
+      HF_HUB_OFFLINE: "1"
+    volumes:
+      - aviation-vllm-cache:/root/.cache/huggingface
+      - ./vllm:/config:ro
+    ports:
+      - "8000:8000"
+    # Image entrypoint is already `vllm serve`
+    command:
+      - RedHatAI/Qwen3.8-27B-INT4
+      - --config
+      - /config/serve.yaml
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5)"]
+      interval: 15s
+      timeout: 5s
+      retries: 40
+      start_period: 300s
+
+volumes:
+  aviation-vllm-cache:
+    external: true

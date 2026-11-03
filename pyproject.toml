@@ -1,0 +1,33 @@
+[project]
+name = "csparse"
+version = "0.1.0"
+description = "Section-bounded, structure-preserving extraction of EASA CS-E Amendment 9 for RAG"
+authors = [
+    { name = "gkizildogan", email = "goksu.kizildogan@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "openai>=3.42.1",
+    "pandas>=3.1.0",
+    "pillow>=13.0.0",
+    "pymupdf>=2.1",
+    "python-dotenv>=1.2.4",
+    "rapidfuzz>=3.14.6",
+    "tiktoken>=0.14.0",
+    "tokenizers>=0.23.3",
+    "tqdm>=4.70.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.10.9,<0.11.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "ipywidgets>=8.1.9",
+    "jupyterlab>=4.6.5",
+    "nbclient>=0.11.0",
+    "nbconvert>=7.17.2",
+]

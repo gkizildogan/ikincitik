@@ -1,0 +1,7 @@
+.venv/
+.env
+data/vlm_cache/
+data/page_images/
+.ipynb_checkpoints/
+__pycache__/
+ignore_this_pdf.pdf

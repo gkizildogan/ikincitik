@@ -1,0 +1,4762 @@
+[
+ {
+  "section_id": "AMC General (SUBPART A)",
+  "kind": "amc_general",
+  "title": "AMC General",
+  "heading": "General",
+  "group_id": "SUBPART A",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 0,
+  "regions": [
+   {
+    "page": 16,
+    "y0": 54.99,
+    "y1": 119.43
+   }
+  ],
+  "page_start": 16,
+  "page_end": 16
+ },
+ {
+  "section_id": "CS-E 10",
+  "kind": "cs",
+  "title": "CS-E 10 Applicability",
+  "heading": "Applicability",
+  "group_id": "CS-E 10",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 1,
+  "regions": [
+   {
+    "page": 16,
+    "y0": 119.43,
+    "y1": 331.02
+   }
+  ],
+  "page_start": 16,
+  "page_end": 16
+ },
+ {
+  "section_id": "AMC E 10(b)",
+  "kind": "amc",
+  "title": "AMC E 10(b) Thrust Reversers",
+  "heading": "Thrust Reversers",
+  "group_id": "CS-E 10",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 2,
+  "regions": [
+   {
+    "page": 16,
+    "y0": 331.02,
+    "y1": 699.44
+   },
+   {
+    "page": 17,
+    "y0": 0.0,
+    "y1": 180.39
+   }
+  ],
+  "page_start": 16,
+  "page_end": 17
+ },
+ {
+  "section_id": "CS-E 15",
+  "kind": "cs",
+  "title": "CS-E 15 Terminology",
+  "heading": "Terminology",
+  "group_id": "CS-E 15",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 3,
+  "regions": [
+   {
+    "page": 17,
+    "y0": 180.39,
+    "y1": 699.44
+   },
+   {
+    "page": 18,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 19,
+    "y0": 0.0,
+    "y1": 279.18
+   }
+  ],
+  "page_start": 17,
+  "page_end": 19
+ },
+ {
+  "section_id": "CS-E 20",
+  "kind": "cs",
+  "title": "CS-E 20 Engine Configuration and Interfaces",
+  "heading": "Engine Configuration and Interfaces",
+  "group_id": "CS-E 20",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 4,
+  "regions": [
+   {
+    "page": 19,
+    "y0": 279.18,
+    "y1": 699.44
+   },
+   {
+    "page": 20,
+    "y0": 0.0,
+    "y1": 12.63
+   }
+  ],
+  "page_start": 19,
+  "page_end": 20
+ },
+ {
+  "section_id": "AMC E 20",
+  "kind": "amc",
+  "title": "AMC E 20 Engine Configuration and Interfaces",
+  "heading": "Engine Configuration and Interfaces",
+  "group_id": "CS-E 20",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 5,
+  "regions": [
+   {
+    "page": 20,
+    "y0": 12.63,
+    "y1": 699.44
+   },
+   {
+    "page": 21,
+    "y0": 0.0,
+    "y1": 12.51
+   }
+  ],
+  "page_start": 20,
+  "page_end": 21
+ },
+ {
+  "section_id": "AMC E 20(f)",
+  "kind": "amc",
+  "title": "AMC E 20(f) Power Assurance Data for Engines with One or More OEI Power Ratings",
+  "heading": "Power Assurance Data for Engines with One or More OEI Power Ratings",
+  "group_id": "CS-E 20",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 6,
+  "regions": [
+   {
+    "page": 21,
+    "y0": 12.51,
+    "y1": 699.44
+   },
+   {
+    "page": 22,
+    "y0": 0.0,
+    "y1": 128.19
+   }
+  ],
+  "page_start": 21,
+  "page_end": 22
+ },
+ {
+  "section_id": "CS-E 25",
+  "kind": "cs",
+  "title": "CS-E 25 Instructions for Continued Airworthiness",
+  "heading": "Instructions for Continued Airworthiness",
+  "group_id": "CS-E 25",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 7,
+  "regions": [
+   {
+    "page": 22,
+    "y0": 128.19,
+    "y1": 699.44
+   },
+   {
+    "page": 23,
+    "y0": 0.0,
+    "y1": 489.8
+   }
+  ],
+  "page_start": 22,
+  "page_end": 23
+ },
+ {
+  "section_id": "AMC E 25",
+  "kind": "amc",
+  "title": "AMC E 25 Instructions for continued airworthiness",
+  "heading": "Instructions for continued airworthiness",
+  "group_id": "CS-E 25",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 8,
+  "regions": [
+   {
+    "page": 23,
+    "y0": 489.8,
+    "y1": 699.44
+   },
+   {
+    "page": 24,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 25,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 26,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 27,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 28,
+    "y0": 0.0,
+    "y1": 111.03
+   }
+  ],
+  "page_start": 23,
+  "page_end": 28
+ },
+ {
+  "section_id": "CS-E 30",
+  "kind": "cs",
+  "title": "CS-E 30 Assumptions",
+  "heading": "Assumptions",
+  "group_id": "CS-E 30",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 9,
+  "regions": [
+   {
+    "page": 28,
+    "y0": 111.03,
+    "y1": 332.46
+   }
+  ],
+  "page_start": 28,
+  "page_end": 28
+ },
+ {
+  "section_id": "AMC E 30",
+  "kind": "amc",
+  "title": "AMC E 30 Assumptions",
+  "heading": "Assumptions",
+  "group_id": "CS-E 30",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 10,
+  "regions": [
+   {
+    "page": 28,
+    "y0": 332.46,
+    "y1": 699.44
+   },
+   {
+    "page": 29,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 30,
+    "y0": 0.0,
+    "y1": 220.98
+   }
+  ],
+  "page_start": 28,
+  "page_end": 30
+ },
+ {
+  "section_id": "CS-E 40",
+  "kind": "cs",
+  "title": "CS-E 40 Ratings",
+  "heading": "Ratings",
+  "group_id": "CS-E 40",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 11,
+  "regions": [
+   {
+    "page": 30,
+    "y0": 220.98,
+    "y1": 699.44
+   },
+   {
+    "page": 31,
+    "y0": 0.0,
+    "y1": 279.18
+   }
+  ],
+  "page_start": 30,
+  "page_end": 31
+ },
+ {
+  "section_id": "AMC E 40",
+  "kind": "amc",
+  "title": "AMC E 40 Ratings",
+  "heading": "Ratings",
+  "group_id": "CS-E 40",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 12,
+  "regions": [
+   {
+    "page": 31,
+    "y0": 279.18,
+    "y1": 381.2
+   }
+  ],
+  "page_start": 31,
+  "page_end": 31
+ },
+ {
+  "section_id": "AMC E 40(b)(3) and (b)(4)",
+  "kind": "amc",
+  "title": "AMC E 40(b)(3) and (b)(4) 30-Second OEI, 2-Minute OEI and 30-minute Power Ratings",
+  "heading": "30-Second OEI, 2-Minute OEI and 30-minute Power Ratings",
+  "group_id": "CS-E 40",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 13,
+  "regions": [
+   {
+    "page": 31,
+    "y0": 381.2,
+    "y1": 699.44
+   },
+   {
+    "page": 32,
+    "y0": 0.0,
+    "y1": 579.23
+   }
+  ],
+  "page_start": 31,
+  "page_end": 32
+ },
+ {
+  "section_id": "AMC E 40(d)",
+  "kind": "amc",
+  "title": "AMC E 40(d) Operating Limitations",
+  "heading": "Operating Limitations",
+  "group_id": "CS-E 40",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 14,
+  "regions": [
+   {
+    "page": 32,
+    "y0": 579.23,
+    "y1": 699.44
+   },
+   {
+    "page": 33,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 34,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 35,
+    "y0": 0.0,
+    "y1": 42.75
+   }
+  ],
+  "page_start": 32,
+  "page_end": 35
+ },
+ {
+  "section_id": "CS-E 50",
+  "kind": "cs",
+  "title": "CS-E 50 Engine Control System",
+  "heading": "Engine Control System",
+  "group_id": "CS-E 50",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 15,
+  "regions": [
+   {
+    "page": 35,
+    "y0": 42.75,
+    "y1": 699.44
+   },
+   {
+    "page": 36,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 37,
+    "y0": 0.0,
+    "y1": 409.4
+   }
+  ],
+  "page_start": 35,
+  "page_end": 37
+ },
+ {
+  "section_id": "AMC E 50",
+  "kind": "amc",
+  "title": "AMC E 50 Engine Control System",
+  "heading": "Engine Control System",
+  "group_id": "CS-E 50",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 16,
+  "regions": [
+   {
+    "page": 37,
+    "y0": 409.4,
+    "y1": 699.44
+   },
+   {
+    "page": 38,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 39,
+    "y0": 0.0,
+    "y1": 337.26
+   }
+  ],
+  "page_start": 37,
+  "page_end": 39
+ },
+ {
+  "section_id": "AMC E 50(e)",
+  "kind": "amc",
+  "title": "AMC E 50(e) Rotor integrity",
+  "heading": "Rotor integrity",
+  "group_id": "CS-E 50",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 17,
+  "regions": [
+   {
+    "page": 39,
+    "y0": 337.26,
+    "y1": 539.36
+   }
+  ],
+  "page_start": 39,
+  "page_end": 39
+ },
+ {
+  "section_id": "AMC E 50(j)",
+  "kind": "amc",
+  "title": "AMC E 50(j) Controls - Engines having a 30-Second OEI Power Rating",
+  "heading": "Controls - Engines having a 30-Second OEI Power Rating",
+  "group_id": "CS-E 50",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 18,
+  "regions": [
+   {
+    "page": 39,
+    "y0": 539.36,
+    "y1": 699.44
+   },
+   {
+    "page": 40,
+    "y0": 0.0,
+    "y1": 168.27
+   }
+  ],
+  "page_start": 39,
+  "page_end": 40
+ },
+ {
+  "section_id": "AMC to CS-E 50(l)",
+  "kind": "amc",
+  "title": "AMC to CS-E 50(l) Information system security protection",
+  "heading": "Information system security protection",
+  "group_id": "CS-E 50",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 19,
+  "regions": [
+   {
+    "page": 40,
+    "y0": 168.27,
+    "y1": 311.82
+   }
+  ],
+  "page_start": 40,
+  "page_end": 40
+ },
+ {
+  "section_id": "CS-E 60",
+  "kind": "cs",
+  "title": "CS-E 60 Provision for Instruments",
+  "heading": "Provision for Instruments",
+  "group_id": "CS-E 60",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 20,
+  "regions": [
+   {
+    "page": 40,
+    "y0": 311.82,
+    "y1": 699.44
+   },
+   {
+    "page": 41,
+    "y0": 0.0,
+    "y1": 259.38
+   }
+  ],
+  "page_start": 40,
+  "page_end": 41
+ },
+ {
+  "section_id": "AMC E 60",
+  "kind": "amc",
+  "title": "AMC E 60 Provision for instruments",
+  "heading": "Provision for instruments",
+  "group_id": "CS-E 60",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 21,
+  "regions": [
+   {
+    "page": 41,
+    "y0": 259.38,
+    "y1": 699.44
+   },
+   {
+    "page": 42,
+    "y0": 0.0,
+    "y1": 54.99
+   }
+  ],
+  "page_start": 41,
+  "page_end": 42
+ },
+ {
+  "section_id": "AMC E 60(d)",
+  "kind": "amc",
+  "title": "AMC E 60(d) Provision for instruments",
+  "heading": "Provision for instruments",
+  "group_id": "CS-E 60",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 22,
+  "regions": [
+   {
+    "page": 42,
+    "y0": 54.99,
+    "y1": 699.44
+   },
+   {
+    "page": 43,
+    "y0": 0.0,
+    "y1": 81.63
+   }
+  ],
+  "page_start": 42,
+  "page_end": 43
+ },
+ {
+  "section_id": "CS-E 70",
+  "kind": "cs",
+  "title": "CS-E 70 Materials and Manufacturing Methods",
+  "heading": "Materials and Manufacturing Methods",
+  "group_id": "CS-E 70",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 23,
+  "regions": [
+   {
+    "page": 43,
+    "y0": 81.63,
+    "y1": 249.42
+   }
+  ],
+  "page_start": 43,
+  "page_end": 43
+ },
+ {
+  "section_id": "AMC E 70",
+  "kind": "amc",
+  "title": "AMC E 70 Castings, Forgings, Welded Structures and Welded Components",
+  "heading": "Castings, Forgings, Welded Structures and Welded Components",
+  "group_id": "CS-E 70",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 24,
+  "regions": [
+   {
+    "page": 43,
+    "y0": 249.42,
+    "y1": 699.44
+   },
+   {
+    "page": 44,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 45,
+    "y0": 0.0,
+    "y1": 372.8
+   }
+  ],
+  "page_start": 43,
+  "page_end": 45
+ },
+ {
+  "section_id": "CS-E 80",
+  "kind": "cs",
+  "title": "CS-E 80 Equipment",
+  "heading": "Equipment",
+  "group_id": "CS-E 80",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 25,
+  "regions": [
+   {
+    "page": 45,
+    "y0": 372.8,
+    "y1": 699.44
+   },
+   {
+    "page": 46,
+    "y0": 0.0,
+    "y1": 211.62
+   }
+  ],
+  "page_start": 45,
+  "page_end": 46
+ },
+ {
+  "section_id": "AMC E 80",
+  "kind": "amc",
+  "title": "AMC E 80 Equipment",
+  "heading": "Equipment",
+  "group_id": "CS-E 80",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 26,
+  "regions": [
+   {
+    "page": 46,
+    "y0": 211.62,
+    "y1": 699.44
+   },
+   {
+    "page": 47,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 48,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 49,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 50,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 51,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 52,
+    "y0": 0.0,
+    "y1": 98.31
+   }
+  ],
+  "page_start": 46,
+  "page_end": 52
+ },
+ {
+  "section_id": "CS-E 90",
+  "kind": "cs",
+  "title": "CS-E 90 Prevention of Corrosion and Deterioration",
+  "heading": "Prevention of Corrosion and Deterioration",
+  "group_id": "CS-E 90",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 27,
+  "regions": [
+   {
+    "page": 52,
+    "y0": 98.31,
+    "y1": 201.66
+   }
+  ],
+  "page_start": 52,
+  "page_end": 52
+ },
+ {
+  "section_id": "CS-E 100",
+  "kind": "cs",
+  "title": "CS-E 100 Strength",
+  "heading": "Strength",
+  "group_id": "CS-E 100",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 28,
+  "regions": [
+   {
+    "page": 52,
+    "y0": 201.66,
+    "y1": 458.6
+   }
+  ],
+  "page_start": 52,
+  "page_end": 52
+ },
+ {
+  "section_id": "CS-E 110",
+  "kind": "cs",
+  "title": "CS-E 110 Drawings and Marking of Parts – Assembly of Parts",
+  "heading": "Drawings and Marking of Parts – Assembly of Parts",
+  "group_id": "CS-E 110",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 29,
+  "regions": [
+   {
+    "page": 52,
+    "y0": 458.6,
+    "y1": 699.44
+   },
+   {
+    "page": 53,
+    "y0": 0.0,
+    "y1": 70.83
+   }
+  ],
+  "page_start": 52,
+  "page_end": 53
+ },
+ {
+  "section_id": "CS-E 120",
+  "kind": "cs",
+  "title": "CS-E 120 Identification",
+  "heading": "Identification",
+  "group_id": "CS-E 120",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 30,
+  "regions": [
+   {
+    "page": 53,
+    "y0": 70.83,
+    "y1": 205.74
+   }
+  ],
+  "page_start": 53,
+  "page_end": 53
+ },
+ {
+  "section_id": "CS-E 130",
+  "kind": "cs",
+  "title": "CS-E 130 Fire Protection",
+  "heading": "Fire Protection",
+  "group_id": "CS-E 130",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 31,
+  "regions": [
+   {
+    "page": 53,
+    "y0": 205.74,
+    "y1": 699.44
+   },
+   {
+    "page": 54,
+    "y0": 0.0,
+    "y1": 577.67
+   }
+  ],
+  "page_start": 53,
+  "page_end": 54
+ },
+ {
+  "section_id": "AMC E 130",
+  "kind": "amc",
+  "title": "AMC E 130 Fire Protection",
+  "heading": "Fire Protection",
+  "group_id": "CS-E 130",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 32,
+  "regions": [
+   {
+    "page": 54,
+    "y0": 577.67,
+    "y1": 699.44
+   },
+   {
+    "page": 55,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 56,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 57,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 58,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 59,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 60,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 61,
+    "y0": 0.0,
+    "y1": 306.06
+   }
+  ],
+  "page_start": 54,
+  "page_end": 61
+ },
+ {
+  "section_id": "CS-E 135",
+  "kind": "cs",
+  "title": "CS-E 135 Electrical Bonding",
+  "heading": "Electrical Bonding",
+  "group_id": "CS-E 135",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 33,
+  "regions": [
+   {
+    "page": 61,
+    "y0": 306.06,
+    "y1": 499.28
+   }
+  ],
+  "page_start": 61,
+  "page_end": 61
+ },
+ {
+  "section_id": "AMC E 135",
+  "kind": "amc",
+  "title": "AMC E 135 Electrical Bonding",
+  "heading": "Electrical Bonding",
+  "group_id": "CS-E 135",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 34,
+  "regions": [
+   {
+    "page": 61,
+    "y0": 499.28,
+    "y1": 699.44
+   },
+   {
+    "page": 62,
+    "y0": 0.0,
+    "y1": 42.75
+   }
+  ],
+  "page_start": 61,
+  "page_end": 62
+ },
+ {
+  "section_id": "CS-E 140",
+  "kind": "cs",
+  "title": "CS-E 140 Tests - Engine Configuration",
+  "heading": "Tests - Engine Configuration",
+  "group_id": "CS-E 140",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 35,
+  "regions": [
+   {
+    "page": 62,
+    "y0": 42.75,
+    "y1": 536.0
+   }
+  ],
+  "page_start": 62,
+  "page_end": 62
+ },
+ {
+  "section_id": "AMC E 140",
+  "kind": "amc",
+  "title": "AMC E 140 Test - Engine configuration",
+  "heading": "Test - Engine configuration",
+  "group_id": "CS-E 140",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 36,
+  "regions": [
+   {
+    "page": 62,
+    "y0": 536.0,
+    "y1": 699.44
+   },
+   {
+    "page": 63,
+    "y0": 0.0,
+    "y1": 12.63
+   }
+  ],
+  "page_start": 62,
+  "page_end": 63
+ },
+ {
+  "section_id": "CS-E 150",
+  "kind": "cs",
+  "title": "CS-E 150 Tests - General Conduct of Tests",
+  "heading": "Tests - General Conduct of Tests",
+  "group_id": "CS-E 150",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 37,
+  "regions": [
+   {
+    "page": 63,
+    "y0": 12.63,
+    "y1": 332.58
+   }
+  ],
+  "page_start": 63,
+  "page_end": 63
+ },
+ {
+  "section_id": "AMC E 150(a)",
+  "kind": "amc",
+  "title": "AMC E 150(a) Tests - General conduct of tests",
+  "heading": "Tests - General conduct of tests",
+  "group_id": "CS-E 150",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 38,
+  "regions": [
+   {
+    "page": 63,
+    "y0": 332.58,
+    "y1": 434.72
+   }
+  ],
+  "page_start": 63,
+  "page_end": 63
+ },
+ {
+  "section_id": "CS-E 160",
+  "kind": "cs",
+  "title": "CS-E 160 Tests - History",
+  "heading": "Tests - History",
+  "group_id": "CS-E 160",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 39,
+  "regions": [
+   {
+    "page": 63,
+    "y0": 434.72,
+    "y1": 609.83
+   }
+  ],
+  "page_start": 63,
+  "page_end": 63
+ },
+ {
+  "section_id": "CS-E 170",
+  "kind": "cs",
+  "title": "CS-E 170 Engine Systems and Component Verification",
+  "heading": "Engine Systems and Component Verification",
+  "group_id": "CS-E 170",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 40,
+  "regions": [
+   {
+    "page": 63,
+    "y0": 609.83,
+    "y1": 699.44
+   },
+   {
+    "page": 64,
+    "y0": 0.0,
+    "y1": 89.07
+   }
+  ],
+  "page_start": 63,
+  "page_end": 64
+ },
+ {
+  "section_id": "AMC E 170",
+  "kind": "amc",
+  "title": "AMC E 170 Engine systems and component verification",
+  "heading": "Engine systems and component verification",
+  "group_id": "CS-E 170",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 41,
+  "regions": [
+   {
+    "page": 64,
+    "y0": 89.07,
+    "y1": 699.44
+   },
+   {
+    "page": 65,
+    "y0": 0.0,
+    "y1": 311.82
+   }
+  ],
+  "page_start": 64,
+  "page_end": 65
+ },
+ {
+  "section_id": "CS-E 175",
+  "kind": "cs",
+  "title": "CS-E 175 Propeller Blade Pitch Control System Components",
+  "heading": "Propeller Blade Pitch Control System Components",
+  "group_id": "CS-E 175",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 42,
+  "regions": [
+   {
+    "page": 65,
+    "y0": 311.82,
+    "y1": 475.04
+   }
+  ],
+  "page_start": 65,
+  "page_end": 65
+ },
+ {
+  "section_id": "CS-E 180",
+  "kind": "cs",
+  "title": "CS-E 180 Propeller Functioning Tests",
+  "heading": "Propeller Functioning Tests",
+  "group_id": "CS-E 180",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 43,
+  "regions": [
+   {
+    "page": 65,
+    "y0": 475.04,
+    "y1": 699.44
+   },
+   {
+    "page": 66,
+    "y0": 0.0,
+    "y1": 432.56
+   }
+  ],
+  "page_start": 65,
+  "page_end": 66
+ },
+ {
+  "section_id": "AMC E 180",
+  "kind": "amc",
+  "title": "AMC E 180 Propeller Functioning Tests",
+  "heading": "Propeller Functioning Tests",
+  "group_id": "CS-E 180",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 3,
+  "order": 44,
+  "regions": [
+   {
+    "page": 66,
+    "y0": 432.56,
+    "y1": 540.56
+   }
+  ],
+  "page_start": 66,
+  "page_end": 66
+ },
+ {
+  "section_id": "CS-E 190",
+  "kind": "cs",
+  "title": "CS-E 190 Engines for Aerobatic Use",
+  "heading": "Engines for Aerobatic Use",
+  "group_id": "CS-E 190",
+  "subpart": "SUBPART A",
+  "subpart_title": "GENERAL",
+  "level": 2,
+  "order": 45,
+  "regions": [
+   {
+    "page": 66,
+    "y0": 540.56,
+    "y1": 699.44
+   },
+   {
+    "page": 67,
+    "y0": 0.0,
+    "y1": 15.69
+   }
+  ],
+  "page_start": 66,
+  "page_end": 67
+ },
+ {
+  "section_id": "CS-E 210",
+  "kind": "cs",
+  "title": "CS-E 210 Failure Analysis",
+  "heading": "Failure Analysis",
+  "group_id": "CS-E 210",
+  "subpart": "SUBPART B",
+  "subpart_title": "PISTON ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 46,
+  "regions": [
+   {
+    "page": 67,
+    "y0": 81.87,
+    "y1": 261.78
+   }
+  ],
+  "page_start": 67,
+  "page_end": 67
+ },
+ {
+  "section_id": "AMC E 210",
+  "kind": "amc",
+  "title": "AMC E 210 Failure Analysis",
+  "heading": "Failure Analysis",
+  "group_id": "CS-E 210",
+  "subpart": "SUBPART B",
+  "subpart_title": "PISTON ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 3,
+  "order": 47,
+  "regions": [
+   {
+    "page": 67,
+    "y0": 261.78,
+    "y1": 699.44
+   },
+   {
+    "page": 68,
+    "y0": 0.0,
+    "y1": 15.03
+   }
+  ],
+  "page_start": 67,
+  "page_end": 68
+ },
+ {
+  "section_id": "CS-E 230",
+  "kind": "cs",
+  "title": "CS-E 230 De-Icing and Anti-Icing Precautions",
+  "heading": "De-Icing and Anti-Icing Precautions",
+  "group_id": "CS-E 230",
+  "subpart": "SUBPART B",
+  "subpart_title": "PISTON ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 48,
+  "regions": [
+   {
+    "page": 68,
+    "y0": 15.03,
+    "y1": 131.67
+   }
+  ],
+  "page_start": 68,
+  "page_end": 68
+ },
+ {
+  "section_id": "CS-E 240",
+  "kind": "cs",
+  "title": "CS-E 240 Ignition",
+  "heading": "Ignition",
+  "group_id": "CS-E 240",
+  "subpart": "SUBPART B",
+  "subpart_title": "PISTON ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 49,
+  "regions": [
+   {
+    "page": 68,
+    "y0": 131.67,
+    "y1": 569.75
+   }
+  ],
+  "page_start": 68,
+  "page_end": 68
+ },
+ {
+  "section_id": "AMC E 240",
+  "kind": "amc",
+  "title": "AMC E 240 Ignition",
+  "heading": "Ignition",
+  "group_id": "CS-E 240",
+  "subpart": "SUBPART B",
+  "subpart_title": "PISTON ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 3,
+  "order": 50,
+  "regions": [
+   {
+    "page": 68,
+    "y0": 569.75,
+    "y1": 699.44
+   },
+   {
+    "page": 69,
+    "y0": 0.0,
+    "y1": 15.03
+   }
+  ],
+  "page_start": 68,
+  "page_end": 69
+ },
+ {
+  "section_id": "CS-E 250",
+  "kind": "cs",
+  "title": "CS-E 250 Fuel System",
+  "heading": "Fuel System",
+  "group_id": "CS-E 250",
+  "subpart": "SUBPART B",
+  "subpart_title": "PISTON ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 51,
+  "regions": [
+   {
+    "page": 69,
+    "y0": 15.03,
+    "y1": 297.42
+   }
+  ],
+  "page_start": 69,
+  "page_end": 69
+ },
+ {
+  "section_id": "CS-E 260",
+  "kind": "cs",
+  "title": "CS-E 260 Engine Cooling System",
+  "heading": "Engine Cooling System",
+  "group_id": "CS-E 260",
+  "subpart": "SUBPART B",
+  "subpart_title": "PISTON ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 52,
+  "regions": [
+   {
+    "page": 69,
+    "y0": 297.42,
+    "y1": 460.4
+   }
+  ],
+  "page_start": 69,
+  "page_end": 69
+ },
+ {
+  "section_id": "CS-E 270",
+  "kind": "cs",
+  "title": "CS-E 270 Lubrication System",
+  "heading": "Lubrication System",
+  "group_id": "CS-E 270",
+  "subpart": "SUBPART B",
+  "subpart_title": "PISTON ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 53,
+  "regions": [
+   {
+    "page": 69,
+    "y0": 460.4,
+    "y1": 699.44
+   },
+   {
+    "page": 70,
+    "y0": 0.0,
+    "y1": 138.99
+   }
+  ],
+  "page_start": 69,
+  "page_end": 70
+ },
+ {
+  "section_id": "CS-E 290",
+  "kind": "cs",
+  "title": "CS-E 290 Hand Turning",
+  "heading": "Hand Turning",
+  "group_id": "CS-E 290",
+  "subpart": "SUBPART B",
+  "subpart_title": "PISTON ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 54,
+  "regions": [
+   {
+    "page": 70,
+    "y0": 138.99,
+    "y1": 699.44
+   },
+   {
+    "page": 71,
+    "y0": 0.0,
+    "y1": 15.69
+   }
+  ],
+  "page_start": 70,
+  "page_end": 71
+ },
+ {
+  "section_id": "CS-E 300",
+  "kind": "cs",
+  "title": "CS-E 300 Conditions Applicable to All Tests",
+  "heading": "Conditions Applicable to All Tests",
+  "group_id": "CS-E 300",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 55,
+  "regions": [
+   {
+    "page": 71,
+    "y0": 101.19,
+    "y1": 699.44
+   },
+   {
+    "page": 72,
+    "y0": 0.0,
+    "y1": 14.91
+   }
+  ],
+  "page_start": 71,
+  "page_end": 72
+ },
+ {
+  "section_id": "AMC E 300(f)",
+  "kind": "amc",
+  "title": "AMC E 300(f) Conditions Applicable to all Tests - Torque Measurement",
+  "heading": "Conditions Applicable to all Tests - Torque Measurement",
+  "group_id": "CS-E 300",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 56,
+  "regions": [
+   {
+    "page": 72,
+    "y0": 14.91,
+    "y1": 327.66
+   }
+  ],
+  "page_start": 72,
+  "page_end": 72
+ },
+ {
+  "section_id": "CS-E 320",
+  "kind": "cs",
+  "title": "CS-E 320 Performance Correction",
+  "heading": "Performance Correction",
+  "group_id": "CS-E 320",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 57,
+  "regions": [
+   {
+    "page": 72,
+    "y0": 327.66,
+    "y1": 482.0
+   }
+  ],
+  "page_start": 72,
+  "page_end": 72
+ },
+ {
+  "section_id": "AMC E 320",
+  "kind": "amc",
+  "title": "AMC E 320 Performance Correction",
+  "heading": "Performance Correction",
+  "group_id": "CS-E 320",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 58,
+  "regions": [
+   {
+    "page": 72,
+    "y0": 482.0,
+    "y1": 699.44
+   },
+   {
+    "page": 73,
+    "y0": 0.0,
+    "y1": 15.03
+   }
+  ],
+  "page_start": 72,
+  "page_end": 73
+ },
+ {
+  "section_id": "CS-E 330",
+  "kind": "cs",
+  "title": "CS-E 330 Tests - General",
+  "heading": "Tests - General",
+  "group_id": "CS-E 330",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 59,
+  "regions": [
+   {
+    "page": 73,
+    "y0": 15.03,
+    "y1": 125.67
+   }
+  ],
+  "page_start": 73,
+  "page_end": 73
+ },
+ {
+  "section_id": "CS-E 340",
+  "kind": "cs",
+  "title": "CS-E 340 Vibration Tests",
+  "heading": "Vibration Tests",
+  "group_id": "CS-E 340",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 60,
+  "regions": [
+   {
+    "page": 73,
+    "y0": 125.67,
+    "y1": 699.44
+   },
+   {
+    "page": 74,
+    "y0": 0.0,
+    "y1": 196.26
+   }
+  ],
+  "page_start": 73,
+  "page_end": 74
+ },
+ {
+  "section_id": "AMC E 340",
+  "kind": "amc",
+  "title": "AMC E 340 Vibration Tests",
+  "heading": "Vibration Tests",
+  "group_id": "CS-E 340",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 61,
+  "regions": [
+   {
+    "page": 74,
+    "y0": 196.26,
+    "y1": 501.68
+   }
+  ],
+  "page_start": 74,
+  "page_end": 74
+ },
+ {
+  "section_id": "CS-E 350",
+  "kind": "cs",
+  "title": "CS-E 350 Calibration Tests",
+  "heading": "Calibration Tests",
+  "group_id": "CS-E 350",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 62,
+  "regions": [
+   {
+    "page": 74,
+    "y0": 501.68,
+    "y1": 699.44
+   },
+   {
+    "page": 75,
+    "y0": 0.0,
+    "y1": 15.03
+   }
+  ],
+  "page_start": 74,
+  "page_end": 75
+ },
+ {
+  "section_id": "AMC E 350",
+  "kind": "amc",
+  "title": "AMC E 350 Calibration Tests",
+  "heading": "Calibration Tests",
+  "group_id": "CS-E 350",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 63,
+  "regions": [
+   {
+    "page": 75,
+    "y0": 15.03,
+    "y1": 334.98
+   }
+  ],
+  "page_start": 75,
+  "page_end": 75
+ },
+ {
+  "section_id": "CS-E 360",
+  "kind": "cs",
+  "title": "CS-E 360 Detonation Tests",
+  "heading": "Detonation Tests",
+  "group_id": "CS-E 360",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 64,
+  "regions": [
+   {
+    "page": 75,
+    "y0": 334.98,
+    "y1": 543.08
+   }
+  ],
+  "page_start": 75,
+  "page_end": 75
+ },
+ {
+  "section_id": "CS-E 370",
+  "kind": "cs",
+  "title": "CS-E 370 Starting Tests",
+  "heading": "Starting Tests",
+  "group_id": "CS-E 370",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 65,
+  "regions": [
+   {
+    "page": 75,
+    "y0": 543.08,
+    "y1": 699.44
+   },
+   {
+    "page": 76,
+    "y0": 0.0,
+    "y1": 86.67
+   }
+  ],
+  "page_start": 75,
+  "page_end": 76
+ },
+ {
+  "section_id": "CS-E 380",
+  "kind": "cs",
+  "title": "CS-E 380 Low Temperature Starting Tests",
+  "heading": "Low Temperature Starting Tests",
+  "group_id": "CS-E 380",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 66,
+  "regions": [
+   {
+    "page": 76,
+    "y0": 86.67,
+    "y1": 373.88
+   }
+  ],
+  "page_start": 76,
+  "page_end": 76
+ },
+ {
+  "section_id": "AMC E 380",
+  "kind": "amc",
+  "title": "AMC E 380 Low Temperature Starting Tests",
+  "heading": "Low Temperature Starting Tests",
+  "group_id": "CS-E 380",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 67,
+  "regions": [
+   {
+    "page": 76,
+    "y0": 373.88,
+    "y1": 475.88
+   }
+  ],
+  "page_start": 76,
+  "page_end": 76
+ },
+ {
+  "section_id": "CS-E 390",
+  "kind": "cs",
+  "title": "CS-E 390 Acceleration Tests",
+  "heading": "Acceleration Tests",
+  "group_id": "CS-E 390",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 68,
+  "regions": [
+   {
+    "page": 76,
+    "y0": 475.88,
+    "y1": 699.44
+   },
+   {
+    "page": 77,
+    "y0": 0.0,
+    "y1": 192.78
+   }
+  ],
+  "page_start": 76,
+  "page_end": 77
+ },
+ {
+  "section_id": "CS-E 400",
+  "kind": "cs",
+  "title": "CS-E 400 Over-speed Tests",
+  "heading": "Over-speed Tests",
+  "group_id": "CS-E 400",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 69,
+  "regions": [
+   {
+    "page": 77,
+    "y0": 192.78,
+    "y1": 469.16
+   }
+  ],
+  "page_start": 77,
+  "page_end": 77
+ },
+ {
+  "section_id": "CS-E 430",
+  "kind": "cs",
+  "title": "CS-E 430 Water Spray Tests",
+  "heading": "Water Spray Tests",
+  "group_id": "CS-E 430",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 70,
+  "regions": [
+   {
+    "page": 77,
+    "y0": 469.16,
+    "y1": 699.44
+   },
+   {
+    "page": 78,
+    "y0": 0.0,
+    "y1": 237.54
+   }
+  ],
+  "page_start": 77,
+  "page_end": 78
+ },
+ {
+  "section_id": "CS-E 440",
+  "kind": "cs",
+  "title": "CS-E 440 Endurance Test",
+  "heading": "Endurance Test",
+  "group_id": "CS-E 440",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 71,
+  "regions": [
+   {
+    "page": 78,
+    "y0": 237.54,
+    "y1": 699.44
+   },
+   {
+    "page": 79,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 80,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 81,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 82,
+    "y0": 0.0,
+    "y1": 266.1
+   }
+  ],
+  "page_start": 78,
+  "page_end": 82
+ },
+ {
+  "section_id": "AMC E 440(b)(4)",
+  "kind": "amc",
+  "title": "AMC E 440(b)(4) Endurance Test — Schedule for Engine Incorporating a Turbocharger",
+  "heading": "Endurance Test — Schedule for Engine Incorporating a Turbocharger",
+  "group_id": "CS-E 440",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 72,
+  "regions": [
+   {
+    "page": 82,
+    "y0": 266.1,
+    "y1": 399.92
+   }
+  ],
+  "page_start": 82,
+  "page_end": 82
+ },
+ {
+  "section_id": "CS-E 450",
+  "kind": "cs",
+  "title": "CS-E 450 Ignition Tests",
+  "heading": "Ignition Tests",
+  "group_id": "CS-E 450",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 73,
+  "regions": [
+   {
+    "page": 82,
+    "y0": 399.92,
+    "y1": 549.44
+   }
+  ],
+  "page_start": 82,
+  "page_end": 82
+ },
+ {
+  "section_id": "CS-E 460",
+  "kind": "cs",
+  "title": "CS-E 460 Backfire Tests",
+  "heading": "Backfire Tests",
+  "group_id": "CS-E 460",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 74,
+  "regions": [
+   {
+    "page": 82,
+    "y0": 549.44,
+    "y1": 699.44
+   },
+   {
+    "page": 83,
+    "y0": 0.0,
+    "y1": 185.34
+   }
+  ],
+  "page_start": 82,
+  "page_end": 83
+ },
+ {
+  "section_id": "CS-E 470",
+  "kind": "cs",
+  "title": "CS-E 470 Contaminated Fuel",
+  "heading": "Contaminated Fuel",
+  "group_id": "CS-E 470",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 75,
+  "regions": [
+   {
+    "page": 83,
+    "y0": 185.34,
+    "y1": 333.66
+   }
+  ],
+  "page_start": 83,
+  "page_end": 83
+ },
+ {
+  "section_id": "AMC E 470",
+  "kind": "amc",
+  "title": "AMC E 470 Contaminated Fuel",
+  "heading": "Contaminated Fuel",
+  "group_id": "CS-E 470",
+  "subpart": "SUBPART C",
+  "subpart_title": "PISTON ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 76,
+  "regions": [
+   {
+    "page": 83,
+    "y0": 333.66,
+    "y1": 699.44
+   },
+   {
+    "page": 84,
+    "y0": 0.0,
+    "y1": 15.69
+   }
+  ],
+  "page_start": 83,
+  "page_end": 84
+ },
+ {
+  "section_id": "CS-E 500",
+  "kind": "cs",
+  "title": "CS-E 500 Functioning",
+  "heading": "Functioning",
+  "group_id": "CS-E 500",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 77,
+  "regions": [
+   {
+    "page": 84,
+    "y0": 81.87,
+    "y1": 255.54
+   }
+  ],
+  "page_start": 84,
+  "page_end": 84
+ },
+ {
+  "section_id": "AMC E 500",
+  "kind": "amc",
+  "title": "AMC E 500 Functioning - Control of Engines (Turbine Engines for Aeroplanes)",
+  "heading": "Functioning - Control of Engines (Turbine Engines for Aeroplanes)",
+  "group_id": "CS-E 500",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 3,
+  "order": 78,
+  "regions": [
+   {
+    "page": 84,
+    "y0": 255.54,
+    "y1": 533.96
+   }
+  ],
+  "page_start": 84,
+  "page_end": 84
+ },
+ {
+  "section_id": "CS-E 510",
+  "kind": "cs",
+  "title": "CS-E 510 Safety Analysis",
+  "heading": "Safety Analysis",
+  "group_id": "CS-E 510",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 79,
+  "regions": [
+   {
+    "page": 84,
+    "y0": 533.96,
+    "y1": 699.44
+   },
+   {
+    "page": 85,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 86,
+    "y0": 0.0,
+    "y1": 506.96
+   }
+  ],
+  "page_start": 84,
+  "page_end": 86
+ },
+ {
+  "section_id": "AMC E 510",
+  "kind": "amc",
+  "title": "AMC E 510 Safety Analysis",
+  "heading": "Safety Analysis",
+  "group_id": "CS-E 510",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 3,
+  "order": 80,
+  "regions": [
+   {
+    "page": 86,
+    "y0": 506.96,
+    "y1": 699.44
+   },
+   {
+    "page": 87,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 88,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 89,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 90,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 91,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 92,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 93,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 94,
+    "y0": 0.0,
+    "y1": 422.48
+   }
+  ],
+  "page_start": 86,
+  "page_end": 94
+ },
+ {
+  "section_id": "CS-E 515",
+  "kind": "cs",
+  "title": "CS-E 515 Engine Critical Parts",
+  "heading": "Engine Critical Parts",
+  "group_id": "CS-E 515",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 81,
+  "regions": [
+   {
+    "page": 94,
+    "y0": 422.48,
+    "y1": 699.44
+   },
+   {
+    "page": 95,
+    "y0": 0.0,
+    "y1": 45.15
+   }
+  ],
+  "page_start": 94,
+  "page_end": 95
+ },
+ {
+  "section_id": "AMC E 515",
+  "kind": "amc",
+  "title": "AMC E 515 Engine Critical Parts",
+  "heading": "Engine Critical Parts",
+  "group_id": "CS-E 515",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 3,
+  "order": 82,
+  "regions": [
+   {
+    "page": 95,
+    "y0": 45.15,
+    "y1": 699.44
+   },
+   {
+    "page": 96,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 97,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 98,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 99,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 100,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 101,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 102,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 103,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 104,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 105,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 106,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 107,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 108,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 109,
+    "y0": 0.0,
+    "y1": 408.56
+   }
+  ],
+  "page_start": 95,
+  "page_end": 109
+ },
+ {
+  "section_id": "CS-E 520",
+  "kind": "cs",
+  "title": "CS-E 520 Strength",
+  "heading": "Strength",
+  "group_id": "CS-E 520",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 83,
+  "regions": [
+   {
+    "page": 109,
+    "y0": 408.56,
+    "y1": 699.44
+   },
+   {
+    "page": 110,
+    "y0": 0.0,
+    "y1": 256.26
+   }
+  ],
+  "page_start": 109,
+  "page_end": 110
+ },
+ {
+  "section_id": "AMC E 520(a)",
+  "kind": "amc",
+  "title": "AMC E 520(a) Strength - High Cycle Fatigue",
+  "heading": "Strength - High Cycle Fatigue",
+  "group_id": "CS-E 520",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 3,
+  "order": 84,
+  "regions": [
+   {
+    "page": 110,
+    "y0": 256.26,
+    "y1": 358.26
+   }
+  ],
+  "page_start": 110,
+  "page_end": 110
+ },
+ {
+  "section_id": "AMC E 520(c)(1)",
+  "kind": "amc",
+  "title": "AMC E 520(c)(1) Strength - Shedding of Blades",
+  "heading": "Strength - Shedding of Blades",
+  "group_id": "CS-E 520",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 3,
+  "order": 85,
+  "regions": [
+   {
+    "page": 110,
+    "y0": 358.26,
+    "y1": 614.03
+   }
+  ],
+  "page_start": 110,
+  "page_end": 110
+ },
+ {
+  "section_id": "AMC E 520(c)(2)",
+  "kind": "amc",
+  "title": "AMC E 520(c)(2) Engine Model Validation",
+  "heading": "Engine Model Validation",
+  "group_id": "CS-E 520",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 3,
+  "order": 86,
+  "regions": [
+   {
+    "page": 110,
+    "y0": 614.03,
+    "y1": 699.44
+   },
+   {
+    "page": 111,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 112,
+    "y0": 0.0,
+    "y1": 45.15
+   }
+  ],
+  "page_start": 110,
+  "page_end": 112
+ },
+ {
+  "section_id": "AMC E 520(d)",
+  "kind": "amc",
+  "title": "AMC E 520(d) Strength – Local Failures",
+  "heading": "Strength – Local Failures",
+  "group_id": "CS-E 520",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 3,
+  "order": 87,
+  "regions": [
+   {
+    "page": 112,
+    "y0": 45.15,
+    "y1": 212.94
+   }
+  ],
+  "page_start": 112,
+  "page_end": 112
+ },
+ {
+  "section_id": "CS-E 525",
+  "kind": "cs",
+  "title": "CS-E 525 Continued Rotation",
+  "heading": "Continued Rotation",
+  "group_id": "CS-E 525",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 88,
+  "regions": [
+   {
+    "page": 112,
+    "y0": 212.94,
+    "y1": 347.82
+   }
+  ],
+  "page_start": 112,
+  "page_end": 112
+ },
+ {
+  "section_id": "AMC E 525",
+  "kind": "amc",
+  "title": "AMC E 525 Continued rotation",
+  "heading": "Continued rotation",
+  "group_id": "CS-E 525",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 3,
+  "order": 89,
+  "regions": [
+   {
+    "page": 112,
+    "y0": 347.82,
+    "y1": 699.44
+   },
+   {
+    "page": 113,
+    "y0": 0.0,
+    "y1": 15.03
+   }
+  ],
+  "page_start": 112,
+  "page_end": 113
+ },
+ {
+  "section_id": "CS-E 540",
+  "kind": "cs",
+  "title": "CS-E 540 Strike and Ingestion of Foreign Matter",
+  "heading": "Strike and Ingestion of Foreign Matter",
+  "group_id": "CS-E 540",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 90,
+  "regions": [
+   {
+    "page": 113,
+    "y0": 15.03,
+    "y1": 254.46
+   }
+  ],
+  "page_start": 113,
+  "page_end": 113
+ },
+ {
+  "section_id": "AMC E 540",
+  "kind": "amc",
+  "title": "AMC E 540 Strike and ingestion of foreign matter",
+  "heading": "Strike and ingestion of foreign matter",
+  "group_id": "CS-E 540",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 3,
+  "order": 91,
+  "regions": [
+   {
+    "page": 113,
+    "y0": 254.46,
+    "y1": 629.63
+   }
+  ],
+  "page_start": 113,
+  "page_end": 113
+ },
+ {
+  "section_id": "CS-E 560",
+  "kind": "cs",
+  "title": "CS-E 560 Fuel System",
+  "heading": "Fuel System",
+  "group_id": "CS-E 560",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 92,
+  "regions": [
+   {
+    "page": 113,
+    "y0": 629.63,
+    "y1": 699.44
+   },
+   {
+    "page": 114,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 115,
+    "y0": 0.0,
+    "y1": 15.03
+   }
+  ],
+  "page_start": 113,
+  "page_end": 115
+ },
+ {
+  "section_id": "AMC E 560",
+  "kind": "amc",
+  "title": "AMC E 560 Fuel System",
+  "heading": "Fuel System",
+  "group_id": "CS-E 560",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 3,
+  "order": 93,
+  "regions": [
+   {
+    "page": 115,
+    "y0": 15.03,
+    "y1": 699.44
+   },
+   {
+    "page": 116,
+    "y0": 0.0,
+    "y1": 103.71
+   }
+  ],
+  "page_start": 115,
+  "page_end": 116
+ },
+ {
+  "section_id": "CS-E 570",
+  "kind": "cs",
+  "title": "CS-E 570 Oil System",
+  "heading": "Oil System",
+  "group_id": "CS-E 570",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 94,
+  "regions": [
+   {
+    "page": 116,
+    "y0": 103.71,
+    "y1": 699.44
+   },
+   {
+    "page": 117,
+    "y0": 0.0,
+    "y1": 427.52
+   }
+  ],
+  "page_start": 116,
+  "page_end": 117
+ },
+ {
+  "section_id": "AMC E 570",
+  "kind": "amc",
+  "title": "AMC E 570 Oil system",
+  "heading": "Oil system",
+  "group_id": "CS-E 570",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 3,
+  "order": 95,
+  "regions": [
+   {
+    "page": 117,
+    "y0": 427.52,
+    "y1": 699.44
+   },
+   {
+    "page": 118,
+    "y0": 0.0,
+    "y1": 45.15
+   }
+  ],
+  "page_start": 117,
+  "page_end": 118
+ },
+ {
+  "section_id": "CS-E 580",
+  "kind": "cs",
+  "title": "CS-E 580 Air Systems",
+  "heading": "Air Systems",
+  "group_id": "CS-E 580",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 96,
+  "regions": [
+   {
+    "page": 118,
+    "y0": 45.15,
+    "y1": 159.39
+   }
+  ],
+  "page_start": 118,
+  "page_end": 118
+ },
+ {
+  "section_id": "CS-E 590",
+  "kind": "cs",
+  "title": "CS-E 590 Starter Systems",
+  "heading": "Starter Systems",
+  "group_id": "CS-E 590",
+  "subpart": "SUBPART D",
+  "subpart_title": "TURBINE ENGINES: DESIGN AND CONSTRUCTION",
+  "level": 2,
+  "order": 97,
+  "regions": [
+   {
+    "page": 118,
+    "y0": 159.39,
+    "y1": 699.44
+   },
+   {
+    "page": 119,
+    "y0": 0.0,
+    "y1": 15.69
+   }
+  ],
+  "page_start": 118,
+  "page_end": 119
+ },
+ {
+  "section_id": "CS-E 600",
+  "kind": "cs",
+  "title": "CS-E 600 Tests - General",
+  "heading": "Tests - General",
+  "group_id": "CS-E 600",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 98,
+  "regions": [
+   {
+    "page": 119,
+    "y0": 81.87,
+    "y1": 342.18
+   }
+  ],
+  "page_start": 119,
+  "page_end": 119
+ },
+ {
+  "section_id": "AMC E 600(e)",
+  "kind": "amc",
+  "title": "AMC E 600(e) Test - General",
+  "heading": "Test - General",
+  "group_id": "CS-E 600",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 99,
+  "regions": [
+   {
+    "page": 119,
+    "y0": 342.18,
+    "y1": 430.76
+   }
+  ],
+  "page_start": 119,
+  "page_end": 119
+ },
+ {
+  "section_id": "CS-E 620",
+  "kind": "cs",
+  "title": "CS-E 620 Performance Correction",
+  "heading": "Performance Correction",
+  "group_id": "CS-E 620",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 100,
+  "regions": [
+   {
+    "page": 119,
+    "y0": 430.76,
+    "y1": 699.44
+   },
+   {
+    "page": 120,
+    "y0": 0.0,
+    "y1": 15.03
+   }
+  ],
+  "page_start": 119,
+  "page_end": 120
+ },
+ {
+  "section_id": "AMC E 620",
+  "kind": "amc",
+  "title": "AMC E 620 Performance: Formulae",
+  "heading": "Performance: Formulae",
+  "group_id": "CS-E 620",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 101,
+  "regions": [
+   {
+    "page": 120,
+    "y0": 15.03,
+    "y1": 699.44
+   },
+   {
+    "page": 121,
+    "y0": 0.0,
+    "y1": 388.04
+   }
+  ],
+  "page_start": 120,
+  "page_end": 121
+ },
+ {
+  "section_id": "CS-E 640",
+  "kind": "cs",
+  "title": "CS-E 640 Pressure Loads",
+  "heading": "Pressure Loads",
+  "group_id": "CS-E 640",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 102,
+  "regions": [
+   {
+    "page": 121,
+    "y0": 388.04,
+    "y1": 699.44
+   },
+   {
+    "page": 122,
+    "y0": 0.0,
+    "y1": 155.79
+   }
+  ],
+  "page_start": 121,
+  "page_end": 122
+ },
+ {
+  "section_id": "AMC E 640",
+  "kind": "amc",
+  "title": "AMC E 640 Pressure Loads",
+  "heading": "Pressure Loads",
+  "group_id": "CS-E 640",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 103,
+  "regions": [
+   {
+    "page": 122,
+    "y0": 155.79,
+    "y1": 699.44
+   },
+   {
+    "page": 123,
+    "y0": 0.0,
+    "y1": 369.18
+   }
+  ],
+  "page_start": 122,
+  "page_end": 123
+ },
+ {
+  "section_id": "CS-E 650",
+  "kind": "cs",
+  "title": "CS-E 650 Vibration Surveys",
+  "heading": "Vibration Surveys",
+  "group_id": "CS-E 650",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 104,
+  "regions": [
+   {
+    "page": 123,
+    "y0": 369.18,
+    "y1": 699.44
+   },
+   {
+    "page": 124,
+    "y0": 0.0,
+    "y1": 323.1
+   }
+  ],
+  "page_start": 123,
+  "page_end": 124
+ },
+ {
+  "section_id": "AMC E 650",
+  "kind": "amc",
+  "title": "AMC E 650 Vibration Surveys",
+  "heading": "Vibration Surveys",
+  "group_id": "CS-E 650",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 105,
+  "regions": [
+   {
+    "page": 124,
+    "y0": 323.1,
+    "y1": 699.44
+   },
+   {
+    "page": 125,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 126,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 127,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 128,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 129,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 130,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 131,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 132,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 133,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 134,
+    "y0": 0.0,
+    "y1": 532.76
+   }
+  ],
+  "page_start": 124,
+  "page_end": 134
+ },
+ {
+  "section_id": "CS-E 660",
+  "kind": "cs",
+  "title": "CS-E 660 Fuel Pressure and Temperature",
+  "heading": "Fuel Pressure and Temperature",
+  "group_id": "CS-E 660",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 106,
+  "regions": [
+   {
+    "page": 134,
+    "y0": 532.76,
+    "y1": 699.44
+   },
+   {
+    "page": 135,
+    "y0": 0.0,
+    "y1": 15.03
+   }
+  ],
+  "page_start": 134,
+  "page_end": 135
+ },
+ {
+  "section_id": "AMC E 660",
+  "kind": "amc",
+  "title": "AMC E 660 Fuel Pump Tests (Turbine Engines for Aeroplanes)",
+  "heading": "Fuel Pump Tests (Turbine Engines for Aeroplanes)",
+  "group_id": "CS-E 660",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 107,
+  "regions": [
+   {
+    "page": 135,
+    "y0": 15.03,
+    "y1": 143.91
+   }
+  ],
+  "page_start": 135,
+  "page_end": 135
+ },
+ {
+  "section_id": "CS-E 670",
+  "kind": "cs",
+  "title": "CS-E 670 Contaminated Fuel",
+  "heading": "Contaminated Fuel",
+  "group_id": "CS-E 670",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 108,
+  "regions": [
+   {
+    "page": 135,
+    "y0": 143.91,
+    "y1": 390.8
+   }
+  ],
+  "page_start": 135,
+  "page_end": 135
+ },
+ {
+  "section_id": "AMC E 670",
+  "kind": "amc",
+  "title": "AMC E 670 Contaminated Fuel Testing",
+  "heading": "Contaminated Fuel Testing",
+  "group_id": "CS-E 670",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 109,
+  "regions": [
+   {
+    "page": 135,
+    "y0": 390.8,
+    "y1": 699.44
+   },
+   {
+    "page": 136,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 137,
+    "y0": 0.0,
+    "y1": 123.15
+   }
+  ],
+  "page_start": 135,
+  "page_end": 137
+ },
+ {
+  "section_id": "CS-E 680",
+  "kind": "cs",
+  "title": "CS-E 680 Inclination and Gyroscopic Load Effects",
+  "heading": "Inclination and Gyroscopic Load Effects",
+  "group_id": "CS-E 680",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 110,
+  "regions": [
+   {
+    "page": 137,
+    "y0": 123.15,
+    "y1": 244.62
+   }
+  ],
+  "page_start": 137,
+  "page_end": 137
+ },
+ {
+  "section_id": "AMC E 680",
+  "kind": "amc",
+  "title": "AMC E 680 Inclination and Gyroscopic Load Effects",
+  "heading": "Inclination and Gyroscopic Load Effects",
+  "group_id": "CS-E 680",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 111,
+  "regions": [
+   {
+    "page": 137,
+    "y0": 244.62,
+    "y1": 346.62
+   }
+  ],
+  "page_start": 137,
+  "page_end": 137
+ },
+ {
+  "section_id": "CS-E 690",
+  "kind": "cs",
+  "title": "CS-E 690 Engine Bleed",
+  "heading": "Engine Bleed",
+  "group_id": "CS-E 690",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 112,
+  "regions": [
+   {
+    "page": 137,
+    "y0": 346.62,
+    "y1": 699.44
+   },
+   {
+    "page": 138,
+    "y0": 0.0,
+    "y1": 335.1
+   }
+  ],
+  "page_start": 137,
+  "page_end": 138
+ },
+ {
+  "section_id": "AMC E 690",
+  "kind": "amc",
+  "title": "AMC E 690 Engine bleed",
+  "heading": "Engine bleed",
+  "group_id": "CS-E 690",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 113,
+  "regions": [
+   {
+    "page": 138,
+    "y0": 335.1,
+    "y1": 542.0
+   }
+  ],
+  "page_start": 138,
+  "page_end": 138
+ },
+ {
+  "section_id": "CS-E 700",
+  "kind": "cs",
+  "title": "CS-E 700 Excess Operating Conditions",
+  "heading": "Excess Operating Conditions",
+  "group_id": "CS-E 700",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 114,
+  "regions": [
+   {
+    "page": 138,
+    "y0": 542.0,
+    "y1": 699.44
+   },
+   {
+    "page": 139,
+    "y0": 0.0,
+    "y1": 14.91
+   }
+  ],
+  "page_start": 138,
+  "page_end": 139
+ },
+ {
+  "section_id": "AMC E 700",
+  "kind": "amc",
+  "title": "AMC E 700 Excess Operating Conditions (Turbine Engines for Aeroplanes)",
+  "heading": "Excess Operating Conditions (Turbine Engines for Aeroplanes)",
+  "group_id": "CS-E 700",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 115,
+  "regions": [
+   {
+    "page": 139,
+    "y0": 14.91,
+    "y1": 699.44
+   },
+   {
+    "page": 140,
+    "y0": 0.0,
+    "y1": 15.03
+   }
+  ],
+  "page_start": 139,
+  "page_end": 140
+ },
+ {
+  "section_id": "CS-E 710",
+  "kind": "cs",
+  "title": "CS-E 710 Rotor Locking Tests",
+  "heading": "Rotor Locking Tests",
+  "group_id": "CS-E 710",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 116,
+  "regions": [
+   {
+    "page": 140,
+    "y0": 15.03,
+    "y1": 190.14
+   }
+  ],
+  "page_start": 140,
+  "page_end": 140
+ },
+ {
+  "section_id": "AMC E 710",
+  "kind": "amc",
+  "title": "AMC E 710 Rotor locking tests",
+  "heading": "Rotor locking tests",
+  "group_id": "CS-E 710",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 117,
+  "regions": [
+   {
+    "page": 140,
+    "y0": 190.14,
+    "y1": 584.75
+   }
+  ],
+  "page_start": 140,
+  "page_end": 140
+ },
+ {
+  "section_id": "CS-E 720",
+  "kind": "cs",
+  "title": "CS-E 720 Continuous Ignition",
+  "heading": "Continuous Ignition",
+  "group_id": "CS-E 720",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 118,
+  "regions": [
+   {
+    "page": 140,
+    "y0": 584.75,
+    "y1": 699.44
+   },
+   {
+    "page": 141,
+    "y0": 0.0,
+    "y1": 177.99
+   }
+  ],
+  "page_start": 140,
+  "page_end": 141
+ },
+ {
+  "section_id": "AMC E 720(a)",
+  "kind": "amc",
+  "title": "AMC E 720(a) Continuous Ignition",
+  "heading": "Continuous Ignition",
+  "group_id": "CS-E 720",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 119,
+  "regions": [
+   {
+    "page": 141,
+    "y0": 177.99,
+    "y1": 266.7
+   }
+  ],
+  "page_start": 141,
+  "page_end": 141
+ },
+ {
+  "section_id": "CS-E 730",
+  "kind": "cs",
+  "title": "CS-E 730 Engine Calibration Test",
+  "heading": "Engine Calibration Test",
+  "group_id": "CS-E 730",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 120,
+  "regions": [
+   {
+    "page": 141,
+    "y0": 266.7,
+    "y1": 452.84
+   }
+  ],
+  "page_start": 141,
+  "page_end": 141
+ },
+ {
+  "section_id": "AMC E 730",
+  "kind": "amc",
+  "title": "AMC E 730 Calibration Tests",
+  "heading": "Calibration Tests",
+  "group_id": "CS-E 730",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 121,
+  "regions": [
+   {
+    "page": 141,
+    "y0": 452.84,
+    "y1": 699.44
+   },
+   {
+    "page": 142,
+    "y0": 0.0,
+    "y1": 15.03
+   }
+  ],
+  "page_start": 141,
+  "page_end": 142
+ },
+ {
+  "section_id": "CS-E 740",
+  "kind": "cs",
+  "title": "CS-E 740 Endurance Tests",
+  "heading": "Endurance Tests",
+  "group_id": "CS-E 740",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 122,
+  "regions": [
+   {
+    "page": 142,
+    "y0": 15.03,
+    "y1": 699.44
+   },
+   {
+    "page": 143,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 144,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 145,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 146,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 147,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 148,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 149,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 150,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 151,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 152,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 153,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 154,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 155,
+    "y0": 0.0,
+    "y1": 167.19
+   }
+  ],
+  "page_start": 142,
+  "page_end": 155
+ },
+ {
+  "section_id": "AMC E 740(c)(2)(i)",
+  "kind": "amc",
+  "title": "AMC E 740(c)(2)(i) Endurance Tests – 30-Minute Power Rating",
+  "heading": "Endurance Tests – 30-Minute Power Rating",
+  "group_id": "CS-E 740",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 123,
+  "regions": [
+   {
+    "page": 155,
+    "y0": 167.19,
+    "y1": 545.96
+   }
+  ],
+  "page_start": 155,
+  "page_end": 155
+ },
+ {
+  "section_id": "AMC E 740(c)(3)",
+  "kind": "amc",
+  "title": "AMC E 740(c)(3) Endurance Tests",
+  "heading": "Endurance Tests",
+  "group_id": "CS-E 740",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 124,
+  "regions": [
+   {
+    "page": 155,
+    "y0": 545.96,
+    "y1": 699.44
+   },
+   {
+    "page": 156,
+    "y0": 0.0,
+    "y1": 326.7
+   }
+  ],
+  "page_start": 155,
+  "page_end": 156
+ },
+ {
+  "section_id": "AMC E 740(c)(4)",
+  "kind": "amc",
+  "title": "AMC E 740(c)(4) Alternate Endurance Testing – Turbofan Engine",
+  "heading": "Alternate Endurance Testing – Turbofan Engine",
+  "group_id": "CS-E 740",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 125,
+  "regions": [
+   {
+    "page": 156,
+    "y0": 326.7,
+    "y1": 699.44
+   },
+   {
+    "page": 157,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 158,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 159,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 160,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 161,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 162,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 163,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 164,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 165,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 166,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 167,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 168,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 169,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 170,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 171,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 172,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 173,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 174,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 175,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 176,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 177,
+    "y0": 0.0,
+    "y1": 563.39
+   }
+  ],
+  "page_start": 156,
+  "page_end": 177
+ },
+ {
+  "section_id": "AMC E 740(f)(1)",
+  "kind": "amc",
+  "title": "AMC E 740(f)(1) Multi-spool Engines",
+  "heading": "Multi-spool Engines",
+  "group_id": "CS-E 740",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 126,
+  "regions": [
+   {
+    "page": 177,
+    "y0": 563.39,
+    "y1": 699.44
+   },
+   {
+    "page": 178,
+    "y0": 0.0,
+    "y1": 323.1
+   }
+  ],
+  "page_start": 177,
+  "page_end": 178
+ },
+ {
+  "section_id": "AMC E 740(f)(5)",
+  "kind": "amc",
+  "title": "AMC E 740(f)(5) Operating Limitations — Transient Engine rotor shaft over-speed, transient Engine exhaust gas over-temperature and transient Engine over-torque limit approval",
+  "heading": "Operating Limitations — Transient Engine rotor shaft over-speed, transient Engine exhaust gas over-temperature and transient Engine over-torque limit approval",
+  "group_id": "CS-E 740",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 127,
+  "regions": [
+   {
+    "page": 178,
+    "y0": 323.1,
+    "y1": 699.44
+   },
+   {
+    "page": 179,
+    "y0": 0.0,
+    "y1": 149.91
+   }
+  ],
+  "page_start": 178,
+  "page_end": 179
+ },
+ {
+  "section_id": "AMC E 740(g)(1)",
+  "kind": "amc",
+  "title": "AMC E 740(g)(1) Endurance Tests - Incremental Periods",
+  "heading": "Endurance Tests - Incremental Periods",
+  "group_id": "CS-E 740",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 128,
+  "regions": [
+   {
+    "page": 179,
+    "y0": 149.91,
+    "y1": 250.74
+   }
+  ],
+  "page_start": 179,
+  "page_end": 179
+ },
+ {
+  "section_id": "AMC E 740(i)(2)",
+  "kind": "amc",
+  "title": "AMC E 740(i)(2) Endurance tests - Inspection checks",
+  "heading": "Endurance tests - Inspection checks",
+  "group_id": "CS-E 740",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 129,
+  "regions": [
+   {
+    "page": 179,
+    "y0": 250.74,
+    "y1": 699.44
+   },
+   {
+    "page": 180,
+    "y0": 0.0,
+    "y1": 69.63
+   }
+  ],
+  "page_start": 179,
+  "page_end": 180
+ },
+ {
+  "section_id": "CS-E 745",
+  "kind": "cs",
+  "title": "CS-E 745 Engine Acceleration",
+  "heading": "Engine Acceleration",
+  "group_id": "CS-E 745",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 130,
+  "regions": [
+   {
+    "page": 180,
+    "y0": 69.63,
+    "y1": 561.35
+   }
+  ],
+  "page_start": 180,
+  "page_end": 180
+ },
+ {
+  "section_id": "AMC E 745",
+  "kind": "amc",
+  "title": "AMC E 745 Engine Acceleration",
+  "heading": "Engine Acceleration",
+  "group_id": "CS-E 745",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 131,
+  "regions": [
+   {
+    "page": 180,
+    "y0": 561.35,
+    "y1": 699.44
+   },
+   {
+    "page": 181,
+    "y0": 0.0,
+    "y1": 164.67
+   }
+  ],
+  "page_start": 180,
+  "page_end": 181
+ },
+ {
+  "section_id": "CS-E 750",
+  "kind": "cs",
+  "title": "CS-E 750 Starting Tests",
+  "heading": "Starting Tests",
+  "group_id": "CS-E 750",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 132,
+  "regions": [
+   {
+    "page": 181,
+    "y0": 164.67,
+    "y1": 518.96
+   }
+  ],
+  "page_start": 181,
+  "page_end": 181
+ },
+ {
+  "section_id": "AMC E 750(b)",
+  "kind": "amc",
+  "title": "AMC E 750(b) Starting tests",
+  "heading": "Starting tests",
+  "group_id": "CS-E 750",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 133,
+  "regions": [
+   {
+    "page": 181,
+    "y0": 518.96,
+    "y1": 634.43
+   }
+  ],
+  "page_start": 181,
+  "page_end": 181
+ },
+ {
+  "section_id": "CS-E 770",
+  "kind": "cs",
+  "title": "CS-E 770 Low Temperature Starting Tests",
+  "heading": "Low Temperature Starting Tests",
+  "group_id": "CS-E 770",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 134,
+  "regions": [
+   {
+    "page": 181,
+    "y0": 634.43,
+    "y1": 699.44
+   },
+   {
+    "page": 182,
+    "y0": 0.0,
+    "y1": 264.66
+   }
+  ],
+  "page_start": 181,
+  "page_end": 182
+ },
+ {
+  "section_id": "AMC E 770",
+  "kind": "amc",
+  "title": "AMC E 770 Low Temperature Starting Tests",
+  "heading": "Low Temperature Starting Tests",
+  "group_id": "CS-E 770",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 135,
+  "regions": [
+   {
+    "page": 182,
+    "y0": 264.66,
+    "y1": 386.12
+   }
+  ],
+  "page_start": 182,
+  "page_end": 182
+ },
+ {
+  "section_id": "CS-E 780",
+  "kind": "cs",
+  "title": "CS-E 780 Icing Conditions",
+  "heading": "Icing Conditions",
+  "group_id": "CS-E 780",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 136,
+  "regions": [
+   {
+    "page": 182,
+    "y0": 386.12,
+    "y1": 699.44
+   },
+   {
+    "page": 183,
+    "y0": 0.0,
+    "y1": 611.63
+   }
+  ],
+  "page_start": 182,
+  "page_end": 183
+ },
+ {
+  "section_id": "AMC E 780",
+  "kind": "amc",
+  "title": "AMC E 780 Icing Conditions",
+  "heading": "Icing Conditions",
+  "group_id": "CS-E 780",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 137,
+  "regions": [
+   {
+    "page": 183,
+    "y0": 611.63,
+    "y1": 699.44
+   },
+   {
+    "page": 184,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 185,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 186,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 187,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 188,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 189,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 190,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 191,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 192,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 193,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 194,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 195,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 196,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 197,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 198,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 199,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 200,
+    "y0": 0.0,
+    "y1": 57.39
+   }
+  ],
+  "page_start": 183,
+  "page_end": 200
+ },
+ {
+  "section_id": "CS-E 790",
+  "kind": "cs",
+  "title": "CS-E 790 Ingestion of Rain and Hail",
+  "heading": "Ingestion of Rain and Hail",
+  "group_id": "CS-E 790",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 138,
+  "regions": [
+   {
+    "page": 200,
+    "y0": 57.39,
+    "y1": 699.44
+   },
+   {
+    "page": 201,
+    "y0": 0.0,
+    "y1": 581.51
+   }
+  ],
+  "page_start": 200,
+  "page_end": 201
+ },
+ {
+  "section_id": "AMC E 790",
+  "kind": "amc",
+  "title": "AMC E 790 Rain and Hail Ingestion",
+  "heading": "Rain and Hail Ingestion",
+  "group_id": "CS-E 790",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 139,
+  "regions": [
+   {
+    "page": 201,
+    "y0": 581.51,
+    "y1": 699.44
+   },
+   {
+    "page": 202,
+    "y0": 0.0,
+    "y1": 184.02
+   }
+  ],
+  "page_start": 201,
+  "page_end": 202
+ },
+ {
+  "section_id": "AMC E 790(a)(1)",
+  "kind": "amc",
+  "title": "AMC E 790(a)(1) Rain and Hail Ingestion Certification for Design Changes and Derivative Engines – Turbine Engine Power/Thrust Loss and Instability in Extreme Conditions of Rain and Hail",
+  "heading": "Rain and Hail Ingestion Certification for Design Changes and Derivative Engines – Turbine Engine Power/Thrust Loss and Instability in Extreme Conditions of Rain and Hail",
+  "group_id": "CS-E 790",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 140,
+  "regions": [
+   {
+    "page": 202,
+    "y0": 184.02,
+    "y1": 425.12
+   }
+  ],
+  "page_start": 202,
+  "page_end": 202
+ },
+ {
+  "section_id": "AMC E 790(a)(2)",
+  "kind": "amc",
+  "title": "AMC E 790(a)(2) Rain and Hail Ingestion – Turbine Engine Power/ Thrust Loss and Instability in Extreme Conditions of Rain and Hail",
+  "heading": "Rain and Hail Ingestion – Turbine Engine Power/ Thrust Loss and Instability in Extreme Conditions of Rain and Hail",
+  "group_id": "CS-E 790",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 141,
+  "regions": [
+   {
+    "page": 202,
+    "y0": 425.12,
+    "y1": 699.44
+   },
+   {
+    "page": 203,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 204,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 205,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 206,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 207,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 208,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 209,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 210,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 211,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 212,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 213,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 214,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 215,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 216,
+    "y0": 0.0,
+    "y1": 14.91
+   }
+  ],
+  "page_start": 202,
+  "page_end": 216
+ },
+ {
+  "section_id": "CS-E 790 Appendix A",
+  "kind": "appendix",
+  "title": "Appendix A Certification Standard Atmospheric Concentrations of Rain and Hail",
+  "heading": "Certification Standard Atmospheric Concentrations of Rain and Hail",
+  "group_id": "CS-E 790",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 142,
+  "regions": [
+   {
+    "page": 216,
+    "y0": 14.91,
+    "y1": 699.44
+   },
+   {
+    "page": 217,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 218,
+    "y0": 0.0,
+    "y1": 106.47
+   }
+  ],
+  "page_start": 216,
+  "page_end": 218
+ },
+ {
+  "section_id": "CS-E 800",
+  "kind": "cs",
+  "title": "CS-E 800 Bird Strike and Ingestion",
+  "heading": "Bird Strike and Ingestion",
+  "group_id": "CS-E 800",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 143,
+  "regions": [
+   {
+    "page": 218,
+    "y0": 106.47,
+    "y1": 699.44
+   },
+   {
+    "page": 219,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 220,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 221,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 222,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 223,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 224,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 225,
+    "y0": 0.0,
+    "y1": 453.32
+   }
+  ],
+  "page_start": 218,
+  "page_end": 225
+ },
+ {
+  "section_id": "AMC E 800",
+  "kind": "amc",
+  "title": "AMC E 800 Bird Strike and Ingestion",
+  "heading": "Bird Strike and Ingestion",
+  "group_id": "CS-E 800",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 144,
+  "regions": [
+   {
+    "page": 225,
+    "y0": 453.32,
+    "y1": 699.44
+   },
+   {
+    "page": 226,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 227,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 228,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 229,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 230,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 231,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 232,
+    "y0": 0.0,
+    "y1": 90.27
+   }
+  ],
+  "page_start": 225,
+  "page_end": 232
+ },
+ {
+  "section_id": "CS-E 810",
+  "kind": "cs",
+  "title": "CS-E 810 Compressor and Turbine Blade Failure",
+  "heading": "Compressor and Turbine Blade Failure",
+  "group_id": "CS-E 810",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 145,
+  "regions": [
+   {
+    "page": 232,
+    "y0": 90.27,
+    "y1": 512.48
+   }
+  ],
+  "page_start": 232,
+  "page_end": 232
+ },
+ {
+  "section_id": "AMC E 810",
+  "kind": "amc",
+  "title": "AMC E 810 Compressor and Turbine Blade Failure",
+  "heading": "Compressor and Turbine Blade Failure",
+  "group_id": "CS-E 810",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 146,
+  "regions": [
+   {
+    "page": 232,
+    "y0": 512.48,
+    "y1": 699.44
+   },
+   {
+    "page": 233,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 234,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 235,
+    "y0": 0.0,
+    "y1": 605.87
+   }
+  ],
+  "page_start": 232,
+  "page_end": 235
+ },
+ {
+  "section_id": "CS-E 820",
+  "kind": "cs",
+  "title": "CS-E 820 Over-torque Test",
+  "heading": "Over-torque Test",
+  "group_id": "CS-E 820",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 147,
+  "regions": [
+   {
+    "page": 235,
+    "y0": 605.87,
+    "y1": 699.44
+   },
+   {
+    "page": 236,
+    "y0": 0.0,
+    "y1": 354.54
+   }
+  ],
+  "page_start": 235,
+  "page_end": 236
+ },
+ {
+  "section_id": "AMC E 820(a)(2)",
+  "kind": "amc",
+  "title": "AMC E 820(a)(2) Over-torque Test",
+  "heading": "Over-torque Test",
+  "group_id": "CS-E 820",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 148,
+  "regions": [
+   {
+    "page": 236,
+    "y0": 354.54,
+    "y1": 443.12
+   }
+  ],
+  "page_start": 236,
+  "page_end": 236
+ },
+ {
+  "section_id": "CS-E 830",
+  "kind": "cs",
+  "title": "CS-E 830 Maximum Engine Over-speed",
+  "heading": "Maximum Engine Over-speed",
+  "group_id": "CS-E 830",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 149,
+  "regions": [
+   {
+    "page": 236,
+    "y0": 443.12,
+    "y1": 699.44
+   },
+   {
+    "page": 237,
+    "y0": 0.0,
+    "y1": 123.15
+   }
+  ],
+  "page_start": 236,
+  "page_end": 237
+ },
+ {
+  "section_id": "AMC E 830(c)",
+  "kind": "amc",
+  "title": "AMC E 830(c) Maximum Engine Over-speed",
+  "heading": "Maximum Engine Over-speed",
+  "group_id": "CS-E 830",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 150,
+  "regions": [
+   {
+    "page": 237,
+    "y0": 123.15,
+    "y1": 211.74
+   }
+  ],
+  "page_start": 237,
+  "page_end": 237
+ },
+ {
+  "section_id": "CS-E 840",
+  "kind": "cs",
+  "title": "CS-E 840 Rotor Integrity",
+  "heading": "Rotor Integrity",
+  "group_id": "CS-E 840",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 151,
+  "regions": [
+   {
+    "page": 237,
+    "y0": 211.74,
+    "y1": 699.44
+   },
+   {
+    "page": 238,
+    "y0": 0.0,
+    "y1": 593.27
+   }
+  ],
+  "page_start": 237,
+  "page_end": 238
+ },
+ {
+  "section_id": "AMC E 840",
+  "kind": "amc",
+  "title": "AMC E 840 Rotor Integrity",
+  "heading": "Rotor Integrity",
+  "group_id": "CS-E 840",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 152,
+  "regions": [
+   {
+    "page": 238,
+    "y0": 593.27,
+    "y1": 699.44
+   },
+   {
+    "page": 239,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 240,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 241,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 242,
+    "y0": 0.0,
+    "y1": 129.27
+   }
+  ],
+  "page_start": 238,
+  "page_end": 242
+ },
+ {
+  "section_id": "CS-E 850",
+  "kind": "cs",
+  "title": "CS-E 850 Compressor, Fan and Turbine Shafts",
+  "heading": "Compressor, Fan and Turbine Shafts",
+  "group_id": "CS-E 850",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 153,
+  "regions": [
+   {
+    "page": 242,
+    "y0": 129.27,
+    "y1": 699.44
+   },
+   {
+    "page": 243,
+    "y0": 0.0,
+    "y1": 78.03
+   }
+  ],
+  "page_start": 242,
+  "page_end": 243
+ },
+ {
+  "section_id": "AMC E 850",
+  "kind": "amc",
+  "title": "AMC E 850 Compressor, Fan and Turbine Shafts",
+  "heading": "Compressor, Fan and Turbine Shafts",
+  "group_id": "CS-E 850",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 154,
+  "regions": [
+   {
+    "page": 243,
+    "y0": 78.03,
+    "y1": 699.44
+   },
+   {
+    "page": 244,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 245,
+    "y0": 0.0,
+    "y1": 598.07
+   }
+  ],
+  "page_start": 243,
+  "page_end": 245
+ },
+ {
+  "section_id": "CS-E 860",
+  "kind": "cs",
+  "title": "CS-E 860 Turbine Rotor Over-temperature",
+  "heading": "Turbine Rotor Over-temperature",
+  "group_id": "CS-E 860",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 155,
+  "regions": [
+   {
+    "page": 245,
+    "y0": 598.07,
+    "y1": 699.44
+   },
+   {
+    "page": 246,
+    "y0": 0.0,
+    "y1": 86.67
+   }
+  ],
+  "page_start": 245,
+  "page_end": 246
+ },
+ {
+  "section_id": "CS-E 870",
+  "kind": "cs",
+  "title": "CS-E 870 Exhaust Gas Over-temperature Test",
+  "heading": "Exhaust Gas Over-temperature Test",
+  "group_id": "CS-E 870",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 156,
+  "regions": [
+   {
+    "page": 246,
+    "y0": 86.67,
+    "y1": 371.22
+   }
+  ],
+  "page_start": 246,
+  "page_end": 246
+ },
+ {
+  "section_id": "AMC E 870(a)(3)",
+  "kind": "amc",
+  "title": "AMC E 870(a)(3) Exhaust Gas Over-temperature Test",
+  "heading": "Exhaust Gas Over-temperature Test",
+  "group_id": "CS-E 870",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 157,
+  "regions": [
+   {
+    "page": 246,
+    "y0": 371.22,
+    "y1": 459.8
+   }
+  ],
+  "page_start": 246,
+  "page_end": 246
+ },
+ {
+  "section_id": "CS-E 880",
+  "kind": "cs",
+  "title": "CS-E 880 Tests with Refrigerant Injection for Take-Off and/or 2½-Minute OEI Power",
+  "heading": "Tests with Refrigerant Injection for Take-Off and/or 2½-Minute OEI Power",
+  "group_id": "CS-E 880",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 158,
+  "regions": [
+   {
+    "page": 246,
+    "y0": 459.8,
+    "y1": 699.44
+   },
+   {
+    "page": 247,
+    "y0": 0.0,
+    "y1": 624.23
+   }
+  ],
+  "page_start": 246,
+  "page_end": 247
+ },
+ {
+  "section_id": "CS-E 890",
+  "kind": "cs",
+  "title": "CS-E 890 Thrust Reverser Tests",
+  "heading": "Thrust Reverser Tests",
+  "group_id": "CS-E 890",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 159,
+  "regions": [
+   {
+    "page": 247,
+    "y0": 624.23,
+    "y1": 699.44
+   },
+   {
+    "page": 248,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 249,
+    "y0": 0.0,
+    "y1": 15.03
+   }
+  ],
+  "page_start": 247,
+  "page_end": 249
+ },
+ {
+  "section_id": "AMC E 890",
+  "kind": "amc",
+  "title": "AMC E 890 Thrust Reverser Tests",
+  "heading": "Thrust Reverser Tests",
+  "group_id": "CS-E 890",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 160,
+  "regions": [
+   {
+    "page": 249,
+    "y0": 15.03,
+    "y1": 699.44
+   },
+   {
+    "page": 250,
+    "y0": 0.0,
+    "y1": 45.15
+   }
+  ],
+  "page_start": 249,
+  "page_end": 250
+ },
+ {
+  "section_id": "CS-E 900",
+  "kind": "cs",
+  "title": "CS-E 900 Propeller Parking Brake",
+  "heading": "Propeller Parking Brake",
+  "group_id": "CS-E 900",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 161,
+  "regions": [
+   {
+    "page": 250,
+    "y0": 45.15,
+    "y1": 115.59
+   }
+  ],
+  "page_start": 250,
+  "page_end": 250
+ },
+ {
+  "section_id": "CS-E 910",
+  "kind": "cs",
+  "title": "CS-E 910 Relighting In Flight",
+  "heading": "Relighting In Flight",
+  "group_id": "CS-E 910",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 162,
+  "regions": [
+   {
+    "page": 250,
+    "y0": 115.59,
+    "y1": 212.82
+   }
+  ],
+  "page_start": 250,
+  "page_end": 250
+ },
+ {
+  "section_id": "AMC E 910",
+  "kind": "amc",
+  "title": "AMC E 910 Relighting In Flight",
+  "heading": "Relighting In Flight",
+  "group_id": "CS-E 910",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 163,
+  "regions": [
+   {
+    "page": 250,
+    "y0": 212.82,
+    "y1": 625.43
+   }
+  ],
+  "page_start": 250,
+  "page_end": 250
+ },
+ {
+  "section_id": "CS-E 920",
+  "kind": "cs",
+  "title": "CS-E 920 Over-temperature Test",
+  "heading": "Over-temperature Test",
+  "group_id": "CS-E 920",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 164,
+  "regions": [
+   {
+    "page": 250,
+    "y0": 625.43,
+    "y1": 699.44
+   },
+   {
+    "page": 251,
+    "y0": 0.0,
+    "y1": 217.14
+   }
+  ],
+  "page_start": 250,
+  "page_end": 251
+ },
+ {
+  "section_id": "AMC E 920",
+  "kind": "amc",
+  "title": "AMC E 920 Over-temperature test",
+  "heading": "Over-temperature test",
+  "group_id": "CS-E 920",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 165,
+  "regions": [
+   {
+    "page": 251,
+    "y0": 217.14,
+    "y1": 536.12
+   }
+  ],
+  "page_start": 251,
+  "page_end": 251
+ },
+ {
+  "section_id": "CS-E 930",
+  "kind": "cs",
+  "title": "CS-E 930 Initial Maintenance Programme Test",
+  "heading": "Initial Maintenance Programme Test",
+  "group_id": "CS-E 930",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 2,
+  "order": 166,
+  "regions": [
+   {
+    "page": 251,
+    "y0": 536.12,
+    "y1": 699.44
+   },
+   {
+    "page": 252,
+    "y0": 0.0,
+    "y1": 15.03
+   }
+  ],
+  "page_start": 251,
+  "page_end": 252
+ },
+ {
+  "section_id": "AMC E 930",
+  "kind": "amc",
+  "title": "AMC E 930 Initial Maintenance Programme Test",
+  "heading": "Initial Maintenance Programme Test",
+  "group_id": "CS-E 930",
+  "subpart": "SUBPART E",
+  "subpart_title": "TURBINE ENGINES: TYPE SUBSTANTIATION",
+  "level": 3,
+  "order": 167,
+  "regions": [
+   {
+    "page": 252,
+    "y0": 15.03,
+    "y1": 699.44
+   },
+   {
+    "page": 253,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 254,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 255,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 256,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 257,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 258,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 259,
+    "y0": 0.0,
+    "y1": 15.69
+   }
+  ],
+  "page_start": 252,
+  "page_end": 259
+ },
+ {
+  "section_id": "CS-E 1000",
+  "kind": "cs",
+  "title": "CS-E 1000 General",
+  "heading": "General",
+  "group_id": "CS-E 1000",
+  "subpart": "SUBPART F",
+  "subpart_title": "TURBINE ENGINES: OPERATIONAL DESIGN SPECIFICATIONS",
+  "level": 2,
+  "order": 168,
+  "regions": [
+   {
+    "page": 259,
+    "y0": 99.99,
+    "y1": 239.7
+   }
+  ],
+  "page_start": 259,
+  "page_end": 259
+ },
+ {
+  "section_id": "AMC E 1000",
+  "kind": "amc",
+  "title": "AMC E 1000 Operational Design Specifications — General",
+  "heading": "Operational Design Specifications — General",
+  "group_id": "CS-E 1000",
+  "subpart": "SUBPART F",
+  "subpart_title": "TURBINE ENGINES: OPERATIONAL DESIGN SPECIFICATIONS",
+  "level": 3,
+  "order": 169,
+  "regions": [
+   {
+    "page": 259,
+    "y0": 239.7,
+    "y1": 353.94
+   }
+  ],
+  "page_start": 259,
+  "page_end": 259
+ },
+ {
+  "section_id": "CS-E 1030",
+  "kind": "cs",
+  "title": "CS-E 1030 Time Limited Dispatch",
+  "heading": "Time Limited Dispatch",
+  "group_id": "CS-E 1030",
+  "subpart": "SUBPART F",
+  "subpart_title": "TURBINE ENGINES: OPERATIONAL DESIGN SPECIFICATIONS",
+  "level": 2,
+  "order": 170,
+  "regions": [
+   {
+    "page": 259,
+    "y0": 353.94,
+    "y1": 699.44
+   },
+   {
+    "page": 260,
+    "y0": 0.0,
+    "y1": 143.79
+   }
+  ],
+  "page_start": 259,
+  "page_end": 260
+ },
+ {
+  "section_id": "AMC E 1030",
+  "kind": "amc",
+  "title": "AMC E 1030 Time limited dispatch",
+  "heading": "Time limited dispatch",
+  "group_id": "CS-E 1030",
+  "subpart": "SUBPART F",
+  "subpart_title": "TURBINE ENGINES: OPERATIONAL DESIGN SPECIFICATIONS",
+  "level": 3,
+  "order": 171,
+  "regions": [
+   {
+    "page": 260,
+    "y0": 143.79,
+    "y1": 699.44
+   },
+   {
+    "page": 261,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 262,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 263,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 264,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 265,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 266,
+    "y0": 0.0,
+    "y1": 699.44
+   },
+   {
+    "page": 267,
+    "y0": 0.0,
+    "y1": 331.02
+   }
+  ],
+  "page_start": 260,
+  "page_end": 267
+ },
+ {
+  "section_id": "CS-E 1040",
+  "kind": "cs",
+  "title": "CS-E 1040 ETOPS",
+  "heading": "ETOPS",
+  "group_id": "CS-E 1040",
+  "subpart": "SUBPART F",
+  "subpart_title": "TURBINE ENGINES: OPERATIONAL DESIGN SPECIFICATIONS",
+  "level": 2,
+  "order": 172,
+  "regions": [
+   {
+    "page": 267,
+    "y0": 331.02,
+    "y1": 452.48
+   }
+  ],
+  "page_start": 267,
+  "page_end": 267
+ },
+ {
+  "section_id": "CS-E 1050",
+  "kind": "cs",
+  "title": "CS-E 1050 Exposure to volcanic cloud hazards",
+  "heading": "Exposure to volcanic cloud hazards",
+  "group_id": "CS-E 1050",
+  "subpart": "SUBPART F",
+  "subpart_title": "TURBINE ENGINES: OPERATIONAL DESIGN SPECIFICATIONS",
+  "level": 2,
+  "order": 173,
+  "regions": [
+   {
+    "page": 267,
+    "y0": 452.48,
+    "y1": 579.95
+   }
+  ],
+  "page_start": 267,
+  "page_end": 267
+ },
+ {
+  "section_id": "AMC E 1050",
+  "kind": "amc",
+  "title": "AMC E 1050 Exposure to volcanic cloud hazards",
+  "heading": "Exposure to volcanic cloud hazards",
+  "group_id": "CS-E 1050",
+  "subpart": "SUBPART F",
+  "subpart_title": "TURBINE ENGINES: OPERATIONAL DESIGN SPECIFICATIONS",
+  "level": 3,
+  "order": 174,
+  "regions": [
+   {
+    "page": 267,
+    "y0": 579.95,
+    "y1": 699.44
+   },
+   {
+    "page": 268,
+    "y0": 0.0,
+    "y1": 699.44
+   }
+  ],
+  "page_start": 267,
+  "page_end": 268
+ }
+]
