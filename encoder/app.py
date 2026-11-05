@@ -1,4 +1,4 @@
-"""CPU-only model server: bge-m3 (dense + sparse + ColBERT) and two rerankers.
+"""Model server: bge-m3 (dense + sparse + ColBERT) and two rerankers, on the CPU or the GPU.
 
 Endpoints
   POST /embed   {texts, dense, sparse, colbert, batch_size, max_length}
@@ -9,9 +9,15 @@ Endpoints
 
 Models are loaded from local snapshot paths (HF cache layout,
 ``.../models--org--name/snapshots/<revision>``) with HF_HUB_OFFLINE=1, so the
-revision is the snapshot directory's name. Everything runs in fp32 on the CPU.
-Model calls are serialised with one lock: concurrent requests would only
-fight over the same cores.
+revision is the snapshot directory's name.
+
+``ENCODER_DEVICE`` = ``cpu`` (service ``encoder``) or ``cuda`` (service
+``encoder-gpu``, only while vLLM is stopped). Both run the same image, the same
+models and fp32 (``ENCODER_DTYPE``); on the GPU, TF32 is disabled so matmuls
+stay full fp32 and the numbers match the CPU closely. The device and dtype are
+reported by /health and stamped into every run's config.json. Model calls are
+serialised with one lock: concurrent requests would only fight over the same
+device.
 """
 
 from __future__ import annotations
@@ -35,6 +41,19 @@ from pydantic import BaseModel, Field
 THREADS = int(os.environ.get("TORCH_THREADS", "12"))
 torch.set_num_threads(THREADS)
 torch.set_grad_enabled(False)
+
+DEVICE = os.environ.get("ENCODER_DEVICE", "cpu")
+if DEVICE.startswith("cuda") and not torch.cuda.is_available():
+    raise RuntimeError("ENCODER_DEVICE=cuda but no GPU is visible (is vLLM holding it? is the service encoder-gpu?)")
+DTYPE_NAME = os.environ.get("ENCODER_DTYPE", "float32")
+DTYPE = {"float32": torch.float32, "bfloat16": torch.bfloat16, "float16": torch.float16}[DTYPE_NAME]
+if DEVICE.startswith("cuda"):
+    torch.backends.cuda.matmul.allow_tf32 = False
+    torch.backends.cudnn.allow_tf32 = False
+    torch.set_float32_matmul_precision("highest")
+# default batch sizes per request (the client may override them)
+EMBED_BATCH = int(os.environ.get("EMBED_BATCH", "16" if DEVICE.startswith("cuda") else "4"))
+RERANK_BATCH = int(os.environ.get("RERANK_BATCH", "16" if DEVICE.startswith("cuda") else "4"))
 
 PATHS = {
     "bge_m3": os.environ.get("BGE_M3_PATH", ""),
@@ -71,19 +90,20 @@ def _resolve(path: str) -> Path:
 def _load_bge_m3(path: Path):
     from FlagEmbedding import BGEM3FlagModel
 
-    return BGEM3FlagModel(str(path), use_fp16=False, devices="cpu", normalize_embeddings=True)
+    return BGEM3FlagModel(str(path), use_fp16=DTYPE == torch.float16, devices=DEVICE, normalize_embeddings=True)
 
 
 def _load_bge_reranker(path: Path):
     from FlagEmbedding import FlagReranker
 
-    return FlagReranker(str(path), use_fp16=False, devices="cpu", max_length=BGE_RERANK_MAX_LENGTH)
+    return FlagReranker(str(path), use_fp16=DTYPE == torch.float16, devices=DEVICE, max_length=BGE_RERANK_MAX_LENGTH)
 
 
 def _load_jina(path: Path):
     from transformers import AutoModel
 
-    m = AutoModel.from_pretrained(str(path), trust_remote_code=True, dtype=torch.float32, attn_implementation="sdpa")
+    m = AutoModel.from_pretrained(str(path), trust_remote_code=True, dtype=DTYPE, attn_implementation="sdpa")
+    m.to(DEVICE)
     m.eval()
     return m
 
@@ -104,7 +124,8 @@ def load_models() -> None:
             "path": str(snap),
             "repo": snap.parent.parent.name.removeprefix("models--").replace("--", "/"),
             "revision": snap.name,
-            "dtype": "float32",
+            "dtype": DTYPE_NAME,
+            "device": DEVICE,
             "load_seconds": round(time.time() - t0, 1),
         }
 
@@ -132,6 +153,9 @@ def health() -> dict:
     return {
         "status": "ok" if all(n in MODELS for n in LOAD) else "loading",
         "models": INFO,
+        "device": DEVICE,
+        "gpu": torch.cuda.get_device_name(0) if DEVICE.startswith("cuda") else None,
+        "dtype": DTYPE_NAME,
         "torch_threads": torch.get_num_threads(),
         "versions": {p: _pkg(p) for p in ("torch", "transformers", "FlagEmbedding", "tokenizers", "fastapi")},
         "limits": {
@@ -149,7 +173,7 @@ class EmbedRequest(BaseModel):
     dense: bool = True
     sparse: bool = True
     colbert: bool = True
-    batch_size: int = 4
+    batch_size: int | None = None  # None: EMBED_BATCH for this device
     max_length: int = BGE_M3_MAX_LENGTH
 
 
@@ -176,7 +200,7 @@ def embed(req: EmbedRequest) -> dict:
     with LOCK:
         out = m.encode(
             req.texts,
-            batch_size=req.batch_size,
+            batch_size=req.batch_size or EMBED_BATCH,
             max_length=req.max_length,
             return_dense=req.dense,
             return_sparse=req.sparse,
@@ -201,7 +225,7 @@ class RerankRequest(BaseModel):
     model: Literal["bge", "jina"]
     query: str
     documents: list[str] = Field(min_length=1)
-    batch_size: int = 4
+    batch_size: int | None = None  # None: RERANK_BATCH for this device
 
 
 @app.post("/rerank")
@@ -218,7 +242,7 @@ def rerank(req: RerankRequest) -> dict:
         pairs = [[req.query, d] for d in req.documents]
         with LOCK:
             s = MODELS["bge_reranker"].compute_score(
-                pairs, batch_size=req.batch_size, max_length=BGE_RERANK_MAX_LENGTH, normalize=False
+                pairs, batch_size=req.batch_size or RERANK_BATCH, max_length=BGE_RERANK_MAX_LENGTH, normalize=False
             )
         scores = [float(x) for x in (s if isinstance(s, list) else [s])]
     else:

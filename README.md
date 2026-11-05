@@ -11,33 +11,41 @@ Two parts:
 uv sync                                                    # .venv with all deps
 uv run python -m ipykernel install --user --name ikincitik --display-name "ikincitik (uv)"
 cp .env.example .env                                       # or add the new keys (below) to an existing .env
-docker compose build encoder                               # CPU model server (once)
+docker compose build encoder                               # model server image (once; CPU and GPU services share it)
 docker compose run --rm --no-deps -e HF_HUB_OFFLINE=0 encoder python download_models.py   # jina-reranker-v3, once
-docker compose up -d qdrant encoder                        # CPU services
-VLLM_CONFIG=serve.retrieval.yaml docker compose up -d vllm # GPU; stop other vLLMs (skyrag-vllm, aviation-vllm*) first
 uv run jupyter lab                                         # pick the "ikincitik (uv)" kernel
+```
+
+The retrieval experiments time-share the GPU in **two phases** (one swap; stop other vLLMs such as skyrag-vllm or aviation-vllm* first):
+
+```bash
+# phase A, notebooks 04-07: encoder on the GPU, vLLM STOPPED
+docker compose stop vllm encoder && docker compose up -d qdrant && docker compose up -d --force-recreate encoder-gpu
+# phase B, notebook 08: vLLM on the GPU (VLLM_CONFIG=serve.retrieval.yaml in .env), encoder on the CPU
+docker compose stop encoder-gpu && docker compose up -d qdrant vllm && docker compose up -d --force-recreate encoder
 ```
 
 ### Services (`compose.yaml`)
 
 | service | runs on | what |
 |---|---|---|
-| `vllm` | GPU (RTX 3090, the only GPU user) | Qwen3.8-27B-INT4 (`RedHatAI/Qwen3.8-27B-INT4`, rev `c063053e…`), weights from the external volume `aviation-vllm-cache`. Options come from `vllm/${VLLM_CONFIG}`. |
+| `vllm` | GPU (phase B) | Qwen3.8-27B-INT4 (`RedHatAI/Qwen3.8-27B-INT4`, rev `c063053e…`), weights from the external volume `aviation-vllm-cache`. Options come from `vllm/${VLLM_CONFIG}`. |
 | `qdrant` | CPU | `qdrant/qdrant:v1.18.3-unprivileged`, volume `ikincitik_qdrant`, ports 6333 (REST) and 6334 (gRPC). |
-| `encoder` | CPU only, no GPU devices | Built from `encoder/`: bge-m3, bge-reranker-v2-m3 and jina-reranker-v3, port 8081. |
+| `encoder` | CPU, no GPU devices (phase B) | Built from `encoder/`: bge-m3, bge-reranker-v2-m3 and jina-reranker-v3, port 8081. |
+| `encoder-gpu` | GPU (phase A; compose profile `gpu`) | The same image and API on the GPU, also port 8081, so only one encoder runs at a time. **Never together with vLLM.** |
 
 **Two vLLM serve configs**, chosen with `VLLM_CONFIG` (in `.env` or on the command line; the default is `serve.yaml`):
 - `vllm/serve.yaml`: page extraction (vision on, `max-model-len 12288`). It stays unchanged, so the extraction run remains reproducible.
-- `vllm/serve.retrieval.yaml`: retrieval experiments (`language-model-only`, `max-model-len 32768`, `gpu-memory-utilization 0.82`). Its KV cache holds 58,709 tokens, 1.79 × a full 32,768-token request (notebook 07 checks the startup log). 0.85 left no headroom next to the desktop's ~3 GB on the same card, and the first request died with CUDA OOM.
+- `vllm/serve.retrieval.yaml`: retrieval experiments (`language-model-only`, `max-model-len 32768`, `gpu-memory-utilization 0.80`). Its KV cache holds 43,690 tokens, 1.33 × a full 32,768-token request (notebook 08 checks the startup log), and an 18k-token prompt (the agent's worst case) runs. 0.85 left no headroom next to the desktop's ~3 GB on the same card, and the first request died with CUDA OOM. At 0.82 the memory profile varied between starts.
 - N-gram speculative decoding is **off** in both: on this hybrid model it corrupted greedy output.
 
-For the retrieval runs vLLM is restarted once with `serve.retrieval.yaml` and stays up. The encoder, Qdrant and the notebooks run on the CPU next to it, so there are no GPU hand-offs.
+**Why two phases.** The rerankers run ~8× faster on the GPU. Measured per question with 50 base units, fp32: bge takes 5.7 s on the GPU and 33 s on the CPU; jina takes 14.4 s and 141 s. That is ~1 h instead of ~9 h for X1 + X2, with the same scores (identical rankings, |Δ| ≤ 4e-5). No run needs a reranker and the LLM at the same time. In phase B the encoder only embeds short texts (HyDE passages, agent search queries), which takes seconds on the CPU. The device of each session is recorded in every run's `config.json`.
 
 **`.env` keys:** `VLLM_ENDPOINT`, `VLLM_API_KEY`, `VLLM_MODEL` (the vLLM container), `VLLM_CONFIG` (serve file), `ENCODER_URL` (default `http://127.0.0.1:8081`), `ENCODER_THREADS` (torch threads in the encoder, default 12 = physical cores), `QDRANT_URL` (default `http://127.0.0.1:6333`), `BGE_M3_TOKENIZER` (bge-m3 `tokenizer.json` for token counts).
 
-### `encoder/`: the CPU model container
+### `encoder/`: the model container (CPU and GPU)
 
-`python:3.12-slim` (pinned by digest) with the CPU build of torch 2.14.1, transformers 5.22.1 and FlagEmbedding 1.4.2. `requirements.txt` is fully pinned and is compiled from `requirements.in` (the command is in its header). All three models work with one `transformers` version, so the service is not split. Models run in fp32 and are loaded offline (`HF_HUB_OFFLINE=1`) from local snapshot paths, so each revision is pinned:
+`python:3.12-slim` (pinned by digest) with the CUDA 12.6 build of torch 2.14.1 (it also runs on the CPU), transformers 5.22.1 and FlagEmbedding 1.4.2. `requirements.txt` is fully pinned and is compiled from `requirements.in` (the command is in its header). All three models work with one `transformers` version, so the service is not split. `ENCODER_DEVICE` (`cpu` / `cuda`) picks the device. Models run in fp32 on both devices; on the GPU, TF32 is off, so the numbers match the CPU closely. Models are loaded offline (`HF_HUB_OFFLINE=1`) from local snapshot paths, so each revision is pinned:
 - bge-m3 (`5617a9f6…`) and bge-reranker-v2-m3 (`953dc6f6…`): `../etoeragcb/model-cache/huggingface/hub`, mounted read-only;
 - jina-reranker-v3 (`d7d7e73b…`): the volume `ikincitik_models`, downloaded once with `download_models.py` (the hub is online only for that step). It loads with `trust_remote_code`, so the pinned revision also pins its model code. **Licence: CC BY-NC 4.0** (non-commercial; academic use is allowed).
 
@@ -45,7 +53,7 @@ Endpoints:
 - `POST /embed` `{texts, dense, sparse, colbert}` → bge-m3 dense (1024-d, normalised), learned-sparse weights and ColBERT vectors (float16) from **one forward pass**, `max_length` 8192.
 - `POST /rerank` `{model: "bge" | "jina", query, documents}` → one score per document, in input order. bge returns raw logits (no sigmoid) with `max_length` 8192 (FlagEmbedding's default of 512 would cut off about half the base units). jina is listwise, takes ≤ 64 documents per call, and has `max_doc_length` 8192 (its default is 2048).
 - `POST /tokens` → token counts under a reranker's tokenizer (the truncation check).
-- `GET /health` → loaded models, revisions and library versions. These are stamped into every run's `config.json`.
+- `GET /health` → loaded models, revisions, device, dtype and library versions. These are stamped into every run's `config.json`.
 
 ## Pipeline (notebooks/)
 
@@ -58,11 +66,11 @@ Endpoints:
 | `04_enrich_window_embed` | engine_type, base-unit spans, cross-references; 500-token windows and their checks; bge-m3 (dense, sparse, ColBERT) and BM25 vectors for both indexes | `data/windows_500.jsonl`, `data/cross_refs.jsonl`, `data/embeddings/` |
 | `05_ingest_qdrant` | creates both collections, upserts, ingestion checks (count, ids, round-trip, self-retrieval), HNSW vs exact, ColBERT engine agreement, server-side BM25 comparison | Qdrant volume |
 | `06_load_questions` | validates the gold quotes, builds span-based qrels for both indexes | `data/eval/qrels.jsonl` |
-| `07_query_llm` | vLLM KV-cache check; HyDE passages (Q1), keyword expansions (Q2) and engine-type filters (F1) for all questions | `data/cache/llm.jsonl` |
-| `08_run_retrievers` | query embedding, each signal's top-50, the retriever grid, rerankers, agentic runs, and the plan's run checks (ANN, RRF, gate, reproducibility, label leakage, one hop) | `data/embeddings/queries_*.npz`, `data/cache/`, `results/runs/` |
+| `07_run_retrievers` | **phase A** (GPU encoder, vLLM stopped): question embeddings, each signal's top-50, the grid without LLM (L1 … T2+T3), the rerankers X1/X2, and the ANN, RRF and gate checks | `data/embeddings/queries_questions.npz`, `data/cache/search.jsonl`, `data/cache/rerank_*.jsonl`, `results/runs/` |
+| `08_llm_and_agent` | **phase B** (vLLM, CPU encoder): vLLM KV-cache check; HyDE passages (Q1), keyword expansions (Q2) and engine-type filters (F1); the Q1/Q2/F1 runs; the agent T4; reproducibility, label-leakage, one-hop and completeness checks | `data/cache/llm.jsonl`, `data/embeddings/queries_{hyde,agent}.npz`, `results/runs/` |
 | `09_analysis` | metrics, bootstrap CIs, paired randomisation tests with Holm, tables, plots, metrics files, diagrams, output checks | `results/run_metrics.parquet`, `results/question_metrics.parquet`, `results/{units,win500}/metrics.{csv,xlsx}`, `results/granularity.csv`, `results/diagrams/` |
 
-**Run order for the experiments:** 04 → 05 → 06 → 07 → 08 → 09. vLLM (`serve.retrieval.yaml`) is needed in 07 and for the agent in 08, and it can stay up the whole time; everything else runs on the CPU. Approximate CPU times: corpus embedding in 04 takes 15–40 min; the fast grid in 08 takes minutes; the rerankers in 08 take hours (~1 min per question for bge on 50 candidates, more for jina's single 25k-token context); the agent takes about 1–2 h on the GPU. All of it is cached and resumable (a run continues from `results/runs/<run_id>/partial.jsonl`).
+**Run order for the experiments:** phase A: 04 → 05 → 06 → 07 (`encoder-gpu`, **vLLM stopped**); swap; phase B: 08 (vLLM + CPU `encoder`); then 09 (no models). Approximate times: corpus embedding in 04 takes a few minutes on the GPU; the grid without LLM in 07 takes minutes; the rerankers in 07 take ~1 h on the GPU; the query-side LLM work in 08 takes ~10–25 min; the agent takes ~1–2 h. All of it is cached and resumable (a run continues from `results/runs/<run_id>/partial.jsonl`). For v2, run 07 and 08 again with `PARAMS_VERSION = "v2"`.
 
 The code lives in `src/`; the notebooks only call it and expose the parameters.
 
@@ -139,9 +147,9 @@ Record formats:
 | `granularity.csv` | RQ7: windows vs units (gate off), section level and evidence recall, Holm-corrected |
 | `diagrams/<run_id>.md` | Mermaid flowchart of a run generated from its config, with its metric panel |
 
-Run ids read `<method>[-b<budget>]-<index>-gate<on|off>-<params_version>-<hash8>`. To regenerate: notebook 08 (runs; skips completed ones) and notebook 09 (all files under `results/` except `runs/`). Scored metrics use the 92 answerable questions; the 8 unanswerable ones are only listed in the `unanswerable` sheets. Tables are sorted by section nDCG@10 for readability only: no run is selected as a winner.
+Run ids read `<method>[-b<budget>]-<index>-gate<on|off>-<params_version>-<hash8>`. To regenerate: notebooks 07 and 08 (runs; they skip completed ones) and notebook 09 (all files under `results/` except `runs/`). Scored metrics use the 92 answerable questions; the 8 unanswerable ones are only listed in the `unanswerable` sheets. Tables are sorted by section nDCG@10 for readability only: no run is selected as a winner.
 
-**Parameters.** `PARAMS["v1"]` in `src/csrag/retrievers/base.py` is fixed before any run. After reading all v1 metrics, the parameters are revised once, by hand, as `PARAMS["v2"]`, and the grid runs again (notebook 08, `RUN_V2`). Both versions are kept and reported.
+**Parameters.** `PARAMS["v1"]` in `src/csrag/retrievers/base.py` is fixed before any run. After reading all v1 metrics, the parameters are revised once, by hand, as `PARAMS["v2"]`, and the grid runs again (notebooks 07 and 08 with `PARAMS_VERSION = "v2"`). Both versions are kept and reported.
 
 ## Notes
 

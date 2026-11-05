@@ -1,22 +1,52 @@
 # ikincitik services.
 #
-# - vllm:    Qwen3.8-27B-INT4 on the RTX 3090 (the only GPU user). Reuses the vLLM
-#            image and the weights already on this machine (external volume).
-#            Serve options: ./vllm/${VLLM_CONFIG}
-#              serve.yaml            page extraction (vision on, max-model-len 12288)
-#              serve.retrieval.yaml  retrieval experiments (language-model-only, 32768)
-#            Only one vLLM fits on the card: stop skyrag-vllm / aviation-vllm* first.
-# - qdrant:  the only vector store (CPU).
-# - encoder: bge-m3 + bge-reranker-v2-m3 + jina-reranker-v3 on the CPU (./encoder).
+# - vllm:        Qwen3.8-27B-INT4 on the RTX 3090. Reuses the vLLM image and the
+#                weights already on this machine (external volume).
+#                Serve options: ./vllm/${VLLM_CONFIG}
+#                  serve.yaml            page extraction (vision on, max-model-len 12288)
+#                  serve.retrieval.yaml  retrieval experiments (language-model-only, 32768)
+#                Only one vLLM fits on the card: stop skyrag-vllm / aviation-vllm* first.
+# - qdrant:      the only vector store (CPU).
+# - encoder:     bge-m3 + bge-reranker-v2-m3 + jina-reranker-v3 on the CPU (./encoder).
+# - encoder-gpu: the same image and API on the GPU (profile "gpu", same port 8081).
+#                vLLM and encoder-gpu never run together: one card, ~21 GB each side.
+#                Use it for the GPU phase (notebooks 04 and 07); stop it before vLLM.
 #
-#   docker compose up -d                                   # all three
-#   VLLM_CONFIG=serve.retrieval.yaml docker compose up -d  # or set it in .env
+# Retrieval experiments, two GPU phases (plan section 5):
+#   docker compose stop vllm encoder && docker compose up -d qdrant && docker compose up -d --force-recreate encoder-gpu        # phase A
+#   docker compose stop encoder-gpu && docker compose up -d qdrant vllm && docker compose up -d --force-recreate encoder         # phase B
 #   docker compose logs -f vllm
 #
 # One-time: download jina-reranker-v3 into the ikincitik_models volume (hub online
 # only for this step):
 #   docker compose build encoder
 #   docker compose run --rm --no-deps -e HF_HUB_OFFLINE=0 encoder python download_models.py
+
+x-encoder: &encoder
+  build: ./encoder
+  image: ikincitik-encoder:2
+  restart: "no"
+  volumes:
+    - ../etoeragcb/model-cache/huggingface:/hf:ro
+    - ikincitik_models:/models
+  ports:
+    - "8081:8081"
+  healthcheck:
+    test: ["CMD", "python", "-c", "import json,urllib.request; d=json.load(urllib.request.urlopen('http://127.0.0.1:8081/health', timeout=5)); assert d['status']=='ok'"]
+    interval: 15s
+    timeout: 5s
+    retries: 40
+    start_period: 120s
+
+x-encoder-env: &encoder-env
+  HF_HUB_OFFLINE: "1"
+  TORCH_THREADS: "${ENCODER_THREADS:-12}"  # physical cores of the Ryzen 9 5900X
+  OMP_NUM_THREADS: "${ENCODER_THREADS:-12}"
+  ENCODER_DTYPE: "float32"
+  LOAD_MODELS: "${ENCODER_MODELS:-bge_m3,bge_reranker,jina_reranker}"
+  BGE_M3_PATH: /hf/hub/models--BAAI--bge-m3/snapshots/5617a9f61b028005a4858fdac845db406aefb181
+  BGE_RERANKER_PATH: /hf/hub/models--BAAI--bge-reranker-v2-m3/snapshots/953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e
+  JINA_RERANKER_PATH: /models/hub/models--jinaai--jina-reranker-v3/snapshots/d7d7e73b6ea138ced340b83865931b5dfb6c97aa
 
 services:
   vllm:
@@ -68,30 +98,27 @@ services:
       retries: 30
 
   encoder:
-    build: ./encoder
-    image: ikincitik-encoder:1
+    <<: *encoder
     container_name: ikincitik-encoder
-    restart: "no"
-    # CPU only: no GPU devices are reserved for this service.
+    # CPU: no GPU devices are reserved for this service.
     environment:
-      HF_HUB_OFFLINE: "1"
-      TORCH_THREADS: "${ENCODER_THREADS:-12}"  # physical cores of the Ryzen 9 5900X
-      OMP_NUM_THREADS: "${ENCODER_THREADS:-12}"
-      LOAD_MODELS: "${ENCODER_MODELS:-bge_m3,bge_reranker,jina_reranker}"
-      BGE_M3_PATH: /hf/hub/models--BAAI--bge-m3/snapshots/5617a9f61b028005a4858fdac845db406aefb181
-      BGE_RERANKER_PATH: /hf/hub/models--BAAI--bge-reranker-v2-m3/snapshots/953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e
-      JINA_RERANKER_PATH: /models/hub/models--jinaai--jina-reranker-v3/snapshots/d7d7e73b6ea138ced340b83865931b5dfb6c97aa
-    volumes:
-      - ../etoeragcb/model-cache/huggingface:/hf:ro
-      - ikincitik_models:/models
-    ports:
-      - "8081:8081"
-    healthcheck:
-      test: ["CMD", "python", "-c", "import json,urllib.request; d=json.load(urllib.request.urlopen('http://127.0.0.1:8081/health', timeout=5)); assert d['status']=='ok'"]
-      interval: 15s
-      timeout: 5s
-      retries: 40
-      start_period: 120s
+      <<: *encoder-env
+      ENCODER_DEVICE: "cpu"
+
+  encoder-gpu:
+    <<: *encoder
+    container_name: ikincitik-encoder-gpu
+    profiles: ["gpu"]  # started only when named: docker compose up -d encoder-gpu
+    environment:
+      <<: *encoder-env
+      ENCODER_DEVICE: "cuda"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
 
 volumes:
   aviation-vllm-cache:

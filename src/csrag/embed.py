@@ -70,11 +70,15 @@ class EncoderClient:
         h = self.health()
         return {
             "models": {k: {"repo": v["repo"], "revision": v["revision"]} for k, v in h["models"].items()},
+            "device": h.get("device"),
+            "gpu": h.get("gpu"),
+            "dtype": h.get("dtype"),
             "versions": h["versions"],
             "limits": h["limits"],
         }
 
-    def embed(self, texts: list[str], dense: bool = True, sparse: bool = True, colbert: bool = True, batch_size: int = 4) -> dict:
+    def embed(self, texts: list[str], dense: bool = True, sparse: bool = True, colbert: bool = True,
+              batch_size: int | None = None) -> dict:
         """bge-m3 outputs of one forward pass per batch: ``dense`` (n, 1024) float32,
         ``sparse`` [Sparse], ``colbert`` [(n_tok, 1024) float16], ``seconds``."""
         r = self.http.post(
@@ -91,7 +95,7 @@ class EncoderClient:
             out["colbert"] = [_decode(c) for c in d["colbert"]]
         return out
 
-    def rerank(self, model: str, query: str, documents: list[str], batch_size: int = 4) -> tuple[list[float], float]:
+    def rerank(self, model: str, query: str, documents: list[str], batch_size: int | None = None) -> tuple[list[float], float]:
         r = self.http.post("/rerank", json={"model": model, "query": query, "documents": documents, "batch_size": batch_size})
         r.raise_for_status()
         d = r.json()
@@ -287,7 +291,7 @@ class EmbeddingStore:
         it = progress(batches, desc=f"embed {self.collection}") if progress else batches
         seconds = 0.0
         for bi, batch in enumerate(it):
-            out = encoder.embed([u["text"] for u in batch], batch_size=4)
+            out = encoder.embed([u["text"] for u in batch])
             seconds += out["seconds"]
             bm = bm25.embed_docs([u["text"] for u in batch])
             for j, u in enumerate(batch):
@@ -361,7 +365,7 @@ class QueryEmbeddings:
                 raise KeyError(f"{len(miss)} query embeddings not cached and no encoder given")
             for i in range(0, len(miss), 16):
                 chunk = miss[i : i + 16]
-                out = encoder.embed(chunk, batch_size=8)
+                out = encoder.embed(chunk)
                 per = out["seconds"] / len(chunk)
                 for j, t in enumerate(chunk):
                     self.rows[text_sha(t)] = {

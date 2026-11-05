@@ -1,6 +1,6 @@
-# Top-level pins for the CPU-only encoder image. requirements.txt is compiled
-# from this file (see the header of requirements.txt) and is what the image installs.
-torch==2.14.1+cpu
+# Top-level pins for the encoder image (CUDA 12.6 torch build; it also runs on the CPU).
+# requirements.txt is compiled from this file (see its header) and is what the image installs.
+torch==2.14.1+cu126
 transformers==5.22.1
 FlagEmbedding==1.4.2
 fastapi==0.162.0

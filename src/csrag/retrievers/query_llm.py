@@ -152,6 +152,18 @@ class LLM:
         return (v if v in ("piston", "turbine") else None), r
 
 
+def vllm_healthy(base_url: str | None = None, timeout: float = 3.0) -> bool:
+    """Is the vLLM server answering /health? (The GPU phases must not overlap.)"""
+    import urllib.request
+
+    base = (base_url or os.environ.get("VLLM_ENDPOINT", "http://127.0.0.1:8000/v1")).rsplit("/v1", 1)[0]
+    try:
+        urllib.request.urlopen(base + "/health", timeout=timeout)
+        return True
+    except Exception:
+        return False
+
+
 def usage_of(rs: list[dict]) -> dict:
     """Summed tokens and latency of LLM results (cached results report their original cost)."""
     return {

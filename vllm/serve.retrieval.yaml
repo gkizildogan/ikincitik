@@ -1,5 +1,5 @@
-# vLLM serve options for the retrieval experiments (notebooks 07-08: HyDE,
-# keyword expansion, filter extraction and the T4 agent). Selected with
+# vLLM serve options for the retrieval experiments (phase B, notebook 08:
+# HyDE, keyword expansion, filter extraction and the T4 agent). Selected with
 # VLLM_CONFIG=serve.retrieval.yaml (see compose.yaml). serve.yaml stays
 # unchanged so the extraction run remains reproducible.
 #
@@ -8,7 +8,7 @@
 #     freed memory goes to the KV cache;
 #   - max-model-len 32768 (was 12288): the 16k expansion budget + prompt +
 #     the agent's tool results + its output;
-#   - gpu-memory-utilization 0.82 (was 0.85), see below.
+#   - gpu-memory-utilization 0.80 (was 0.85), see below.
 # The startup log must show a KV cache that holds at least one full
 # 32768-token request ("Maximum concurrency for 32,768 tokens per request" >= 1).
 # If it doesn't, use 24576 and drop the 16k expansion budget.
@@ -21,10 +21,12 @@ language-model-only: true
 
 max-model-len: 32768
 max-num-seqs: 4
-# 0.85 (as in serve.yaml) left no headroom next to the desktop's ~3 GB on the
-# same card: the first request died with CUDA OOM. 0.82 still holds more than
-# one full 32768-token request in the KV cache (checked in notebook 07).
-gpu-memory-utilization: 0.82
+# 0.80, the value used for text-only serving on this card (see serve.yaml).
+# The desktop holds ~3 GB of the same GPU. At 0.85 the first request died with
+# CUDA OOM; at 0.82 vLLM's memory profile varied between starts and sometimes
+# left only ~1 GB free. 0.80 still holds more than one full 32768-token request
+# in the KV cache (checked in notebook 08).
+gpu-memory-utilization: 0.80
 enforce-eager: true
 reasoning-parser: qwen3
 
