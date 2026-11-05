@@ -1,0 +1,32 @@
+# vLLM serve options for the retrieval experiments (notebooks 07-08: HyDE,
+# keyword expansion, filter extraction and the T4 agent). Selected with
+# VLLM_CONFIG=serve.retrieval.yaml (see compose.yaml). serve.yaml stays
+# unchanged so the extraction run remains reproducible.
+#
+# Differences from serve.yaml (everything else is the same):
+#   - language-model-only: no vision tower and no image encoder cache, so the
+#     freed memory goes to the KV cache;
+#   - max-model-len 32768 (was 12288): the 16k expansion budget + prompt +
+#     the agent's tool results + its output;
+#   - gpu-memory-utilization 0.82 (was 0.85), see below.
+# The startup log must show a KV cache that holds at least one full
+# 32768-token request ("Maximum concurrency for 32,768 tokens per request" >= 1).
+# If it doesn't, use 24576 and drop the 16k expansion budget.
+
+revision: c063053e004e9783631651df95cf55d0bbf88b32
+tokenizer-revision: c063053e004e9783631651df95cf55d0bbf88b32
+served-model-name: RedHatAI/Qwen3.8-27B-INT4
+
+language-model-only: true
+
+max-model-len: 32768
+max-num-seqs: 4
+# 0.85 (as in serve.yaml) left no headroom next to the desktop's ~3 GB on the
+# same card: the first request died with CUDA OOM. 0.82 still holds more than
+# one full 32768-token request in the KV cache (checked in notebook 07).
+gpu-memory-utilization: 0.82
+enforce-eager: true
+reasoning-parser: qwen3
+
+# Prompt-lookup (n-gram) speculative decoding stays OFF: it corrupted greedy
+# output of this hybrid model (see serve.yaml).

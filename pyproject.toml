@@ -7,13 +7,20 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
+    "fastembed>=0.9.1",
+    "httpx>=0.28.1",
     "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
     "openai>=3.42.1",
+    "openpyxl>=3.1.5",
     "pandas>=3.1.0",
     "pillow>=13.0.0",
+    "pyarrow>=26.0.1",
     "pymupdf>=2.1",
     "python-dotenv>=1.2.4",
+    "qdrant-client>=1.20.0",
     "rapidfuzz>=3.14.6",
+    "scipy>=1.18.1",
     "tiktoken>=0.14.0",
     "tokenizers>=0.23.3",
     "tqdm>=4.70.1",
@@ -22,6 +29,10 @@ dependencies = [
 [build-system]
 requires = ["uv_build>=0.10.9,<0.11.0"]
 build-backend = "uv_build"
+
+[tool.uv.build-backend]
+# Two packages in src/: csparse (PDF -> sections/chunks) and csrag (retrieval experiments).
+module-name = ["csparse", "csrag"]
 
 [dependency-groups]
 dev = [

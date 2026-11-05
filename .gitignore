@@ -6,3 +6,8 @@ data/page_images/
 __pycache__/
 ignore_this_pdf.pdf
 plan.md
+# regenerable, large: fastembed model files and corpus/query vectors (notebook 04)
+.cache/
+data/embeddings/
+# interrupted runs (completed runs keep hits.parquet + config.json)
+results/runs/*/partial.jsonl

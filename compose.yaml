@@ -1,10 +1,22 @@
-# vLLM (vision enabled) for page extraction. Reuses the vLLM image and the
-# Qwen3.8-27B weights already on this machine (shared with ../skyrag and
-# ../datacuration via the external volume). Nothing is pulled or downloaded.
+# ikincitik services.
 #
-# Only one vLLM fits on the RTX 3090: stop skyrag-vllm / aviation-vllm* first.
-#   docker compose up -d && docker compose logs -f vllm
-# Serve options live in ./vllm/serve.yaml.
+# - vllm:    Qwen3.8-27B-INT4 on the RTX 3090 (the only GPU user). Reuses the vLLM
+#            image and the weights already on this machine (external volume).
+#            Serve options: ./vllm/${VLLM_CONFIG}
+#              serve.yaml            page extraction (vision on, max-model-len 12288)
+#              serve.retrieval.yaml  retrieval experiments (language-model-only, 32768)
+#            Only one vLLM fits on the card: stop skyrag-vllm / aviation-vllm* first.
+# - qdrant:  the only vector store (CPU).
+# - encoder: bge-m3 + bge-reranker-v2-m3 + jina-reranker-v3 on the CPU (./encoder).
+#
+#   docker compose up -d                                   # all three
+#   VLLM_CONFIG=serve.retrieval.yaml docker compose up -d  # or set it in .env
+#   docker compose logs -f vllm
+#
+# One-time: download jina-reranker-v3 into the ikincitik_models volume (hub online
+# only for this step):
+#   docker compose build encoder
+#   docker compose run --rm --no-deps -e HF_HUB_OFFLINE=0 encoder python download_models.py
 
 services:
   vllm:
@@ -23,7 +35,7 @@ services:
     command:
       - RedHatAI/Qwen3.8-27B-INT4
       - --config
-      - /config/serve.yaml
+      - /config/${VLLM_CONFIG:-serve.yaml}
     deploy:
       resources:
         reservations:
@@ -38,6 +50,53 @@ services:
       retries: 40
       start_period: 300s
 
+  qdrant:
+    image: qdrant/qdrant:v1.18.3-unprivileged
+    container_name: ikincitik-qdrant
+    restart: "no"
+    environment:
+      QDRANT__TELEMETRY_DISABLED: "true"
+    volumes:
+      - ikincitik_qdrant:/qdrant/storage
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/127.0.0.1/6333 && printf \"GET /readyz HTTP/1.0\\r\\n\\r\\n\" >&3 && grep -q \"200 OK\" <&3'"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
+  encoder:
+    build: ./encoder
+    image: ikincitik-encoder:1
+    container_name: ikincitik-encoder
+    restart: "no"
+    # CPU only: no GPU devices are reserved for this service.
+    environment:
+      HF_HUB_OFFLINE: "1"
+      TORCH_THREADS: "${ENCODER_THREADS:-12}"  # physical cores of the Ryzen 9 5900X
+      OMP_NUM_THREADS: "${ENCODER_THREADS:-12}"
+      LOAD_MODELS: "${ENCODER_MODELS:-bge_m3,bge_reranker,jina_reranker}"
+      BGE_M3_PATH: /hf/hub/models--BAAI--bge-m3/snapshots/5617a9f61b028005a4858fdac845db406aefb181
+      BGE_RERANKER_PATH: /hf/hub/models--BAAI--bge-reranker-v2-m3/snapshots/953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e
+      JINA_RERANKER_PATH: /models/hub/models--jinaai--jina-reranker-v3/snapshots/d7d7e73b6ea138ced340b83865931b5dfb6c97aa
+    volumes:
+      - ../etoeragcb/model-cache/huggingface:/hf:ro
+      - ikincitik_models:/models
+    ports:
+      - "8081:8081"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import json,urllib.request; d=json.load(urllib.request.urlopen('http://127.0.0.1:8081/health', timeout=5)); assert d['status']=='ok'"]
+      interval: 15s
+      timeout: 5s
+      retries: 40
+      start_period: 120s
+
 volumes:
   aviation-vllm-cache:
     external: true
+  ikincitik_qdrant:
+    name: ikincitik_qdrant
+  ikincitik_models:
+    name: ikincitik_models
