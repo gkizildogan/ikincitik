@@ -1,0 +1,977 @@
+{"index": "units", "src_unit_id": "AMC E 10(b)", "src_section_id": "AMC E 10(b)", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(a)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 10(b)", "src_section_id": "AMC E 10(b)", "dst_section_id": "CS-E 500", "ref_text": "CS-E 500", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 10(b)", "src_section_id": "AMC E 10(b)", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 10(b)", "src_section_id": "AMC E 10(b)", "dst_section_id": "CS-E 890", "ref_text": "CS-E 890", "order": 3}
+{"index": "units", "src_unit_id": "CS-E 15", "src_section_id": "CS-E 15", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 15", "src_section_id": "CS-E 15", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 20", "src_section_id": "CS-E 20", "dst_section_id": "AMC E 20", "ref_text": "AMC E 20", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 20", "src_section_id": "CS-E 20", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 20", "src_section_id": "CS-E 20", "dst_section_id": "AMC E 20(f)", "ref_text": "AMC E 20(f)", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 20", "src_section_id": "AMC E 20", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(a)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 20", "src_section_id": "AMC E 20", "dst_section_id": "CS-E 80", "ref_text": "CS-E 80", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 20", "src_section_id": "AMC E 20", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 20(f)", "src_section_id": "AMC E 20(f)", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 20(f)", "src_section_id": "AMC E 20(f)", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(f)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 20(f)", "src_section_id": "AMC E 20(f)", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(j)", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 25", "src_section_id": "CS-E 25", "dst_section_id": "AMC E 25", "ref_text": "AMC E 25", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 25", "src_section_id": "CS-E 25", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 25", "src_section_id": "CS-E 25", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(f)", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 25", "src_section_id": "CS-E 25", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(l)", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 25#01", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(b)(1)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 25#02", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(b)(2)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 25#02", "src_section_id": "AMC E 25", "dst_section_id": "AMC E 40(b)(3) and (b)(4)", "ref_text": "AMC E 40(b)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 25#02", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 60", "ref_text": "CS-E 60(d)(2)", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 25#02", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40(f)", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 25#03", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(b)(2)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 25#03", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)(iii)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 25#04", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 25#04", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(a)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 30", "src_section_id": "CS-E 30", "dst_section_id": "AMC E 30", "ref_text": "AMC E 30", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 30", "src_section_id": "CS-E 30", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 60", "ref_text": "CS-E 60", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 100", "ref_text": "CS-E 100", "order": 4}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 520", "ref_text": "CS-E 520", "order": 5}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 640", "ref_text": "CS-E 640", "order": 6}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130", "order": 7}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 135", "ref_text": "CS-E 135", "order": 8}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 180", "ref_text": "CS-E 180", "order": 9}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 210", "ref_text": "CS-E 210", "order": 10}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 11}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 380", "ref_text": "CS-E 380", "order": 12}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 500", "ref_text": "CS-E 500", "order": 13}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 14}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 525", "ref_text": "CS-E 525", "order": 15}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 560", "ref_text": "CS-E 560", "order": 16}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 570", "ref_text": "CS-E 570", "order": 17}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 590", "ref_text": "CS-E 590", "order": 18}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650", "order": 19}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 670", "ref_text": "CS-E 670", "order": 20}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "AMC E 670", "ref_text": "AMC E 670", "order": 21}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 680", "ref_text": "CS-E 680", "order": 22}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 700", "ref_text": "CS-E 700", "order": 23}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 710", "ref_text": "CS-E 710", "order": 24}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 745", "ref_text": "CS-E 745", "order": 25}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 26}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790", "order": 27}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800", "order": 28}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 910", "ref_text": "CS-E 910", "order": 29}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 230", "ref_text": "CS-E 230", "order": 30}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 260", "ref_text": "CS-E 260", "order": 31}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 340", "ref_text": "CS-E 340", "order": 32}
+{"index": "units", "src_unit_id": "AMC E 30", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 430", "ref_text": "CS-E 430", "order": 33}
+{"index": "units", "src_unit_id": "CS-E 40", "src_section_id": "CS-E 40", "dst_section_id": "AMC E 40", "ref_text": "AMC E 40", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 40", "src_section_id": "CS-E 40", "dst_section_id": "AMC E 40(b)(3) and (b)(4)", "ref_text": "AMC E 40(b)(3)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 40", "src_section_id": "CS-E 40", "dst_section_id": "AMC E 40(d)", "ref_text": "AMC E 40(d)", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 40", "src_section_id": "CS-E 40", "dst_section_id": "CS-E 60", "ref_text": "CS-E 60(b)", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 40", "src_section_id": "AMC E 40", "dst_section_id": "CS-E 350", "ref_text": "CS-E 350", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 40", "src_section_id": "AMC E 40", "dst_section_id": "CS-E 730", "ref_text": "CS-E 730", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 40", "src_section_id": "AMC E 40", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 40", "src_section_id": "AMC E 40", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 40(b)(3) and (b)(4)", "src_section_id": "AMC E 40(b)(3) and (b)(4)", "dst_section_id": "AMC E 25", "ref_text": "AMC E 25", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 40(b)(3) and (b)(4)", "src_section_id": "AMC E 40(b)(3) and (b)(4)", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(b)(2)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 40(b)(3) and (b)(4)", "src_section_id": "AMC E 40(b)(3) and (b)(4)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)(iii)", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 40(d)", "src_section_id": "AMC E 40(d)", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40(d)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 40(d)", "src_section_id": "AMC E 40(d)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(f)(5)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 40(d)", "src_section_id": "AMC E 40(d)", "dst_section_id": "CS-E 820", "ref_text": "CS-E 820", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 40(d)", "src_section_id": "AMC E 40(d)", "dst_section_id": "CS-E 830", "ref_text": "CS-E 830", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 40(d)", "src_section_id": "AMC E 40(d)", "dst_section_id": "CS-E 870", "ref_text": "CS-E 870", "order": 4}
+{"index": "units", "src_unit_id": "CS-E 50", "src_section_id": "CS-E 50", "dst_section_id": "AMC E 50", "ref_text": "AMC E 50", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 50", "src_section_id": "CS-E 50", "dst_section_id": "CS-E 390", "ref_text": "CS-E 390", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 50", "src_section_id": "CS-E 50", "dst_section_id": "CS-E 500", "ref_text": "CS-E 500(a)", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 50", "src_section_id": "CS-E 50", "dst_section_id": "CS-E 745", "ref_text": "CS-E 745", "order": 3}
+{"index": "units", "src_unit_id": "CS-E 50", "src_section_id": "CS-E 50", "dst_section_id": "CS-E 210", "ref_text": "CS-E 210", "order": 4}
+{"index": "units", "src_unit_id": "CS-E 50", "src_section_id": "CS-E 50", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 5}
+{"index": "units", "src_unit_id": "CS-E 50", "src_section_id": "CS-E 50", "dst_section_id": "CS-E 110", "ref_text": "CS-E 110(e)", "order": 6}
+{"index": "units", "src_unit_id": "CS-E 50", "src_section_id": "CS-E 50", "dst_section_id": "AMC E 50(e)", "ref_text": "AMC E 50(e)", "order": 7}
+{"index": "units", "src_unit_id": "CS-E 50", "src_section_id": "CS-E 50", "dst_section_id": "AMC E 50(j)", "ref_text": "AMC E 50(j)", "order": 8}
+{"index": "units", "src_unit_id": "AMC E 50", "src_section_id": "AMC E 50", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 50", "src_section_id": "AMC E 50", "dst_section_id": "CS-E 170", "ref_text": "CS-E 170", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 50", "src_section_id": "AMC E 50", "dst_section_id": "CS-E 560", "ref_text": "CS-E 560", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 50", "src_section_id": "AMC E 50", "dst_section_id": "CS-E 80", "ref_text": "CS-E 80", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 50(e)", "src_section_id": "AMC E 50(e)", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(e)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 50(j)", "src_section_id": "AMC E 50(j)", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(j)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 50(j)", "src_section_id": "AMC E 50(j)", "dst_section_id": "AMC E 20(f)", "ref_text": "AMC E 20(f)", "order": 1}
+{"index": "units", "src_unit_id": "AMC to CS-E 50(l)", "src_section_id": "AMC to CS-E 50(l)", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(l)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 60", "src_section_id": "CS-E 60", "dst_section_id": "AMC E 60", "ref_text": "AMC E 60", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 60", "src_section_id": "CS-E 60", "dst_section_id": "AMC E 60(d)", "ref_text": "AMC E 60(d)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 60", "src_section_id": "AMC E 60", "dst_section_id": "CS-E 60", "ref_text": "CS-E 60(a)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 60(d)", "src_section_id": "AMC E 60(d)", "dst_section_id": "CS-E 60", "ref_text": "CS-E 60(d)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 60(d)", "src_section_id": "AMC E 60(d)", "dst_section_id": "AMC E 40(b)(3) and (b)(4)", "ref_text": "AMC E 40(b)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 60(d)", "src_section_id": "AMC E 60(d)", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(d)", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 60(d)", "src_section_id": "AMC E 60(d)", "dst_section_id": "CS-E 820", "ref_text": "CS-E 820", "order": 3}
+{"index": "units", "src_unit_id": "CS-E 70", "src_section_id": "CS-E 70", "dst_section_id": "AMC E 70", "ref_text": "AMC E 70", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 80", "src_section_id": "CS-E 80", "dst_section_id": "AMC E 80", "ref_text": "AMC E 80", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 80", "src_section_id": "CS-E 80", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(c)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 80#01", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 80", "ref_text": "CS-E 80", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 80#03", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 560", "ref_text": "CS-E 560", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 80#03", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 230", "ref_text": "CS-E 230", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 80#03", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 80#03", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 570", "ref_text": "CS-E 570", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 80#03", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 580", "ref_text": "CS-E 580(a)", "order": 4}
+{"index": "units", "src_unit_id": "AMC E 80#05", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 640", "ref_text": "CS-E 640(a)(1)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 80#05", "src_section_id": "AMC E 80", "dst_section_id": "AMC E 515", "ref_text": "AMC E 515(3)(e)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 80#05", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 80#05", "src_section_id": "AMC E 80", "dst_section_id": "AMC E 130", "ref_text": "AMC E 130", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 80#05", "src_section_id": "AMC E 80", "dst_section_id": "AMC E 640", "ref_text": "AMC E 640", "order": 4}
+{"index": "units", "src_unit_id": "AMC E 80#06", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(c)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 80#06", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 80", "ref_text": "CS-E 80(d)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 80#06", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 590", "ref_text": "CS-E 590", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 80#06", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 80#06", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840", "order": 4}
+{"index": "units", "src_unit_id": "AMC E 80#06", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 520", "ref_text": "CS-E 520(b)", "order": 5}
+{"index": "units", "src_unit_id": "CS-E 110", "src_section_id": "CS-E 110", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 110", "src_section_id": "CS-E 110", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(d)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 130", "src_section_id": "CS-E 130", "dst_section_id": "AMC E 130", "ref_text": "AMC E 130", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 130", "src_section_id": "CS-E 130", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 130#01", "src_section_id": "AMC E 130", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 130#01", "src_section_id": "AMC E 130", "dst_section_id": "CS-E 570", "ref_text": "CS-E 570(e)(1)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 130#02", "src_section_id": "AMC E 130", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130(a)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 130#03", "src_section_id": "AMC E 130", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 135", "src_section_id": "CS-E 135", "dst_section_id": "AMC E 135", "ref_text": "AMC E 135", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 135", "src_section_id": "AMC E 135", "dst_section_id": "CS-E 135", "ref_text": "CS-E 135", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 140", "src_section_id": "CS-E 140", "dst_section_id": "AMC E 140", "ref_text": "AMC E 140", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 140", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 140", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 350", "ref_text": "CS-E 350", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 140", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 730", "ref_text": "CS-E 730", "order": 3}
+{"index": "units", "src_unit_id": "CS-E 140", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)(iii)", "order": 4}
+{"index": "units", "src_unit_id": "CS-E 140", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 500", "ref_text": "CS-E 500", "order": 5}
+{"index": "units", "src_unit_id": "CS-E 140", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 560", "ref_text": "CS-E 560", "order": 6}
+{"index": "units", "src_unit_id": "CS-E 140", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 590", "ref_text": "CS-E 590", "order": 7}
+{"index": "units", "src_unit_id": "CS-E 140", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 180", "ref_text": "CS-E 180", "order": 8}
+{"index": "units", "src_unit_id": "AMC E 140", "src_section_id": "AMC E 140", "dst_section_id": "CS-E 140", "ref_text": "CS-E 140(d)(1)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 150", "src_section_id": "CS-E 150", "dst_section_id": "AMC E 150(a)", "ref_text": "AMC E 150(a)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 150", "src_section_id": "CS-E 150", "dst_section_id": "CS-E 140", "ref_text": "CS-E 140(c)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 170", "src_section_id": "CS-E 170", "dst_section_id": "AMC E 170", "ref_text": "AMC E 170", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 170", "src_section_id": "AMC E 170", "dst_section_id": "CS-E 170", "ref_text": "CS-E 170", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 170", "src_section_id": "AMC E 170", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 170", "src_section_id": "AMC E 170", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 170", "src_section_id": "AMC E 170", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(a)", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 170", "src_section_id": "AMC E 170", "dst_section_id": "CS-E 80", "ref_text": "CS-E 80", "order": 4}
+{"index": "units", "src_unit_id": "AMC E 170", "src_section_id": "AMC E 170", "dst_section_id": "AMC E 80", "ref_text": "AMC E 80", "order": 5}
+{"index": "units", "src_unit_id": "CS-E 175", "src_section_id": "CS-E 175", "dst_section_id": "CS-E 210", "ref_text": "CS-E 210", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 175", "src_section_id": "CS-E 175", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 180", "src_section_id": "CS-E 180", "dst_section_id": "AMC E 180", "ref_text": "AMC E 180", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 180", "src_section_id": "CS-E 180", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 180", "src_section_id": "CS-E 180", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 180", "src_section_id": "CS-E 180", "dst_section_id": "CS-E 570", "ref_text": "CS-E 570(f)(3)(i)", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 180", "src_section_id": "AMC E 180", "dst_section_id": "CS-E 180", "ref_text": "CS-E 180(b)(3)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 210", "src_section_id": "CS-E 210", "dst_section_id": "AMC E 210", "ref_text": "AMC E 210", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 210", "src_section_id": "AMC E 210", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 240", "src_section_id": "CS-E 240", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40(d)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 300", "src_section_id": "CS-E 300", "dst_section_id": "CS-E 350", "ref_text": "CS-E 350", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 300", "src_section_id": "CS-E 300", "dst_section_id": "AMC E 300(f)", "ref_text": "AMC E 300(f)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 320", "src_section_id": "CS-E 320", "dst_section_id": "AMC E 320", "ref_text": "AMC E 320", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 340", "src_section_id": "CS-E 340", "dst_section_id": "AMC E 340", "ref_text": "AMC E 340", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 340", "src_section_id": "CS-E 340", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 340", "src_section_id": "AMC E 340", "dst_section_id": "CS-E 340", "ref_text": "CS-E 340", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 350", "src_section_id": "CS-E 350", "dst_section_id": "AMC E 350", "ref_text": "AMC E 350", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 350", "src_section_id": "CS-E 350", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 350", "src_section_id": "AMC E 350", "dst_section_id": "CS-E 350", "ref_text": "CS-E 350(a)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 370", "src_section_id": "CS-E 370", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 380", "src_section_id": "CS-E 380", "dst_section_id": "AMC E 380", "ref_text": "AMC E 380", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 380", "src_section_id": "CS-E 380", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(c)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 390", "src_section_id": "CS-E 390", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 390", "src_section_id": "CS-E 390", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40(h)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 400", "src_section_id": "CS-E 400", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 440#03", "src_section_id": "CS-E 440", "dst_section_id": "AMC E 440(b)(4)", "ref_text": "AMC E 440(b)(4)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 450", "src_section_id": "CS-E 450", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 450", "src_section_id": "CS-E 450", "dst_section_id": "CS-E 240", "ref_text": "CS-E 240(b)(1)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 460", "src_section_id": "CS-E 460", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 470", "src_section_id": "CS-E 470", "dst_section_id": "AMC E 470", "ref_text": "AMC E 470", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 470", "src_section_id": "CS-E 470", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 470", "src_section_id": "AMC E 470", "dst_section_id": "CS-E 470", "ref_text": "CS-E 470", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 500", "src_section_id": "CS-E 500", "dst_section_id": "AMC E 500", "ref_text": "AMC E 500", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 500", "src_section_id": "AMC E 500", "dst_section_id": "AMC E 700", "ref_text": "AMC E 700", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 510", "src_section_id": "CS-E 510", "dst_section_id": "AMC E 510", "ref_text": "AMC E 510", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 510", "src_section_id": "CS-E 510", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 510", "src_section_id": "CS-E 510", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 510", "src_section_id": "CS-E 510", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25", "order": 3}
+{"index": "units", "src_unit_id": "CS-E 510", "src_section_id": "CS-E 510", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 4}
+{"index": "units", "src_unit_id": "AMC E 510#01", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 510#02", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 510#02", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 510#02", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 510#03", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 510#03", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 510#03", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 510#03", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 850", "ref_text": "CS-E 850", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 510#03", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 520", "ref_text": "CS-E 520(c)(1)", "order": 4}
+{"index": "units", "src_unit_id": "AMC E 510#03", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 5}
+{"index": "units", "src_unit_id": "AMC E 510#05", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510(a)(4)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 515", "src_section_id": "CS-E 515", "dst_section_id": "AMC E 515", "ref_text": "AMC E 515", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 515", "src_section_id": "CS-E 515", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 515", "src_section_id": "CS-E 515", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(b)", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 515#01", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510(c)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 515#01", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 515#05", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515(a)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 515#05", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510(a)(3)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 515#08", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 515#08", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 515#08", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 515#09", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 520", "src_section_id": "CS-E 520", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 520", "src_section_id": "CS-E 520", "dst_section_id": "AMC E 520(a)", "ref_text": "AMC E 520(a)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 520", "src_section_id": "CS-E 520", "dst_section_id": "AMC E 520(c)(1)", "ref_text": "AMC E 520(c)(1)", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 520", "src_section_id": "CS-E 520", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810", "order": 3}
+{"index": "units", "src_unit_id": "CS-E 520", "src_section_id": "CS-E 520", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800", "order": 4}
+{"index": "units", "src_unit_id": "CS-E 520", "src_section_id": "CS-E 520", "dst_section_id": "AMC E 520(c)(2)", "ref_text": "AMC E 520", "order": 5}
+{"index": "units", "src_unit_id": "CS-E 520", "src_section_id": "CS-E 520", "dst_section_id": "AMC E 520(d)", "ref_text": "AMC E 520", "order": 6}
+{"index": "units", "src_unit_id": "AMC E 520(c)(2)", "src_section_id": "AMC E 520(c)(2)", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 520(c)(2)", "src_section_id": "AMC E 520(c)(2)", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 520(c)(2)", "src_section_id": "AMC E 520(c)(2)", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 520(d)", "src_section_id": "AMC E 520(d)", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510(a)(2)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 520(d)", "src_section_id": "AMC E 520(d)", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 525", "src_section_id": "CS-E 525", "dst_section_id": "AMC E 525", "ref_text": "AMC E 525", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 525", "src_section_id": "CS-E 525", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 525", "src_section_id": "AMC E 525", "dst_section_id": "CS-E 520", "ref_text": "CS-E 520(c)(2)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 525", "src_section_id": "AMC E 525", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 540", "src_section_id": "CS-E 540", "dst_section_id": "AMC E 540", "ref_text": "AMC E 540", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 540", "src_section_id": "CS-E 540", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510(g)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 540", "src_section_id": "AMC E 540", "dst_section_id": "CS-E 540", "ref_text": "CS-E 540(a)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 540", "src_section_id": "AMC E 540", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 540", "src_section_id": "AMC E 540", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 540", "src_section_id": "AMC E 540", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790", "order": 3}
+{"index": "units", "src_unit_id": "CS-E 560", "src_section_id": "CS-E 560", "dst_section_id": "AMC E 560", "ref_text": "AMC E 560", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 560", "src_section_id": "CS-E 560", "dst_section_id": "CS-E 670", "ref_text": "CS-E 670", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 560", "src_section_id": "CS-E 560", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 560", "src_section_id": "AMC E 560", "dst_section_id": "CS-E 560", "ref_text": "CS-E 560(a)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 560", "src_section_id": "AMC E 560", "dst_section_id": "CS-E 90", "ref_text": "CS-E 90", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 560", "src_section_id": "AMC E 560", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30(a)", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 560", "src_section_id": "AMC E 560", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 560", "src_section_id": "AMC E 560", "dst_section_id": "CS-E 110", "ref_text": "CS-E 110(d)", "order": 4}
+{"index": "units", "src_unit_id": "AMC E 560", "src_section_id": "AMC E 560", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130(a)", "order": 5}
+{"index": "units", "src_unit_id": "CS-E 570", "src_section_id": "CS-E 570", "dst_section_id": "AMC E 570", "ref_text": "AMC E 570", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 570", "src_section_id": "AMC E 570", "dst_section_id": "CS-E 570", "ref_text": "CS-E 570(a)(1)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 570", "src_section_id": "AMC E 570", "dst_section_id": "AMC E 130", "ref_text": "AMC E 130", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 600", "src_section_id": "CS-E 600", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(f)(4)(i)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 600", "src_section_id": "CS-E 600", "dst_section_id": "AMC E 600(e)", "ref_text": "AMC E 600(e)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 620", "src_section_id": "CS-E 620", "dst_section_id": "AMC E 620", "ref_text": "AMC E 620", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 620", "src_section_id": "AMC E 620", "dst_section_id": "CS-E 620", "ref_text": "CS-E 620", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 640", "src_section_id": "CS-E 640", "dst_section_id": "AMC E 640", "ref_text": "AMC E 640", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 640", "src_section_id": "AMC E 640", "dst_section_id": "CS-E 640", "ref_text": "CS-E 640(a)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 650", "src_section_id": "CS-E 650", "dst_section_id": "AMC E 650", "ref_text": "AMC E 650", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 650", "src_section_id": "CS-E 650", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 650#01", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 70", "ref_text": "CS-E 70", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 650#01", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 100", "ref_text": "CS-E 100", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 650#01", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650(a)", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 650#02", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650(b)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 650#02", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 650#02", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 650#03", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650(g)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 650#03", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 60", "ref_text": "CS-E 60", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 650#03", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 650#03", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 100", "ref_text": "CS-E 100", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 650#04", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650(f)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 650#04", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 650#05", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650(b)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 660", "src_section_id": "CS-E 660", "dst_section_id": "AMC E 660", "ref_text": "AMC E 660", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 670", "src_section_id": "CS-E 670", "dst_section_id": "AMC E 670", "ref_text": "AMC E 670", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 670", "src_section_id": "AMC E 670", "dst_section_id": "CS-E 670", "ref_text": "CS-E 670(a)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 670", "src_section_id": "AMC E 670", "dst_section_id": "AMC E 560", "ref_text": "AMC E 560(4)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 680", "src_section_id": "CS-E 680", "dst_section_id": "AMC E 680", "ref_text": "AMC E 680", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 690", "src_section_id": "CS-E 690", "dst_section_id": "AMC E 690", "ref_text": "AMC E 690", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 690", "src_section_id": "CS-E 690", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 690", "src_section_id": "CS-E 690", "dst_section_id": "CS-E 730", "ref_text": "CS-E 730", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 690", "src_section_id": "AMC E 690", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)(iii)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 700", "src_section_id": "CS-E 700", "dst_section_id": "AMC E 700", "ref_text": "AMC E 700", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 700", "src_section_id": "AMC E 700", "dst_section_id": "AMC E 500", "ref_text": "AMC E 500", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 700", "src_section_id": "AMC E 700", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800(c)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 700", "src_section_id": "AMC E 700", "dst_section_id": "CS-E 700", "ref_text": "CS-E 700", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 700", "src_section_id": "AMC E 700", "dst_section_id": "CS-E 820", "ref_text": "CS-E 820", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 700", "src_section_id": "AMC E 700", "dst_section_id": "CS-E 830", "ref_text": "CS-E 830", "order": 4}
+{"index": "units", "src_unit_id": "AMC E 700", "src_section_id": "AMC E 700", "dst_section_id": "CS-E 870", "ref_text": "CS-E 870", "order": 5}
+{"index": "units", "src_unit_id": "CS-E 710", "src_section_id": "CS-E 710", "dst_section_id": "AMC E 710", "ref_text": "AMC E 710", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 710", "src_section_id": "AMC E 710", "dst_section_id": "CS-E 525", "ref_text": "CS-E 525", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 710", "src_section_id": "AMC E 710", "dst_section_id": "CS-E 710", "ref_text": "CS-E 710", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 710", "src_section_id": "AMC E 710", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 720", "src_section_id": "CS-E 720", "dst_section_id": "AMC E 720(a)", "ref_text": "AMC E 720(a)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 730", "src_section_id": "CS-E 730", "dst_section_id": "AMC E 730", "ref_text": "AMC E 730", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 730", "src_section_id": "CS-E 730", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 730", "src_section_id": "AMC E 730", "dst_section_id": "CS-E 730", "ref_text": "CS-E 730", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 730", "src_section_id": "AMC E 730", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)(iii)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 740#01", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 690", "ref_text": "CS-E 690(a)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 740#01", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 750", "ref_text": "CS-E 750", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 740#01", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 890", "ref_text": "CS-E 890", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 740#01", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40", "order": 3}
+{"index": "units", "src_unit_id": "CS-E 740#03", "src_section_id": "CS-E 740", "dst_section_id": "AMC E 740(c)(3)", "ref_text": "AMC E 740(c)(3)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 740#04", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 170", "ref_text": "CS-E 170", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 740#05", "src_section_id": "CS-E 740", "dst_section_id": "AMC E 740(c)(4)", "ref_text": "AMC E 740(c)(4)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 740#05", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 690", "ref_text": "CS-E 690(a)(3)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 740#05", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 750", "ref_text": "CS-E 750", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 740#07", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40(d)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 740#07", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 690", "ref_text": "CS-E 690(a)(3)(ii)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 740#07", "src_section_id": "CS-E 740", "dst_section_id": "AMC E 740(f)(1)", "ref_text": "AMC E 740(f)(1)", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 740#09", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 820", "ref_text": "CS-E 820", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 740#09", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 830", "ref_text": "CS-E 830", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 740#09", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 870", "ref_text": "CS-E 870", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 740#10", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 740#10", "src_section_id": "CS-E 740", "dst_section_id": "AMC E 740(g)(1)", "ref_text": "AMC E 740(g)(1)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 740#10", "src_section_id": "CS-E 740", "dst_section_id": "AMC E 740(i)(2)", "ref_text": "AMC E 740(i)(2)", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 740(c)(2)(i)", "src_section_id": "AMC E 740(c)(2)(i)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 740(c)(2)(i)", "src_section_id": "AMC E 740(c)(2)(i)", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30(a)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 740(c)(3)", "src_section_id": "AMC E 740(c)(3)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 740(c)(3)", "src_section_id": "AMC E 740(c)(3)", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(j)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 740(c)(4)#01", "src_section_id": "AMC E 740(c)(4)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(4)(iv)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 740(c)(4)#02", "src_section_id": "AMC E 740(c)(4)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(1)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 740(c)(4)#02", "src_section_id": "AMC E 740(c)(4)", "dst_section_id": "CS-E 170", "ref_text": "CS-E 170", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 740(c)(4)#03", "src_section_id": "AMC E 740(c)(4)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(4)(iv)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 740(c)(4)#04", "src_section_id": "AMC E 740(c)(4)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(f)(4)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 740(f)(1)", "src_section_id": "AMC E 740(f)(1)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(f)(1)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 740(f)(5)", "src_section_id": "AMC E 740(f)(5)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(f)(4)(iii)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 740(g)(1)", "src_section_id": "AMC E 740(g)(1)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(g)(1)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 740(g)(1)", "src_section_id": "AMC E 740(g)(1)", "dst_section_id": "AMC E 650", "ref_text": "AMC E 650", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 740(i)(2)", "src_section_id": "AMC E 740(i)(2)", "dst_section_id": "CS-E 150", "ref_text": "CS-E 150(b)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 740(i)(2)", "src_section_id": "AMC E 740(i)(2)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)(iii)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 740(i)(2)", "src_section_id": "AMC E 740(i)(2)", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(b)(2)", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 745", "src_section_id": "CS-E 745", "dst_section_id": "AMC E 745", "ref_text": "AMC E 745", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 745", "src_section_id": "AMC E 745", "dst_section_id": "CS-E 745", "ref_text": "CS-E 745", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 745", "src_section_id": "AMC E 745", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 750", "src_section_id": "CS-E 750", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 750", "src_section_id": "CS-E 750", "dst_section_id": "AMC E 750(b)", "ref_text": "AMC E 750(b)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 750(b)", "src_section_id": "AMC E 750(b)", "dst_section_id": "CS-E 750", "ref_text": "CS-E 750(b)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 770", "src_section_id": "CS-E 770", "dst_section_id": "AMC E 770", "ref_text": "AMC E 770", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 770", "src_section_id": "AMC E 770", "dst_section_id": "CS-E 770", "ref_text": "CS-E 770(b)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 780", "src_section_id": "CS-E 780", "dst_section_id": "AMC E 780", "ref_text": "AMC E 780", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 780", "src_section_id": "CS-E 780", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(b)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 780", "src_section_id": "CS-E 780", "dst_section_id": "CS-E 540", "ref_text": "CS-E 540", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 780#01", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 780#03", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 780#03", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780(b)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 780#04", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 780#06", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 780#07", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780(a)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 780#09", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780(f)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 780#10", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780(f)(2)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 780#11", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 780#11", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780(f)(3)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 790", "src_section_id": "CS-E 790", "dst_section_id": "AMC E 790(a)(2)", "ref_text": "AMC E 790(a)(2)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 790", "src_section_id": "AMC E 790", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790(a)(1)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 790", "src_section_id": "AMC E 790", "dst_section_id": "AMC E 790(a)(2)", "ref_text": "AMC E 790(a)(2)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 790(a)(1)", "src_section_id": "AMC E 790(a)(1)", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790(a)(1)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 790(a)(2)#02", "src_section_id": "AMC E 790(a)(2)", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790(a)(2)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 790(a)(2)#04", "src_section_id": "AMC E 790(a)(2)", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790(a)(2)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 790 Appendix A", "src_section_id": "CS-E 790 Appendix A", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790(a)(2)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 800#01", "src_section_id": "CS-E 800", "dst_section_id": "AMC E 800", "ref_text": "AMC E 800", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 800#01", "src_section_id": "CS-E 800", "dst_section_id": "CS-E 540", "ref_text": "CS-E 540", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 800#03", "src_section_id": "CS-E 800", "dst_section_id": "CS-E 540", "ref_text": "CS-E 540", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 800#04", "src_section_id": "CS-E 800", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810(a)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 800#04", "src_section_id": "CS-E 800", "dst_section_id": "CS-E 700", "ref_text": "CS-E 700", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 800#01", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800(b)(1)(iii)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 800#01", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 540", "ref_text": "CS-E 540(b)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 800#01", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 700", "ref_text": "CS-E 700", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 800#02", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 800#02", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800(d)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 800#03", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 800#03", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 540", "ref_text": "CS-E 540(b)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 800#04", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 140", "ref_text": "CS-E 140", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 800#04", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800(d)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 800#04", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 810", "src_section_id": "CS-E 810", "dst_section_id": "AMC E 810", "ref_text": "AMC E 810", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 810", "src_section_id": "CS-E 810", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 810#01", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810(a)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 810#01", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 810#02", "src_section_id": "AMC E 810", "dst_section_id": "AMC E 520(c)(1)", "ref_text": "AMC E 520(c)(1)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 810#02", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(f)(5)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 810#02", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 830", "ref_text": "CS-E 830", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 810#02", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 870", "ref_text": "CS-E 870", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 810#02", "src_section_id": "AMC E 810", "dst_section_id": "AMC E 510", "ref_text": "AMC E 510", "order": 4}
+{"index": "units", "src_unit_id": "AMC E 810#02", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 5}
+{"index": "units", "src_unit_id": "AMC E 810#02", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810(a)", "order": 6}
+{"index": "units", "src_unit_id": "AMC E 810#02", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 850", "ref_text": "CS-E 850(a)(1)", "order": 7}
+{"index": "units", "src_unit_id": "AMC E 810#02", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840(c)", "order": 8}
+{"index": "units", "src_unit_id": "CS-E 820", "src_section_id": "CS-E 820", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 820", "src_section_id": "CS-E 820", "dst_section_id": "AMC E 820(a)(2)", "ref_text": "AMC E 820(a)(2)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 820(a)(2)", "src_section_id": "AMC E 820(a)(2)", "dst_section_id": "CS-E 820", "ref_text": "CS-E 820(a)(2)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 830", "src_section_id": "CS-E 830", "dst_section_id": "AMC E 830(c)", "ref_text": "AMC E 830(c)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 830", "src_section_id": "CS-E 830", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 830(c)", "src_section_id": "AMC E 830(c)", "dst_section_id": "CS-E 830", "ref_text": "CS-E 830(c)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 840", "src_section_id": "CS-E 840", "dst_section_id": "AMC E 840", "ref_text": "AMC E 840", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 840", "src_section_id": "CS-E 840", "dst_section_id": "CS-E 850", "ref_text": "CS-E 850", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 840", "src_section_id": "CS-E 840", "dst_section_id": "CS-E 100", "ref_text": "CS-E 100(b)", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 840#01", "src_section_id": "AMC E 840", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 840#01", "src_section_id": "AMC E 840", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(f)(5)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 840#02", "src_section_id": "AMC E 840", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 850", "src_section_id": "CS-E 850", "dst_section_id": "AMC E 850", "ref_text": "AMC E 850", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 850", "src_section_id": "CS-E 850", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 850", "src_section_id": "CS-E 850", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 850#01", "src_section_id": "AMC E 850", "dst_section_id": "CS-E 850", "ref_text": "CS-E 850", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 850#01", "src_section_id": "AMC E 850", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 850#01", "src_section_id": "AMC E 850", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810(b)", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 850#02", "src_section_id": "AMC E 850", "dst_section_id": "CS-E 850", "ref_text": "CS-E 850(a)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 850#02", "src_section_id": "AMC E 850", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 860", "src_section_id": "CS-E 860", "dst_section_id": "CS-E 60", "ref_text": "CS-E 60(e)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 870", "src_section_id": "CS-E 870", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 870", "src_section_id": "CS-E 870", "dst_section_id": "AMC E 870(a)(3)", "ref_text": "AMC E 870(a)(3)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 870(a)(3)", "src_section_id": "AMC E 870(a)(3)", "dst_section_id": "CS-E 870", "ref_text": "CS-E 870(a)(3)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 880", "src_section_id": "CS-E 880", "dst_section_id": "CS-E 730", "ref_text": "CS-E 730", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 880", "src_section_id": "CS-E 880", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 880", "src_section_id": "CS-E 880", "dst_section_id": "CS-E 745", "ref_text": "CS-E 745", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 880", "src_section_id": "CS-E 880", "dst_section_id": "CS-E 830", "ref_text": "CS-E 830", "order": 3}
+{"index": "units", "src_unit_id": "CS-E 890", "src_section_id": "CS-E 890", "dst_section_id": "AMC E 890", "ref_text": "AMC E 890", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 890", "src_section_id": "CS-E 890", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 890", "src_section_id": "AMC E 890", "dst_section_id": "CS-E 890", "ref_text": "CS-E 890(g)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 890", "src_section_id": "AMC E 890", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 910", "src_section_id": "AMC E 910", "dst_section_id": "CS-E 910", "ref_text": "CS-E 910", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 920", "src_section_id": "CS-E 920", "dst_section_id": "AMC E 920", "ref_text": "AMC E 920", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 920", "src_section_id": "AMC E 920", "dst_section_id": "CS-E 920", "ref_text": "CS-E 920(b)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 930", "src_section_id": "CS-E 930", "dst_section_id": "AMC E 930", "ref_text": "AMC E 930", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 930#01", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 930#01", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 930", "ref_text": "CS-E 930", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 930#02", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 930", "ref_text": "CS-E 930", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 930#02", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 80", "ref_text": "CS-E 80(b)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 930#03", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 930", "ref_text": "CS-E 930", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 930#03", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 930#03", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(b)(2)", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 930#03", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 1040", "ref_text": "CS-E 1040", "order": 3}
+{"index": "units", "src_unit_id": "AMC E 930#04", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 930", "ref_text": "CS-E 930", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 1000", "src_section_id": "CS-E 1000", "dst_section_id": "AMC E 1000", "ref_text": "AMC E 1000", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 1000", "src_section_id": "CS-E 1000", "dst_section_id": "CS-E 1030", "ref_text": "CS-E 1030", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 1000", "src_section_id": "CS-E 1000", "dst_section_id": "CS-E 1040", "ref_text": "CS-E 1040", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 1030", "src_section_id": "CS-E 1030", "dst_section_id": "AMC E 1030", "ref_text": "AMC E 1030", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 1030", "src_section_id": "CS-E 1030", "dst_section_id": "CS-E 500", "ref_text": "CS-E 500(a)", "order": 1}
+{"index": "units", "src_unit_id": "CS-E 1030", "src_section_id": "CS-E 1030", "dst_section_id": "CS-E 750", "ref_text": "CS-E 750", "order": 2}
+{"index": "units", "src_unit_id": "CS-E 1030", "src_section_id": "CS-E 1030", "dst_section_id": "CS-E 745", "ref_text": "CS-E 745", "order": 3}
+{"index": "units", "src_unit_id": "CS-E 1030", "src_section_id": "CS-E 1030", "dst_section_id": "CS-E 910", "ref_text": "CS-E 910", "order": 4}
+{"index": "units", "src_unit_id": "CS-E 1030", "src_section_id": "CS-E 1030", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 5}
+{"index": "units", "src_unit_id": "CS-E 1030", "src_section_id": "CS-E 1030", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50", "order": 6}
+{"index": "units", "src_unit_id": "AMC E 1030#01", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 15", "ref_text": "CS-E 15", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 1030#02", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 1030", "ref_text": "CS-E 1030(b)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 1030#03", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 0}
+{"index": "units", "src_unit_id": "AMC E 1030#03", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(a)", "order": 1}
+{"index": "units", "src_unit_id": "AMC E 1030#03", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40(d)", "order": 2}
+{"index": "units", "src_unit_id": "AMC E 1030#04", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 1030", "ref_text": "CS-E 1030(e)", "order": 0}
+{"index": "units", "src_unit_id": "CS-E 1050", "src_section_id": "CS-E 1050", "dst_section_id": "AMC E 1050", "ref_text": "AMC E 1050", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 10(b)#w1", "src_section_id": "AMC E 10(b)", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 10(b)#w1", "src_section_id": "AMC E 10(b)", "dst_section_id": "CS-E 500", "ref_text": "CS-E 500", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 10(b)#w1", "src_section_id": "AMC E 10(b)", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 10(b)#w1", "src_section_id": "AMC E 10(b)", "dst_section_id": "CS-E 890", "ref_text": "CS-E 890", "order": 3}
+{"index": "win500", "src_unit_id": "CS-E 15#w1", "src_section_id": "CS-E 15", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 15#w3", "src_section_id": "CS-E 15", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 20#w1", "src_section_id": "CS-E 20", "dst_section_id": "AMC E 20", "ref_text": "AMC E 20", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 20#w1", "src_section_id": "CS-E 20", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 20#w1", "src_section_id": "CS-E 20", "dst_section_id": "AMC E 20(f)", "ref_text": "AMC E 20(f)", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 20#w1", "src_section_id": "AMC E 20", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 20#w1", "src_section_id": "AMC E 20", "dst_section_id": "CS-E 80", "ref_text": "CS-E 80", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 20#w1", "src_section_id": "AMC E 20", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 20(f)#w1", "src_section_id": "AMC E 20(f)", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 20(f)#w1", "src_section_id": "AMC E 20(f)", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(f)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 20(f)#w2", "src_section_id": "AMC E 20(f)", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(f)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 20(f)#w2", "src_section_id": "AMC E 20(f)", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(j)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 25#w1", "src_section_id": "CS-E 25", "dst_section_id": "AMC E 25", "ref_text": "AMC E 25", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 25#w1", "src_section_id": "CS-E 25", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 25#w1", "src_section_id": "CS-E 25", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(f)", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 25#w2", "src_section_id": "CS-E 25", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(l)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 25#w1", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(b)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 25#w1", "src_section_id": "AMC E 25", "dst_section_id": "AMC E 40(b)(3) and (b)(4)", "ref_text": "AMC E 40(b)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 25#w2", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 60", "ref_text": "CS-E 60(d)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 25#w2", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(b)(2)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 25#w3", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40(f)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 25#w4", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(b)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 25#w4", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)(iii)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 25#w6", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 25#w7", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 25#w8", "src_section_id": "AMC E 25", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(a)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 30#w1", "src_section_id": "CS-E 30", "dst_section_id": "AMC E 30", "ref_text": "AMC E 30", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 30#w1", "src_section_id": "CS-E 30", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 30#w1", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 30#w1", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 30#w1", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 30#w1", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 60", "ref_text": "CS-E 60", "order": 3}
+{"index": "win500", "src_unit_id": "AMC E 30#w1", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 100", "ref_text": "CS-E 100", "order": 4}
+{"index": "win500", "src_unit_id": "AMC E 30#w1", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 520", "ref_text": "CS-E 520", "order": 5}
+{"index": "win500", "src_unit_id": "AMC E 30#w1", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 640", "ref_text": "CS-E 640", "order": 6}
+{"index": "win500", "src_unit_id": "AMC E 30#w1", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130", "order": 7}
+{"index": "win500", "src_unit_id": "AMC E 30#w1", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 135", "ref_text": "CS-E 135", "order": 8}
+{"index": "win500", "src_unit_id": "AMC E 30#w1", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 180", "ref_text": "CS-E 180", "order": 9}
+{"index": "win500", "src_unit_id": "AMC E 30#w1", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 210", "ref_text": "CS-E 210", "order": 10}
+{"index": "win500", "src_unit_id": "AMC E 30#w1", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 11}
+{"index": "win500", "src_unit_id": "AMC E 30#w1", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 380", "ref_text": "CS-E 380", "order": 12}
+{"index": "win500", "src_unit_id": "AMC E 30#w1", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 500", "ref_text": "CS-E 500", "order": 13}
+{"index": "win500", "src_unit_id": "AMC E 30#w2", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 500", "ref_text": "CS-E 500", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 30#w2", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 30#w2", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 525", "ref_text": "CS-E 525", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 30#w2", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 560", "ref_text": "CS-E 560", "order": 3}
+{"index": "win500", "src_unit_id": "AMC E 30#w2", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 570", "ref_text": "CS-E 570", "order": 4}
+{"index": "win500", "src_unit_id": "AMC E 30#w2", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 590", "ref_text": "CS-E 590", "order": 5}
+{"index": "win500", "src_unit_id": "AMC E 30#w2", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650", "order": 6}
+{"index": "win500", "src_unit_id": "AMC E 30#w2", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 670", "ref_text": "CS-E 670", "order": 7}
+{"index": "win500", "src_unit_id": "AMC E 30#w2", "src_section_id": "AMC E 30", "dst_section_id": "AMC E 670", "ref_text": "AMC E 670", "order": 8}
+{"index": "win500", "src_unit_id": "AMC E 30#w2", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 680", "ref_text": "CS-E 680", "order": 9}
+{"index": "win500", "src_unit_id": "AMC E 30#w2", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 700", "ref_text": "CS-E 700", "order": 10}
+{"index": "win500", "src_unit_id": "AMC E 30#w2", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 710", "ref_text": "CS-E 710", "order": 11}
+{"index": "win500", "src_unit_id": "AMC E 30#w2", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 745", "ref_text": "CS-E 745", "order": 12}
+{"index": "win500", "src_unit_id": "AMC E 30#w2", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 13}
+{"index": "win500", "src_unit_id": "AMC E 30#w3", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 30#w3", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 30#w3", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 30#w3", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 910", "ref_text": "CS-E 910", "order": 3}
+{"index": "win500", "src_unit_id": "AMC E 30#w3", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 230", "ref_text": "CS-E 230", "order": 4}
+{"index": "win500", "src_unit_id": "AMC E 30#w3", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 260", "ref_text": "CS-E 260", "order": 5}
+{"index": "win500", "src_unit_id": "AMC E 30#w3", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 340", "ref_text": "CS-E 340", "order": 6}
+{"index": "win500", "src_unit_id": "AMC E 30#w3", "src_section_id": "AMC E 30", "dst_section_id": "CS-E 430", "ref_text": "CS-E 430", "order": 7}
+{"index": "win500", "src_unit_id": "CS-E 40#w1", "src_section_id": "CS-E 40", "dst_section_id": "AMC E 40", "ref_text": "AMC E 40", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 40#w1", "src_section_id": "CS-E 40", "dst_section_id": "AMC E 40(b)(3) and (b)(4)", "ref_text": "AMC E 40(b)(3)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 40#w1", "src_section_id": "CS-E 40", "dst_section_id": "AMC E 40(d)", "ref_text": "AMC E 40(d)", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 40#w2", "src_section_id": "CS-E 40", "dst_section_id": "CS-E 60", "ref_text": "CS-E 60(b)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 40#w1", "src_section_id": "AMC E 40", "dst_section_id": "CS-E 350", "ref_text": "CS-E 350", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 40#w1", "src_section_id": "AMC E 40", "dst_section_id": "CS-E 730", "ref_text": "CS-E 730", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 40#w1", "src_section_id": "AMC E 40", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 40#w1", "src_section_id": "AMC E 40", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 3}
+{"index": "win500", "src_unit_id": "AMC E 40(b)(3) and (b)(4)#w1", "src_section_id": "AMC E 40(b)(3) and (b)(4)", "dst_section_id": "AMC E 25", "ref_text": "AMC E 25", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 40(b)(3) and (b)(4)#w2", "src_section_id": "AMC E 40(b)(3) and (b)(4)", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(b)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 40(b)(3) and (b)(4)#w2", "src_section_id": "AMC E 40(b)(3) and (b)(4)", "dst_section_id": "AMC E 25", "ref_text": "AMC E 25", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 40(b)(3) and (b)(4)#w2", "src_section_id": "AMC E 40(b)(3) and (b)(4)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)(iii)", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 40(d)#w1", "src_section_id": "AMC E 40(d)", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40(d)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 40(d)#w2", "src_section_id": "AMC E 40(d)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(f)(5)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 40(d)#w3", "src_section_id": "AMC E 40(d)", "dst_section_id": "CS-E 820", "ref_text": "CS-E 820", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 40(d)#w3", "src_section_id": "AMC E 40(d)", "dst_section_id": "CS-E 830", "ref_text": "CS-E 830", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 40(d)#w3", "src_section_id": "AMC E 40(d)", "dst_section_id": "CS-E 870", "ref_text": "CS-E 870", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 50#w1", "src_section_id": "CS-E 50", "dst_section_id": "AMC E 50", "ref_text": "AMC E 50", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 50#w1", "src_section_id": "CS-E 50", "dst_section_id": "CS-E 390", "ref_text": "CS-E 390", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 50#w1", "src_section_id": "CS-E 50", "dst_section_id": "CS-E 500", "ref_text": "CS-E 500(a)", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 50#w1", "src_section_id": "CS-E 50", "dst_section_id": "CS-E 745", "ref_text": "CS-E 745", "order": 3}
+{"index": "win500", "src_unit_id": "CS-E 50#w2", "src_section_id": "CS-E 50", "dst_section_id": "CS-E 210", "ref_text": "CS-E 210", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 50#w2", "src_section_id": "CS-E 50", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 50#w2", "src_section_id": "CS-E 50", "dst_section_id": "CS-E 110", "ref_text": "CS-E 110(e)", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 50#w2", "src_section_id": "CS-E 50", "dst_section_id": "AMC E 50(e)", "ref_text": "AMC E 50(e)", "order": 3}
+{"index": "win500", "src_unit_id": "CS-E 50#w4", "src_section_id": "CS-E 50", "dst_section_id": "AMC E 50(j)", "ref_text": "AMC E 50(j)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 50#w1", "src_section_id": "AMC E 50", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 50#w1", "src_section_id": "AMC E 50", "dst_section_id": "CS-E 170", "ref_text": "CS-E 170", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 50#w2", "src_section_id": "AMC E 50", "dst_section_id": "CS-E 170", "ref_text": "CS-E 170", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 50#w2", "src_section_id": "AMC E 50", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 50#w2", "src_section_id": "AMC E 50", "dst_section_id": "CS-E 560", "ref_text": "CS-E 560", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 50#w2", "src_section_id": "AMC E 50", "dst_section_id": "CS-E 80", "ref_text": "CS-E 80", "order": 3}
+{"index": "win500", "src_unit_id": "AMC E 50#w3", "src_section_id": "AMC E 50", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(h)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 50(e)#w1", "src_section_id": "AMC E 50(e)", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(e)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 50(j)#w1", "src_section_id": "AMC E 50(j)", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(j)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 50(j)#w1", "src_section_id": "AMC E 50(j)", "dst_section_id": "AMC E 20(f)", "ref_text": "AMC E 20(f)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC to CS-E 50(l)#w1", "src_section_id": "AMC to CS-E 50(l)", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(l)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 60#w1", "src_section_id": "CS-E 60", "dst_section_id": "AMC E 60", "ref_text": "AMC E 60", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 60#w1", "src_section_id": "CS-E 60", "dst_section_id": "AMC E 60(d)", "ref_text": "AMC E 60(d)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 60#w1", "src_section_id": "AMC E 60", "dst_section_id": "CS-E 60", "ref_text": "CS-E 60(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 60(d)#w1", "src_section_id": "AMC E 60(d)", "dst_section_id": "CS-E 60", "ref_text": "CS-E 60(d)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 60(d)#w1", "src_section_id": "AMC E 60(d)", "dst_section_id": "AMC E 40(b)(3) and (b)(4)", "ref_text": "AMC E 40(b)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 60(d)#w1", "src_section_id": "AMC E 60(d)", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(d)", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 60(d)#w2", "src_section_id": "AMC E 60(d)", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(d)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 60(d)#w2", "src_section_id": "AMC E 60(d)", "dst_section_id": "CS-E 820", "ref_text": "CS-E 820", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 70#w1", "src_section_id": "CS-E 70", "dst_section_id": "AMC E 70", "ref_text": "AMC E 70", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 80#w1", "src_section_id": "CS-E 80", "dst_section_id": "AMC E 80", "ref_text": "AMC E 80", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 80#w1", "src_section_id": "CS-E 80", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(c)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 80#w1", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 80", "ref_text": "CS-E 80", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 80#w2", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 560", "ref_text": "CS-E 560", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 80#w2", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 230", "ref_text": "CS-E 230", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 80#w2", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 80#w3", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 560", "ref_text": "CS-E 560", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 80#w3", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 570", "ref_text": "CS-E 570", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 80#w3", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 580", "ref_text": "CS-E 580(a)", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 80#w7", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 640", "ref_text": "CS-E 640(a)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 80#w7", "src_section_id": "AMC E 80", "dst_section_id": "AMC E 515", "ref_text": "AMC E 515(3)(e)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 80#w8", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 640", "ref_text": "CS-E 640(a)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 80#w8", "src_section_id": "AMC E 80", "dst_section_id": "AMC E 515", "ref_text": "AMC E 515(3)(e)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 80#w8", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 80#w8", "src_section_id": "AMC E 80", "dst_section_id": "AMC E 130", "ref_text": "AMC E 130", "order": 3}
+{"index": "win500", "src_unit_id": "AMC E 80#w8", "src_section_id": "AMC E 80", "dst_section_id": "AMC E 640", "ref_text": "AMC E 640", "order": 4}
+{"index": "win500", "src_unit_id": "AMC E 80#w8", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(c)", "order": 5}
+{"index": "win500", "src_unit_id": "AMC E 80#w8", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 80", "ref_text": "CS-E 80(d)", "order": 6}
+{"index": "win500", "src_unit_id": "AMC E 80#w9", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 590", "ref_text": "CS-E 590", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 80#w9", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 80#w9", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 80#w9", "src_section_id": "AMC E 80", "dst_section_id": "CS-E 520", "ref_text": "CS-E 520(b)", "order": 3}
+{"index": "win500", "src_unit_id": "CS-E 110#w1", "src_section_id": "CS-E 110", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 110#w1", "src_section_id": "CS-E 110", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(d)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 130#w1", "src_section_id": "CS-E 130", "dst_section_id": "AMC E 130", "ref_text": "AMC E 130", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 130#w1", "src_section_id": "CS-E 130", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 130#w2", "src_section_id": "CS-E 130", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 130#w2", "src_section_id": "CS-E 130", "dst_section_id": "AMC E 130", "ref_text": "AMC E 130(4)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 130#w1", "src_section_id": "AMC E 130", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 130#w2", "src_section_id": "AMC E 130", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130(b)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 130#w2", "src_section_id": "AMC E 130", "dst_section_id": "CS-E 570", "ref_text": "CS-E 570(e)(1)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 130#w3", "src_section_id": "AMC E 130", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130(c)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 130#w5", "src_section_id": "AMC E 130", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 130#w7", "src_section_id": "AMC E 130", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 130#w8", "src_section_id": "AMC E 130", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 130#w9", "src_section_id": "AMC E 130", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130(b)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 130#w10", "src_section_id": "AMC E 130", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 135#w1", "src_section_id": "CS-E 135", "dst_section_id": "AMC E 135", "ref_text": "AMC E 135", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 135#w1", "src_section_id": "AMC E 135", "dst_section_id": "CS-E 135", "ref_text": "CS-E 135", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 140#w1", "src_section_id": "CS-E 140", "dst_section_id": "AMC E 140", "ref_text": "AMC E 140", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 140#w1", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 140#w1", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 350", "ref_text": "CS-E 350", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 140#w1", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 730", "ref_text": "CS-E 730", "order": 3}
+{"index": "win500", "src_unit_id": "CS-E 140#w1", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)(iii)", "order": 4}
+{"index": "win500", "src_unit_id": "CS-E 140#w1", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 500", "ref_text": "CS-E 500", "order": 5}
+{"index": "win500", "src_unit_id": "CS-E 140#w1", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 560", "ref_text": "CS-E 560", "order": 6}
+{"index": "win500", "src_unit_id": "CS-E 140#w1", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 590", "ref_text": "CS-E 590", "order": 7}
+{"index": "win500", "src_unit_id": "CS-E 140#w2", "src_section_id": "CS-E 140", "dst_section_id": "CS-E 180", "ref_text": "CS-E 180", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 140#w1", "src_section_id": "AMC E 140", "dst_section_id": "CS-E 140", "ref_text": "CS-E 140(d)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 150#w1", "src_section_id": "CS-E 150", "dst_section_id": "AMC E 150(a)", "ref_text": "AMC E 150(a)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 150#w1", "src_section_id": "CS-E 150", "dst_section_id": "CS-E 140", "ref_text": "CS-E 140(c)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 170#w1", "src_section_id": "CS-E 170", "dst_section_id": "AMC E 170", "ref_text": "AMC E 170", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 170#w1", "src_section_id": "AMC E 170", "dst_section_id": "CS-E 170", "ref_text": "CS-E 170", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 170#w1", "src_section_id": "AMC E 170", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 170#w1", "src_section_id": "AMC E 170", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 170#w1", "src_section_id": "AMC E 170", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(a)", "order": 3}
+{"index": "win500", "src_unit_id": "AMC E 170#w1", "src_section_id": "AMC E 170", "dst_section_id": "CS-E 80", "ref_text": "CS-E 80", "order": 4}
+{"index": "win500", "src_unit_id": "AMC E 170#w2", "src_section_id": "AMC E 170", "dst_section_id": "AMC E 80", "ref_text": "AMC E 80", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 170#w2", "src_section_id": "AMC E 170", "dst_section_id": "CS-E 170", "ref_text": "CS-E 170", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 175#w1", "src_section_id": "CS-E 175", "dst_section_id": "CS-E 210", "ref_text": "CS-E 210", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 175#w1", "src_section_id": "CS-E 175", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 180#w1", "src_section_id": "CS-E 180", "dst_section_id": "AMC E 180", "ref_text": "AMC E 180", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 180#w1", "src_section_id": "CS-E 180", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 180#w1", "src_section_id": "CS-E 180", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 180#w1", "src_section_id": "CS-E 180", "dst_section_id": "CS-E 570", "ref_text": "CS-E 570(f)(3)(i)", "order": 3}
+{"index": "win500", "src_unit_id": "AMC E 180#w1", "src_section_id": "AMC E 180", "dst_section_id": "CS-E 180", "ref_text": "CS-E 180(b)(3)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 210#w1", "src_section_id": "CS-E 210", "dst_section_id": "AMC E 210", "ref_text": "AMC E 210", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 210#w1", "src_section_id": "AMC E 210", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 240#w1", "src_section_id": "CS-E 240", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40(d)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 300#w2", "src_section_id": "CS-E 300", "dst_section_id": "CS-E 350", "ref_text": "CS-E 350", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 300#w2", "src_section_id": "CS-E 300", "dst_section_id": "AMC E 300(f)", "ref_text": "AMC E 300(f)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 320#w1", "src_section_id": "CS-E 320", "dst_section_id": "AMC E 320", "ref_text": "AMC E 320", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 340#w1", "src_section_id": "CS-E 340", "dst_section_id": "AMC E 340", "ref_text": "AMC E 340", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 340#w2", "src_section_id": "CS-E 340", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 340#w1", "src_section_id": "AMC E 340", "dst_section_id": "CS-E 340", "ref_text": "CS-E 340", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 350#w1", "src_section_id": "CS-E 350", "dst_section_id": "AMC E 350", "ref_text": "AMC E 350", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 350#w1", "src_section_id": "CS-E 350", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 350#w1", "src_section_id": "AMC E 350", "dst_section_id": "CS-E 350", "ref_text": "CS-E 350(a)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 370#w1", "src_section_id": "CS-E 370", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 380#w1", "src_section_id": "CS-E 380", "dst_section_id": "AMC E 380", "ref_text": "AMC E 380", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 380#w1", "src_section_id": "CS-E 380", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(c)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 390#w1", "src_section_id": "CS-E 390", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 390#w1", "src_section_id": "CS-E 390", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40(h)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 400#w1", "src_section_id": "CS-E 400", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 440#w6", "src_section_id": "CS-E 440", "dst_section_id": "AMC E 440(b)(4)", "ref_text": "AMC E 440(b)(4)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 450#w1", "src_section_id": "CS-E 450", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 450#w1", "src_section_id": "CS-E 450", "dst_section_id": "CS-E 240", "ref_text": "CS-E 240(b)(1)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 460#w1", "src_section_id": "CS-E 460", "dst_section_id": "CS-E 440", "ref_text": "CS-E 440", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 470#w1", "src_section_id": "CS-E 470", "dst_section_id": "AMC E 470", "ref_text": "AMC E 470", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 470#w1", "src_section_id": "CS-E 470", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 470#w1", "src_section_id": "AMC E 470", "dst_section_id": "CS-E 470", "ref_text": "CS-E 470", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 500#w1", "src_section_id": "CS-E 500", "dst_section_id": "AMC E 500", "ref_text": "AMC E 500", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 500#w1", "src_section_id": "AMC E 500", "dst_section_id": "AMC E 700", "ref_text": "AMC E 700", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 510#w1", "src_section_id": "CS-E 510", "dst_section_id": "AMC E 510", "ref_text": "AMC E 510", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 510#w2", "src_section_id": "CS-E 510", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 510#w2", "src_section_id": "CS-E 510", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 510#w2", "src_section_id": "CS-E 510", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 510#w2", "src_section_id": "CS-E 510", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 3}
+{"index": "win500", "src_unit_id": "CS-E 510#w3", "src_section_id": "CS-E 510", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 510#w1", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 510#w2", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 510#w2", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 510#w2", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 510#w3", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 510#w3", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 510#w4", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 510#w4", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 510#w4", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 510#w4", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 850", "ref_text": "CS-E 850", "order": 3}
+{"index": "win500", "src_unit_id": "AMC E 510#w4", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 520", "ref_text": "CS-E 520(c)(1)", "order": 4}
+{"index": "win500", "src_unit_id": "AMC E 510#w5", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 510#w5", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 510#w5", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 510#w6", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 510#w7", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510(a)(4)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 510#w9", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510(b)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 510#w10", "src_section_id": "AMC E 510", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510(e)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 515#w1", "src_section_id": "CS-E 515", "dst_section_id": "AMC E 515", "ref_text": "AMC E 515", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 515#w1", "src_section_id": "CS-E 515", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 515#w1", "src_section_id": "CS-E 515", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(b)", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 515#w1", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510(c)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 515#w1", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 515#w9", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 515#w10", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510(a)(3)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 515#w13", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 515#w13", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 515#w15", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 515#w19", "src_section_id": "AMC E 515", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 520#w1", "src_section_id": "CS-E 520", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 520#w1", "src_section_id": "CS-E 520", "dst_section_id": "AMC E 520(a)", "ref_text": "AMC E 520(a)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 520#w1", "src_section_id": "CS-E 520", "dst_section_id": "AMC E 520(c)(1)", "ref_text": "AMC E 520(c)(1)", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 520#w1", "src_section_id": "CS-E 520", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810", "order": 3}
+{"index": "win500", "src_unit_id": "CS-E 520#w1", "src_section_id": "CS-E 520", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800", "order": 4}
+{"index": "win500", "src_unit_id": "CS-E 520#w1", "src_section_id": "CS-E 520", "dst_section_id": "AMC E 520(c)(2)", "ref_text": "AMC E 520", "order": 5}
+{"index": "win500", "src_unit_id": "CS-E 520#w1", "src_section_id": "CS-E 520", "dst_section_id": "AMC E 520(d)", "ref_text": "AMC E 520", "order": 6}
+{"index": "win500", "src_unit_id": "CS-E 520#w2", "src_section_id": "CS-E 520", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 520#w2", "src_section_id": "CS-E 520", "dst_section_id": "AMC E 520(a)", "ref_text": "AMC E 520", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 520#w2", "src_section_id": "CS-E 520", "dst_section_id": "AMC E 520(c)(1)", "ref_text": "AMC E 520", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 520#w2", "src_section_id": "CS-E 520", "dst_section_id": "AMC E 520(c)(2)", "ref_text": "AMC E 520", "order": 3}
+{"index": "win500", "src_unit_id": "CS-E 520#w2", "src_section_id": "CS-E 520", "dst_section_id": "AMC E 520(d)", "ref_text": "AMC E 520", "order": 4}
+{"index": "win500", "src_unit_id": "AMC E 520(c)(2)#w1", "src_section_id": "AMC E 520(c)(2)", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 520(c)(2)#w1", "src_section_id": "AMC E 520(c)(2)", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 520(c)(2)#w1", "src_section_id": "AMC E 520(c)(2)", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 520(c)(2)#w2", "src_section_id": "AMC E 520(c)(2)", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 520(c)(2)#w2", "src_section_id": "AMC E 520(c)(2)", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 520(d)#w1", "src_section_id": "AMC E 520(d)", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510(a)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 520(d)#w1", "src_section_id": "AMC E 520(d)", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 525#w1", "src_section_id": "CS-E 525", "dst_section_id": "AMC E 525", "ref_text": "AMC E 525", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 525#w1", "src_section_id": "CS-E 525", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 525#w1", "src_section_id": "AMC E 525", "dst_section_id": "CS-E 520", "ref_text": "CS-E 520(c)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 525#w1", "src_section_id": "AMC E 525", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 540#w1", "src_section_id": "CS-E 540", "dst_section_id": "AMC E 540", "ref_text": "AMC E 540", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 540#w1", "src_section_id": "CS-E 540", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510(g)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 540#w1", "src_section_id": "AMC E 540", "dst_section_id": "CS-E 540", "ref_text": "CS-E 540(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 540#w1", "src_section_id": "AMC E 540", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 540#w1", "src_section_id": "AMC E 540", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 540#w1", "src_section_id": "AMC E 540", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790", "order": 3}
+{"index": "win500", "src_unit_id": "CS-E 560#w1", "src_section_id": "CS-E 560", "dst_section_id": "AMC E 560", "ref_text": "AMC E 560", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 560#w1", "src_section_id": "CS-E 560", "dst_section_id": "CS-E 670", "ref_text": "CS-E 670", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 560#w2", "src_section_id": "CS-E 560", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 560#w1", "src_section_id": "AMC E 560", "dst_section_id": "CS-E 560", "ref_text": "CS-E 560(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 560#w1", "src_section_id": "AMC E 560", "dst_section_id": "CS-E 90", "ref_text": "CS-E 90", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 560#w1", "src_section_id": "AMC E 560", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30(a)", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 560#w1", "src_section_id": "AMC E 560", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 3}
+{"index": "win500", "src_unit_id": "AMC E 560#w2", "src_section_id": "AMC E 560", "dst_section_id": "CS-E 110", "ref_text": "CS-E 110(d)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 560#w2", "src_section_id": "AMC E 560", "dst_section_id": "CS-E 130", "ref_text": "CS-E 130(a)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 560#w2", "src_section_id": "AMC E 560", "dst_section_id": "CS-E 560", "ref_text": "CS-E 560(g)", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 570#w1", "src_section_id": "CS-E 570", "dst_section_id": "AMC E 570", "ref_text": "AMC E 570", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 570#w1", "src_section_id": "AMC E 570", "dst_section_id": "CS-E 570", "ref_text": "CS-E 570(a)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 570#w1", "src_section_id": "AMC E 570", "dst_section_id": "AMC E 130", "ref_text": "AMC E 130", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 600#w1", "src_section_id": "CS-E 600", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(f)(4)(i)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 600#w1", "src_section_id": "CS-E 600", "dst_section_id": "AMC E 600(e)", "ref_text": "AMC E 600(e)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 620#w1", "src_section_id": "CS-E 620", "dst_section_id": "AMC E 620", "ref_text": "AMC E 620", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 620#w1", "src_section_id": "AMC E 620", "dst_section_id": "CS-E 620", "ref_text": "CS-E 620", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 640#w1", "src_section_id": "CS-E 640", "dst_section_id": "AMC E 640", "ref_text": "AMC E 640", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 640#w1", "src_section_id": "AMC E 640", "dst_section_id": "CS-E 640", "ref_text": "CS-E 640(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 640#w2", "src_section_id": "AMC E 640", "dst_section_id": "CS-E 640", "ref_text": "CS-E 640(a)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 650#w1", "src_section_id": "CS-E 650", "dst_section_id": "AMC E 650", "ref_text": "AMC E 650", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 650#w2", "src_section_id": "CS-E 650", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 650#w2", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 70", "ref_text": "CS-E 70", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 650#w2", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 100", "ref_text": "CS-E 100", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 650#w3", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 650#w4", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650(b)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 650#w5", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 650#w6", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 650#w6", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 650#w6", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 650#w7", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650(g)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 650#w7", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 60", "ref_text": "CS-E 60", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 650#w7", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 650#w8", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650(g)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 650#w8", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 100", "ref_text": "CS-E 100", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 650#w9", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650(f)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 650#w10", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650(f)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 650#w11", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650(f)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 650#w12", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 650#w12", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 650#w16", "src_section_id": "AMC E 650", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650(b)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 660#w1", "src_section_id": "CS-E 660", "dst_section_id": "AMC E 660", "ref_text": "AMC E 660", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 670#w1", "src_section_id": "CS-E 670", "dst_section_id": "AMC E 670", "ref_text": "AMC E 670", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 670#w3", "src_section_id": "AMC E 670", "dst_section_id": "CS-E 670", "ref_text": "CS-E 670(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 670#w3", "src_section_id": "AMC E 670", "dst_section_id": "AMC E 560", "ref_text": "AMC E 560(4)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 680#w1", "src_section_id": "CS-E 680", "dst_section_id": "AMC E 680", "ref_text": "AMC E 680", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 690#w1", "src_section_id": "CS-E 690", "dst_section_id": "AMC E 690", "ref_text": "AMC E 690", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 690#w1", "src_section_id": "CS-E 690", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 690#w1", "src_section_id": "CS-E 690", "dst_section_id": "CS-E 730", "ref_text": "CS-E 730", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 690#w2", "src_section_id": "CS-E 690", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)(iii)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 690#w1", "src_section_id": "AMC E 690", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)(iii)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 700#w1", "src_section_id": "CS-E 700", "dst_section_id": "AMC E 700", "ref_text": "AMC E 700", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 700#w2", "src_section_id": "AMC E 700", "dst_section_id": "AMC E 500", "ref_text": "AMC E 500", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 700#w2", "src_section_id": "AMC E 700", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800(c)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 700#w2", "src_section_id": "AMC E 700", "dst_section_id": "CS-E 700", "ref_text": "CS-E 700", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 700#w2", "src_section_id": "AMC E 700", "dst_section_id": "CS-E 820", "ref_text": "CS-E 820", "order": 3}
+{"index": "win500", "src_unit_id": "AMC E 700#w2", "src_section_id": "AMC E 700", "dst_section_id": "CS-E 830", "ref_text": "CS-E 830", "order": 4}
+{"index": "win500", "src_unit_id": "AMC E 700#w2", "src_section_id": "AMC E 700", "dst_section_id": "CS-E 870", "ref_text": "CS-E 870", "order": 5}
+{"index": "win500", "src_unit_id": "CS-E 710#w1", "src_section_id": "CS-E 710", "dst_section_id": "AMC E 710", "ref_text": "AMC E 710", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 710#w1", "src_section_id": "AMC E 710", "dst_section_id": "CS-E 525", "ref_text": "CS-E 525", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 710#w1", "src_section_id": "AMC E 710", "dst_section_id": "CS-E 710", "ref_text": "CS-E 710", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 710#w1", "src_section_id": "AMC E 710", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 720#w1", "src_section_id": "CS-E 720", "dst_section_id": "AMC E 720(a)", "ref_text": "AMC E 720(a)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 730#w1", "src_section_id": "CS-E 730", "dst_section_id": "AMC E 730", "ref_text": "AMC E 730", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 730#w1", "src_section_id": "CS-E 730", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 730#w1", "src_section_id": "AMC E 730", "dst_section_id": "CS-E 730", "ref_text": "CS-E 730", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 730#w1", "src_section_id": "AMC E 730", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)(iii)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 740#w1", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 690", "ref_text": "CS-E 690(a)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 740#w1", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 750", "ref_text": "CS-E 750", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 740#w1", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 890", "ref_text": "CS-E 890", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 740#w1", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40", "order": 3}
+{"index": "win500", "src_unit_id": "CS-E 740#w2", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 740#w5", "src_section_id": "CS-E 740", "dst_section_id": "AMC E 740(c)(3)", "ref_text": "AMC E 740(c)(3)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 740#w9", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 170", "ref_text": "CS-E 170", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 740#w11", "src_section_id": "CS-E 740", "dst_section_id": "AMC E 740(c)(4)", "ref_text": "AMC E 740(c)(4)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 740#w12", "src_section_id": "CS-E 740", "dst_section_id": "AMC E 740(c)(4)", "ref_text": "AMC E 740(c)(4)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 740#w13", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 690", "ref_text": "CS-E 690(a)(3)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 740#w13", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 750", "ref_text": "CS-E 750", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 740#w14", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40(d)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 740#w15", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 690", "ref_text": "CS-E 690(a)(3)(ii)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 740#w15", "src_section_id": "CS-E 740", "dst_section_id": "AMC E 740(f)(1)", "ref_text": "AMC E 740(f)(1)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 740#w19", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 820", "ref_text": "CS-E 820", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 740#w19", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 830", "ref_text": "CS-E 830", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 740#w19", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 870", "ref_text": "CS-E 870", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 740#w20", "src_section_id": "CS-E 740", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 740#w21", "src_section_id": "CS-E 740", "dst_section_id": "AMC E 740(g)(1)", "ref_text": "AMC E 740(g)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 740#w21", "src_section_id": "CS-E 740", "dst_section_id": "AMC E 740(i)(2)", "ref_text": "AMC E 740(i)(2)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 740#w22", "src_section_id": "CS-E 740", "dst_section_id": "AMC E 740(i)(2)", "ref_text": "AMC E 740(i)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(c)(2)(i)#w1", "src_section_id": "AMC E 740(c)(2)(i)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(c)(2)(i)#w1", "src_section_id": "AMC E 740(c)(2)(i)", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30(a)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 740(c)(3)#w1", "src_section_id": "AMC E 740(c)(3)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(c)(3)#w1", "src_section_id": "AMC E 740(c)(3)", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50(j)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 740(c)(4)#w1", "src_section_id": "AMC E 740(c)(4)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(4)(iv)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(c)(4)#w2", "src_section_id": "AMC E 740(c)(4)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(4)(iv)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(c)(4)#w4", "src_section_id": "AMC E 740(c)(4)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(c)(4)#w5", "src_section_id": "AMC E 740(c)(4)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(c)(4)#w6", "src_section_id": "AMC E 740(c)(4)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(4)(vi)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(c)(4)#w6", "src_section_id": "AMC E 740(c)(4)", "dst_section_id": "CS-E 170", "ref_text": "CS-E 170", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 740(c)(4)#w7", "src_section_id": "AMC E 740(c)(4)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(4)(iv)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(c)(4)#w8", "src_section_id": "AMC E 740(c)(4)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(c)(4)#w11", "src_section_id": "AMC E 740(c)(4)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(f)(4)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(f)(1)#w1", "src_section_id": "AMC E 740(f)(1)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(f)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(f)(5)#w1", "src_section_id": "AMC E 740(f)(5)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(f)(4)(iii)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(f)(5)#w2", "src_section_id": "AMC E 740(f)(5)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(g)(1)#w1", "src_section_id": "AMC E 740(g)(1)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(g)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(g)(1)#w1", "src_section_id": "AMC E 740(g)(1)", "dst_section_id": "AMC E 650", "ref_text": "AMC E 650", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 740(i)(2)#w1", "src_section_id": "AMC E 740(i)(2)", "dst_section_id": "CS-E 150", "ref_text": "CS-E 150(b)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 740(i)(2)#w1", "src_section_id": "AMC E 740(i)(2)", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)(3)(iii)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 740(i)(2)#w1", "src_section_id": "AMC E 740(i)(2)", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(b)(2)", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 745#w1", "src_section_id": "CS-E 745", "dst_section_id": "AMC E 745", "ref_text": "AMC E 745", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 745#w1", "src_section_id": "AMC E 745", "dst_section_id": "CS-E 745", "ref_text": "CS-E 745", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 745#w1", "src_section_id": "AMC E 745", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 750#w1", "src_section_id": "CS-E 750", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 750#w1", "src_section_id": "CS-E 750", "dst_section_id": "AMC E 750(b)", "ref_text": "AMC E 750(b)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 750(b)#w1", "src_section_id": "AMC E 750(b)", "dst_section_id": "CS-E 750", "ref_text": "CS-E 750(b)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 770#w1", "src_section_id": "CS-E 770", "dst_section_id": "AMC E 770", "ref_text": "AMC E 770", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 770#w1", "src_section_id": "AMC E 770", "dst_section_id": "CS-E 770", "ref_text": "CS-E 770(b)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 780#w1", "src_section_id": "CS-E 780", "dst_section_id": "AMC E 780", "ref_text": "AMC E 780", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 780#w1", "src_section_id": "CS-E 780", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(b)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 780#w2", "src_section_id": "CS-E 780", "dst_section_id": "CS-E 540", "ref_text": "CS-E 540", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 780#w2", "src_section_id": "CS-E 780", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 780#w1", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 780#w5", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 780#w6", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780(b)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 780#w8", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 780#w10", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 780#w11", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 780#w15", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 780#w16", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 780#w19", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780(f)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 780#w20", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780(f)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 780#w22", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780(f)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 780#w26", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 780#w26", "src_section_id": "AMC E 780", "dst_section_id": "CS-E 780", "ref_text": "CS-E 780(f)(3)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 790#w2", "src_section_id": "CS-E 790", "dst_section_id": "AMC E 790(a)(2)", "ref_text": "AMC E 790(a)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 790#w1", "src_section_id": "AMC E 790", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790(a)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 790#w1", "src_section_id": "AMC E 790", "dst_section_id": "AMC E 790(a)(2)", "ref_text": "AMC E 790(a)(2)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 790(a)(1)#w1", "src_section_id": "AMC E 790(a)(1)", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790(a)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 790(a)(2)#w5", "src_section_id": "AMC E 790(a)(2)", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790(a)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 790(a)(2)#w9", "src_section_id": "AMC E 790(a)(2)", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790(a)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 790 Appendix A#w1", "src_section_id": "CS-E 790 Appendix A", "dst_section_id": "CS-E 790", "ref_text": "CS-E 790(a)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 800#w1", "src_section_id": "CS-E 800", "dst_section_id": "AMC E 800", "ref_text": "AMC E 800", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 800#w1", "src_section_id": "CS-E 800", "dst_section_id": "CS-E 540", "ref_text": "CS-E 540", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 800#w9", "src_section_id": "CS-E 800", "dst_section_id": "CS-E 540", "ref_text": "CS-E 540", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 800#w10", "src_section_id": "CS-E 800", "dst_section_id": "CS-E 540", "ref_text": "CS-E 540", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 800#w10", "src_section_id": "CS-E 800", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810(a)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 800#w11", "src_section_id": "CS-E 800", "dst_section_id": "CS-E 700", "ref_text": "CS-E 700", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 800#w1", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800(b)(1)(iii)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 800#w2", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800(g)(3)(ii)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 800#w3", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800(c)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 800#w3", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 540", "ref_text": "CS-E 540(b)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 800#w3", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 700", "ref_text": "CS-E 700", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 800#w4", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800(d)(1)(iii)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 800#w4", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 800#w5", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800(f)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 800#w6", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800(e)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 800#w7", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 800#w8", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800(d)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 800#w8", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 540", "ref_text": "CS-E 540(b)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 800#w9", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 800#w9", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 140", "ref_text": "CS-E 140", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 800#w10", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 800", "ref_text": "CS-E 800(g)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 800#w10", "src_section_id": "AMC E 800", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 810#w1", "src_section_id": "CS-E 810", "dst_section_id": "AMC E 810", "ref_text": "AMC E 810", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 810#w1", "src_section_id": "CS-E 810", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 810#w1", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 810#w1", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 810#w2", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 810#w2", "src_section_id": "AMC E 810", "dst_section_id": "AMC E 520(c)(1)", "ref_text": "AMC E 520(c)(1)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 810#w3", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(f)(5)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 810#w3", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 830", "ref_text": "CS-E 830", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 810#w3", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 870", "ref_text": "CS-E 870", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 810#w4", "src_section_id": "AMC E 810", "dst_section_id": "AMC E 510", "ref_text": "AMC E 510", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 810#w4", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 810#w4", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810(a)", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 810#w4", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 850", "ref_text": "CS-E 850(a)(1)", "order": 3}
+{"index": "win500", "src_unit_id": "AMC E 810#w4", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840(c)", "order": 4}
+{"index": "win500", "src_unit_id": "AMC E 810#w5", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 850", "ref_text": "CS-E 850(a)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 810#w5", "src_section_id": "AMC E 810", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840(c)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 820#w1", "src_section_id": "CS-E 820", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 820#w1", "src_section_id": "CS-E 820", "dst_section_id": "AMC E 820(a)(2)", "ref_text": "AMC E 820(a)(2)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 820(a)(2)#w1", "src_section_id": "AMC E 820(a)(2)", "dst_section_id": "CS-E 820", "ref_text": "CS-E 820(a)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 830#w1", "src_section_id": "CS-E 830", "dst_section_id": "AMC E 830(c)", "ref_text": "AMC E 830(c)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 830#w1", "src_section_id": "CS-E 830", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 830(c)#w1", "src_section_id": "AMC E 830(c)", "dst_section_id": "CS-E 830", "ref_text": "CS-E 830(c)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 840#w1", "src_section_id": "CS-E 840", "dst_section_id": "AMC E 840", "ref_text": "AMC E 840", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 840#w2", "src_section_id": "CS-E 840", "dst_section_id": "CS-E 850", "ref_text": "CS-E 850", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 840#w3", "src_section_id": "CS-E 840", "dst_section_id": "CS-E 100", "ref_text": "CS-E 100(b)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 840#w1", "src_section_id": "AMC E 840", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 840#w1", "src_section_id": "AMC E 840", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(f)(5)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 840#w2", "src_section_id": "AMC E 840", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 840#w3", "src_section_id": "AMC E 840", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840(d)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 840#w4", "src_section_id": "AMC E 840", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840(b)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 840#w5", "src_section_id": "AMC E 840", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 840#w6", "src_section_id": "AMC E 840", "dst_section_id": "CS-E 840", "ref_text": "CS-E 840(c)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 850#w1", "src_section_id": "CS-E 850", "dst_section_id": "AMC E 850", "ref_text": "AMC E 850", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 850#w1", "src_section_id": "CS-E 850", "dst_section_id": "CS-E 515", "ref_text": "CS-E 515", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 850#w1", "src_section_id": "CS-E 850", "dst_section_id": "CS-E 30", "ref_text": "CS-E 30", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 850#w1", "src_section_id": "AMC E 850", "dst_section_id": "CS-E 850", "ref_text": "CS-E 850", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 850#w1", "src_section_id": "AMC E 850", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 850#w1", "src_section_id": "AMC E 850", "dst_section_id": "CS-E 810", "ref_text": "CS-E 810(b)", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 850#w2", "src_section_id": "AMC E 850", "dst_section_id": "CS-E 850", "ref_text": "CS-E 850(b)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 850#w3", "src_section_id": "AMC E 850", "dst_section_id": "CS-E 850", "ref_text": "CS-E 850(a)(1)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 850#w4", "src_section_id": "AMC E 850", "dst_section_id": "CS-E 850", "ref_text": "CS-E 850(a)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 850#w4", "src_section_id": "AMC E 850", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 850#w5", "src_section_id": "AMC E 850", "dst_section_id": "CS-E 650", "ref_text": "CS-E 650", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 860#w1", "src_section_id": "CS-E 860", "dst_section_id": "CS-E 60", "ref_text": "CS-E 60(e)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 870#w1", "src_section_id": "CS-E 870", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 870#w1", "src_section_id": "CS-E 870", "dst_section_id": "AMC E 870(a)(3)", "ref_text": "AMC E 870(a)(3)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 870(a)(3)#w1", "src_section_id": "AMC E 870(a)(3)", "dst_section_id": "CS-E 870", "ref_text": "CS-E 870(a)(3)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 880#w1", "src_section_id": "CS-E 880", "dst_section_id": "CS-E 730", "ref_text": "CS-E 730", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 880#w1", "src_section_id": "CS-E 880", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 880#w1", "src_section_id": "CS-E 880", "dst_section_id": "CS-E 745", "ref_text": "CS-E 745", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 880#w1", "src_section_id": "CS-E 880", "dst_section_id": "CS-E 830", "ref_text": "CS-E 830", "order": 3}
+{"index": "win500", "src_unit_id": "CS-E 880#w2", "src_section_id": "CS-E 880", "dst_section_id": "CS-E 730", "ref_text": "CS-E 730", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 880#w2", "src_section_id": "CS-E 880", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(c)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 880#w2", "src_section_id": "CS-E 880", "dst_section_id": "CS-E 745", "ref_text": "CS-E 745", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 880#w2", "src_section_id": "CS-E 880", "dst_section_id": "CS-E 830", "ref_text": "CS-E 830", "order": 3}
+{"index": "win500", "src_unit_id": "CS-E 890#w1", "src_section_id": "CS-E 890", "dst_section_id": "AMC E 890", "ref_text": "AMC E 890", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 890#w1", "src_section_id": "CS-E 890", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 890#w2", "src_section_id": "CS-E 890", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740(i)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 890#w1", "src_section_id": "AMC E 890", "dst_section_id": "CS-E 890", "ref_text": "CS-E 890(g)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 890#w1", "src_section_id": "AMC E 890", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 890#w2", "src_section_id": "AMC E 890", "dst_section_id": "CS-E 890", "ref_text": "CS-E 890(d)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 890#w2", "src_section_id": "AMC E 890", "dst_section_id": "CS-E 740", "ref_text": "CS-E 740", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 910#w1", "src_section_id": "AMC E 910", "dst_section_id": "CS-E 910", "ref_text": "CS-E 910", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 920#w1", "src_section_id": "CS-E 920", "dst_section_id": "AMC E 920", "ref_text": "AMC E 920", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 920#w1", "src_section_id": "AMC E 920", "dst_section_id": "CS-E 920", "ref_text": "CS-E 920(b)", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 930#w1", "src_section_id": "CS-E 930", "dst_section_id": "AMC E 930", "ref_text": "AMC E 930", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 930#w1", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 930#w1", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 930", "ref_text": "CS-E 930", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 930#w2", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 930", "ref_text": "CS-E 930", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 930#w4", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 930", "ref_text": "CS-E 930", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 930#w4", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 80", "ref_text": "CS-E 80(b)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 930#w5", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 930", "ref_text": "CS-E 930", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 930#w5", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 930#w6", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(b)(2)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 930#w7", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 930", "ref_text": "CS-E 930", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 930#w7", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 1040", "ref_text": "CS-E 1040", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 930#w8", "src_section_id": "AMC E 930", "dst_section_id": "CS-E 930", "ref_text": "CS-E 930", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 1000#w1", "src_section_id": "CS-E 1000", "dst_section_id": "AMC E 1000", "ref_text": "AMC E 1000", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 1000#w1", "src_section_id": "CS-E 1000", "dst_section_id": "CS-E 1030", "ref_text": "CS-E 1030", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 1000#w1", "src_section_id": "CS-E 1000", "dst_section_id": "CS-E 1040", "ref_text": "CS-E 1040", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 1030#w1", "src_section_id": "CS-E 1030", "dst_section_id": "AMC E 1030", "ref_text": "AMC E 1030", "order": 0}
+{"index": "win500", "src_unit_id": "CS-E 1030#w1", "src_section_id": "CS-E 1030", "dst_section_id": "CS-E 500", "ref_text": "CS-E 500(a)", "order": 1}
+{"index": "win500", "src_unit_id": "CS-E 1030#w1", "src_section_id": "CS-E 1030", "dst_section_id": "CS-E 750", "ref_text": "CS-E 750", "order": 2}
+{"index": "win500", "src_unit_id": "CS-E 1030#w1", "src_section_id": "CS-E 1030", "dst_section_id": "CS-E 745", "ref_text": "CS-E 745", "order": 3}
+{"index": "win500", "src_unit_id": "CS-E 1030#w1", "src_section_id": "CS-E 1030", "dst_section_id": "CS-E 910", "ref_text": "CS-E 910", "order": 4}
+{"index": "win500", "src_unit_id": "CS-E 1030#w1", "src_section_id": "CS-E 1030", "dst_section_id": "CS-E 510", "ref_text": "CS-E 510", "order": 5}
+{"index": "win500", "src_unit_id": "CS-E 1030#w1", "src_section_id": "CS-E 1030", "dst_section_id": "CS-E 50", "ref_text": "CS-E 50", "order": 6}
+{"index": "win500", "src_unit_id": "AMC E 1030#w1", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 15", "ref_text": "CS-E 15", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 1030#w3", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 1030", "ref_text": "CS-E 1030(b)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 1030#w4", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 1030", "ref_text": "CS-E 1030(b)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 1030#w6", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 1030", "ref_text": "CS-E 1030(b)(7)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 1030#w7", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 1030", "ref_text": "CS-E 1030(b)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 1030#w8", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 20", "ref_text": "CS-E 20(d)", "order": 0}
+{"index": "win500", "src_unit_id": "AMC E 1030#w8", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 25", "ref_text": "CS-E 25(a)", "order": 1}
+{"index": "win500", "src_unit_id": "AMC E 1030#w8", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 40", "ref_text": "CS-E 40(d)", "order": 2}
+{"index": "win500", "src_unit_id": "AMC E 1030#w8", "src_section_id": "AMC E 1030", "dst_section_id": "CS-E 1030", "ref_text": "CS-E 1030(e)", "order": 3}
+{"index": "win500", "src_unit_id": "CS-E 1050#w1", "src_section_id": "CS-E 1050", "dst_section_id": "AMC E 1050", "ref_text": "AMC E 1050", "order": 0}
