@@ -12,6 +12,8 @@ A research project. It has two parts:
 
 `ignore_this_pdf.pdf` is unrelated; ignore it.
 
+To add more documents (e.g. CS-27) or update stored ones for production, follow `adding_new_docs.md`. Never write to the experiment collections `cse_units_v1` / `cse_win500_v1`.
+
 ## Commands
 
 ```bash
