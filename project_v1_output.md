@@ -4,6 +4,72 @@
 
 **How this document relates to the plan:** `plan.md` says no run is selected as "the winner". The RQ sections below keep to that. They report each pre-declared test and name the leading option as a description only. Section 10, "Combinations to use in real projects", is a separate engineering decision made after seeing the results. It should not be presented as a pre-declared finding.
 
+## 0. Terms
+
+### Single-signal baselines (RQ1)
+| id | method | Qdrant mechanism |
+|---|---|---|
+| L1 | BM25 | `query(bm25 sparse)` |
+| S1 | bge-m3 learned sparse | `query(bge_sparse)` |
+| D1 | bge-m3 dense | `query(dense)` |
+| C1 | ColBERT MaxSim over all units | exact MaxSim over every unit's full ColBERT vectors, client-side (Qdrant's multivector cap, section 3.5) |
+
+### Hybrid and multi-stage (RQ2)
+| id | method |
+|---|---|
+| H1 | BM25 + dense: each top-50 → gate A → **RRF** |
+| H2 | BM25 + bge-sparse + dense: each top-50 → gate A → RRF (three-way) |
+| M1 | dense top-50 → gate A → **ColBERT rerank** of the kept hits (exact MaxSim over their full ColBERT vectors, client-side; section 3.5) → gate B |
+
+### Metadata and structure (RQ5), on top of H1
+| id | method |
+|---|---|
+| F0 | **oracle filter**: the same filter as F1, but built from the question's `engine_type` label instead of the LLM. `piston` / `turbine` → `engine_type ∈ {label, all}`; `all` → no filter. It is the upper bound for F1, and the only method that reads a label. |
+| F1 | **LLM-extracted filter**: Qwen returns JSON (schema `{engine_type: "piston" \| "turbine" \| null}`), and the filter becomes `engine_type ∈ {extracted, all}`; `null` means no filter. The filter is applied inside each signal's Qdrant search, before gate A. |
+| T1 | **id lookup**: a regex finds "CS-E 740", "AMC E 20(f)" in the question text; that section's units or windows go first, then H1's results |
+
+### Query-side LLM methods (RQ4; cached in `data/cache/llm.jsonl`)
+| id | method |
+|---|---|
+| Q1 | **HyDE**: Qwen writes one hypothetical CS/AMC-style passage that answers the question. The dense query vector is the normalised mean of the question's and the passage's embeddings. Dense search → gate A; compared with D1. |
+| Q2 | **keyword expansion for BM25**: Qwen lists regulation-style terms for the question (e.g. "flame out" → "flame-out, relight"). BM25 runs on the question plus these terms, so no original word is lost → gate A; compared with L1. |
+
+### Rerankers (RQ3), on H1's fused list
+| id | method |
+|---|---|
+| X1 | **bge-reranker-v2-m3**: pointwise cross-encoder, `encoder-gpu` (phase A) → gate B |
+| X2 | **jina-reranker-v3**: listwise (the query and all candidates in one context), `encoder-gpu` (phase A) → gate B |
+
+### Expansion: fixed rules and agent (RQ6), on H1
+| id | method |
+|---|---|
+| T0 | **no expansion**: H1's units or windows in rank order, overlapping windows merged, cut to the token budget (the reference point for every expansion method) |
+| T2 | **fixed parent expansion** (small-to-big, baseline): H1's hits in rank order → their sections (or groups), deduplicated, until the token budget is full. For windows this is the classic small-to-big. |
+| T3 | **fixed cross-reference following** (baseline): H1's hits in rank order, each followed by the sections it references (in order of mention), until the token budget is full. It always includes the AMCs of a retrieved CS. |
+| T2+T3 | both fixed rules together, under the same token budget |
+| T4 | **agentic small-to-big** (single question, step limit, token budget). It starts from H1's hits, not from an empty context. Qwen gets the tools `expand(unit_id, to="section"\|"group")`, `follow_refs(unit_id)`, `search(query)` and `done(evidence_ids)`. It decides per question whether the hits are already enough (it calls `done` straight away), or whether to expand, follow a reference or search again. `search` uses H1 with the run's gate. Every step is logged with its decision, tool and arguments, and the tokens added. |
+
+### Everything in a single list
+| L1 | BM25 |
+| S1 | bge-m3 learned sparse |
+| D1 | bge-m3 dense |
+| C1 | ColBERT MaxSim over all units |
+| H1 | BM25 + dense: each top-50 → gate A → **RRF** |
+| H2 | BM25 + bge-sparse + dense: each top-50 → gate A → RRF (three-way) |
+| M1 | dense top-50 → gate A → **ColBERT rerank** of the kept hits  → gate B |
+| F0 | **oracle filter**: same filter as F1, built from the question's `engine_type` instead of LLM. |
+| F1 | **LLM-extracted filter**: Qwen returns JSON|
+| T1 | **id lookup**: a regex finds "CS-E 740" in qst text, units or windows go first, then H1's results |
+| Q1 | **HyDE**: Qwen writes one hypothetical passage |
+| Q2 | **keyword expansion for BM25**: Qwen lists regulation-style terms |
+| X1 | **bge-reranker-v2-m3**: pointwise cross-encoder,|
+| X2 | **jina-reranker-v3**: listwise |
+| T0 | **no expansion**: H1's units or windows in rank order |
+| T2 | **fixed parent expansion** (small-to-big, baseline) |
+| T3 | **fixed cross-reference following** (baseline):  |
+| T2+T3 | both fixed rules together |
+| T4 | **agentic small-to-big** (single question, step limit, token budget). |
+
 ## 1. Summary
 
 | RQ | Question | Short answer | Leading option | Pre-declared tests (Holm-corrected) |
