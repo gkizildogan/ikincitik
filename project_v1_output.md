@@ -50,6 +50,8 @@
 | T4 | **agentic small-to-big** (single question, step limit, token budget). It starts from H1's hits, not from an empty context. Qwen gets the tools `expand(unit_id, to="section"\|"group")`, `follow_refs(unit_id)`, `search(query)` and `done(evidence_ids)`. It decides per question whether the hits are already enough (it calls `done` straight away), or whether to expand, follow a reference or search again. `search` uses H1 with the run's gate. Every step is logged with its decision, tool and arguments, and the tokens added. |
 
 ### Everything in a single list
+| id | method |
+|---|---|
 | L1 | BM25 |
 | S1 | bge-m3 learned sparse |
 | D1 | bge-m3 dense |
