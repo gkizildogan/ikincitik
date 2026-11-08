@@ -99,6 +99,7 @@ The code lives in `src/`; the notebooks only call it and expose the parameters.
 | `retrievers/agentic.py` | T4: the agent with `expand`, `follow_refs`, `search` and `done`, one JSON-schema LLM call per step |
 | `evaluate.py` | question validation, span-based qrels, metrics (incl. evidence recall, gate diagnostics, supporting recall, all-gold), bootstrap CIs, randomisation tests, Holm |
 | `report.py` | per-index `metrics.csv`/`metrics.xlsx`, `granularity.csv`, Mermaid pipeline diagrams |
+| `qgen.py` | question set 2: `fill` (derived fields), `check` (schema, verbatim quotes, family rules, twin table), `pool` (candidates for the single-source judge: BM25 over sections plus structure), `stats`, `overlap`, `refs`; needs no services or tokenizer |
 
 ## Indexes (Qdrant)
 
@@ -127,6 +128,8 @@ Named vectors: `dense` (1024, Cosine), `colbert` (multivector, MAX_SIM, float16,
 | `cross_refs.jsonl` | `index, src_unit_id, src_section_id, dst_section_id, ref_text, order` | 04 | yes (deterministic) |
 | `eval/questions.jsonl` | 100 questions (92 answerable, 8 unanswerable); see `eval/README.md` | – | yes |
 | `eval/qrels.jsonl` | span-based qrels: unit level per index, section and group level | 06 | yes (deterministic) |
+| `eval/specs/` | generation specs for question set 2 (four families, all answerable): rules, record format, judge checks, freeze procedure | – | yes |
+| `eval/set2/` | question set 2, one file per family, plus `pools/` for the single-source check; written from `eval/specs/`, checked with `csrag.qgen` | – | yes |
 | `embeddings/` | `<collection>.{npz,jsonl}` corpus vectors and `queries_*.npz` query vectors | 04, 08 | no (gitignored, large; regenerable with the encoder) |
 | `cache/` | `llm.jsonl` (every LLM output), `search.jsonl` (each signal's top-50), `rerank_bge.jsonl`, `rerank_jina.jsonl` | 07, 08 | yes (the LLM outputs make reruns exact) |
 

@@ -41,3 +41,12 @@
 - **Types:** factual 31, numeric 26, procedural 15, list 14, definition 4, rationale 2, unanswerable 8.
 - **Engine:** turbine 50, all 26, piston 24.
 - **Difficulty:** easy 30, medium 56, hard 14.
+
+## Set 2 (in preparation)
+A second, harder question set, all answerable, is being written into `set2/` from the generation specs in `specs/`. It has four families:
+- paraphrases of the 92 answerable questions;
+- section-id queries;
+- piston/turbine twin pairs;
+- multi-section questions.
+
+`specs/README.md` has the shared rules, the record format, the judge checks and the freeze procedure. `src/csrag/qgen.py` checks the files (`uv run python -m csrag.qgen check data/eval/set2/<family>.jsonl`). v1 above is unchanged.
