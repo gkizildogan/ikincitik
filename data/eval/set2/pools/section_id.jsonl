@@ -1,0 +1,50 @@
+{"question_id": "id001", "candidates": ["CS-E 10", "AMC E 10(b)", "CS-E 20", "AMC E 60", "CS-E 500", "CS-E 510", "AMC E 510", "CS-E 650", "CS-E 890"], "n_chars": 44107}
+{"question_id": "id002", "candidates": ["CS-E 20", "AMC E 20", "AMC E 20(f)", "CS-E 25", "CS-E 50", "AMC E 50(j)", "AMC E 60(d)", "CS-E 510", "CS-E 780"], "n_chars": 36027}
+{"question_id": "id003", "candidates": ["AMC E 25", "AMC E 30", "AMC E 40(b)(3) and (b)(4)", "CS-E 50", "AMC E 50", "CS-E 60", "AMC E 60", "AMC E 60(d)", "CS-E 820"], "n_chars": 47285}
+{"question_id": "id004", "candidates": ["AMC E 30", "CS-E 520", "CS-E 540", "AMC E 540", "CS-E 700", "AMC E 700", "CS-E 800", "AMC E 800", "CS-E 810"], "n_chars": 51370}
+{"question_id": "id005", "candidates": ["AMC E 130", "CS-E 135", "AMC E 135", "AMC E 300(f)", "AMC E 740(c)(2)(i)", "AMC E 740(c)(4)"], "n_chars": 50224}
+{"question_id": "id006", "candidates": ["CS-E 15", "CS-E 25", "CS-E 40", "AMC E 40(d)", "CS-E 50", "AMC E 60(d)", "AMC E 1000", "CS-E 1030", "AMC E 1030"], "n_chars": 50960}
+{"question_id": "id007", "candidates": ["AMC E 20", "CS-E 50", "AMC E 50", "AMC E 50(e)", "AMC E 50(j)", "AMC to CS-E 50(l)", "CS-E 80", "CS-E 110", "CS-E 170", "CS-E 340", "CS-E 440", "CS-E 520", "CS-E 560"], "n_chars": 44689}
+{"question_id": "id008", "candidates": ["CS-E 50", "AMC E 50", "AMC E 130", "CS-E 170", "AMC E 170", "CS-E 440", "CS-E 740", "AMC E 740(c)(4)", "AMC E 740(f)(5)"], "n_chars": 117036}
+{"question_id": "id009", "candidates": ["CS-E 25", "AMC E 25", "AMC E 40(b)(3) and (b)(4)", "AMC E 130", "CS-E 440", "AMC E 515", "CS-E 740", "CS-E 930", "AMC E 930"], "n_chars": 151620}
+{"question_id": "id010", "candidates": ["AMC E 25", "AMC E 40(b)(3) and (b)(4)", "AMC E 40(d)", "CS-E 740", "AMC E 740(c)(2)(i)", "AMC E 740(c)(3)", "AMC E 740(c)(4)", "AMC E 740(f)(1)", "AMC E 740(f)(5)", "AMC E 740(g)(1)", "AMC E 740(i)(2)"], "n_chars": 98977}
+{"question_id": "id011", "candidates": ["CS-E 50", "AMC E 50", "AMC E 50(e)", "AMC E 50(j)", "AMC to CS-E 50(l)", "CS-E 110", "CS-E 510", "AMC E 510", "CS-E 650", "CS-E 790 Appendix A"], "n_chars": 54267}
+{"question_id": "id012", "candidates": ["CS-E 30", "AMC E 30", "AMC E 80", "CS-E 130", "AMC E 130", "CS-E 340", "CS-E 510", "AMC E 740(c)(4)"], "n_chars": 80405}
+{"question_id": "id013", "candidates": ["CS-E 140", "AMC E 140", "CS-E 150", "CS-E 180", "AMC E 350", "CS-E 590", "CS-E 740", "AMC E 790(a)(1)", "AMC E 930"], "n_chars": 64679}
+{"question_id": "id014", "candidates": ["CS-E 300", "AMC E 300(f)", "CS-E 350", "CS-E 510", "AMC E 670", "CS-E 790 Appendix A", "AMC E 1030"], "n_chars": 37506}
+{"question_id": "id015", "candidates": ["AMC E 30", "CS-E 340", "AMC E 340", "CS-E 440", "CS-E 510", "AMC E 510", "CS-E 650"], "n_chars": 53695}
+{"question_id": "id016", "candidates": ["CS-E 25", "CS-E 30", "CS-E 510", "AMC E 510", "CS-E 515", "CS-E 525", "CS-E 650", "AMC E 710", "CS-E 810"], "n_chars": 43600}
+{"question_id": "id017", "candidates": ["AMC E 30", "AMC E 130", "CS-E 180", "CS-E 570", "AMC E 570", "AMC E 1030"], "n_chars": 53371}
+{"question_id": "id018", "candidates": ["CS-E 20", "AMC E 30", "CS-E 510", "AMC E 510", "AMC E 515", "CS-E 650", "AMC E 650", "AMC E 740(c)(4)", "AMC E 850", "AMC E 1030"], "n_chars": 167773}
+{"question_id": "id019", "candidates": ["AMC E 10(b)", "CS-E 510", "CS-E 650", "CS-E 740", "CS-E 870", "CS-E 890", "AMC E 890"], "n_chars": 57694}
+{"question_id": "id020", "candidates": ["CS-E 30", "CS-E 90", "CS-E 130", "CS-E 140", "CS-E 510", "AMC E 510", "CS-E 560", "AMC E 560", "CS-E 650"], "n_chars": 48143}
+{"question_id": "id021", "candidates": ["CS-E 20", "AMC E 20", "AMC E 20(f)", "CS-E 30", "CS-E 50", "CS-E 80", "CS-E 160", "AMC E 740(c)(4)", "AMC E 800"], "n_chars": 64374}
+{"question_id": "id022", "candidates": ["AMC E 10(b)", "CS-E 15", "CS-E 20", "CS-E 30", "AMC E 30", "AMC E 210", "CS-E 510", "AMC E 510"], "n_chars": 46396}
+{"question_id": "id023", "candidates": ["CS-E 40", "AMC E 130", "CS-E 240", "AMC E 240", "CS-E 360", "CS-E 450", "AMC E 1030"], "n_chars": 46614}
+{"question_id": "id024", "candidates": ["CS-E 250", "CS-E 270", "CS-E 470", "CS-E 560", "AMC E 560", "CS-E 570"], "n_chars": 15199}
+{"question_id": "id025", "candidates": ["CS-E 20", "CS-E 25", "CS-E 80", "AMC E 80", "AMC E 650", "AMC E 740(c)(4)", "AMC E 810", "CS-E 930", "AMC E 930"], "n_chars": 108752}
+{"question_id": "id026", "candidates": ["CS-E 20", "AMC E 30", "AMC E 40(d)", "CS-E 380", "AMC E 380", "AMC E 650", "CS-E 770"], "n_chars": 46466}
+{"question_id": "id027", "candidates": ["AMC E 130", "CS-E 520", "AMC E 520(a)", "AMC E 520(c)(1)", "AMC E 520(c)(2)", "AMC E 520(d)", "AMC E 850"], "n_chars": 36066}
+{"question_id": "id028", "candidates": ["CS-E 510", "CS-E 540", "AMC E 540", "CS-E 570", "CS-E 580", "CS-E 790", "CS-E 800", "AMC E 800"], "n_chars": 55968}
+{"question_id": "id029", "candidates": ["CS-E 440", "CS-E 690", "AMC E 690", "CS-E 730", "CS-E 740", "AMC E 740(c)(4)", "CS-E 820"], "n_chars": 82074}
+{"question_id": "id030", "candidates": ["AMC E 30", "CS-E 50", "CS-E 745", "AMC E 745", "CS-E 800", "CS-E 880", "CS-E 1030"], "n_chars": 39085}
+{"question_id": "id031", "candidates": ["CS-E 510", "AMC E 510", "AMC E 520(c)(2)", "AMC E 800", "CS-E 810", "AMC E 810", "AMC E 850"], "n_chars": 71263}
+{"question_id": "id032", "candidates": ["CS-E 50", "CS-E 500", "CS-E 510", "AMC E 520(c)(2)", "CS-E 745", "CS-E 1000", "AMC E 1000", "CS-E 1030", "AMC E 1030"], "n_chars": 41959}
+{"question_id": "id033", "candidates": ["CS-E 30", "AMC E 30", "CS-E 230", "CS-E 470", "AMC E 470", "CS-E 560", "AMC E 560"], "n_chars": 13502}
+{"question_id": "id034", "candidates": ["CS-E 240", "AMC E 700", "CS-E 780", "AMC E 780", "CS-E 910", "AMC E 910"], "n_chars": 60499}
+{"question_id": "id035", "candidates": ["AMC E 40(d)", "AMC E 700", "CS-E 740", "AMC E 810", "CS-E 830", "AMC E 830(c)", "CS-E 880", "CS-E 890"], "n_chars": 65339}
+{"question_id": "id036", "candidates": ["CS-E 740", "CS-E 820", "CS-E 830", "CS-E 920", "AMC E 920", "AMC E 1030"], "n_chars": 65367}
+{"question_id": "id037", "candidates": ["AMC E 40", "CS-E 350", "AMC E 350", "CS-E 690", "CS-E 730", "AMC E 730", "CS-E 740", "CS-E 880"], "n_chars": 49409}
+{"question_id": "id038", "candidates": ["AMC E 30", "CS-E 50", "CS-E 175", "CS-E 210", "AMC E 210", "CS-E 860"], "n_chars": 14874}
+{"question_id": "id039", "candidates": ["CS-E 440", "AMC E 440(b)(4)", "AMC E 640", "AMC E 780", "CS-E 790", "CS-E 790 Appendix A"], "n_chars": 73625}
+{"question_id": "id040", "candidates": ["CS-E 15", "AMC E 60", "AMC E 80", "CS-E 640", "AMC E 640", "AMC E 810"], "n_chars": 37881}
+{"question_id": "id041", "candidates": ["AMC E 80", "CS-E 650", "AMC E 650", "AMC E 780", "CS-E 1050", "AMC E 1050"], "n_chars": 103669}
+{"question_id": "id042", "candidates": ["AMC E 70", "CS-E 510", "CS-E 515", "AMC E 515", "CS-E 520", "AMC E 520(a)", "AMC E 520(c)(1)", "AMC E 520(c)(2)", "AMC E 520(d)", "CS-E 840", "AMC E 840"], "n_chars": 77096}
+{"question_id": "id043", "candidates": ["CS-E 20", "AMC E 30", "CS-E 175", "CS-E 520", "CS-E 525", "AMC E 525", "AMC E 710", "CS-E 780"], "n_chars": 16433}
+{"question_id": "id044", "candidates": ["CS-E 330", "AMC E 500", "CS-E 700", "AMC E 700", "CS-E 800", "AMC E 800", "AMC E 810", "CS-E 830", "AMC E 1030"], "n_chars": 74044}
+{"question_id": "id045", "candidates": ["AMC E 20(f)", "CS-E 50", "AMC E 50", "AMC E 50(e)", "AMC E 50(j)", "AMC to CS-E 50(l)", "AMC E 130"], "n_chars": 40963}
+{"question_id": "id046", "candidates": ["AMC E 520(c)(1)", "AMC E 570", "CS-E 740", "CS-E 750", "AMC E 750(b)", "CS-E 1030"], "n_chars": 45318}
+{"question_id": "id047", "candidates": ["AMC E 40", "CS-E 300", "CS-E 350", "AMC E 350", "CS-E 730", "AMC E 730"], "n_chars": 6088}
+{"question_id": "id048", "candidates": ["AMC E 70", "CS-E 320", "AMC E 320", "AMC E 515", "AMC E 650", "AMC E 740(c)(4)"], "n_chars": 107324}
+{"question_id": "id049", "candidates": ["AMC E 130", "CS-E 240", "AMC E 240", "CS-E 450", "CS-E 720", "AMC E 930"], "n_chars": 39578}
+{"question_id": "id050", "candidates": ["AMC E 30", "AMC E 70", "CS-E 640", "AMC E 640", "CS-E 680", "AMC E 680"], "n_chars": 16237}
