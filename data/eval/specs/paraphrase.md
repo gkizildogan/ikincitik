@@ -4,7 +4,7 @@ Read `README.md` in this folder first; its rules apply here too.
 
 **What it measures:** how each method copes when the wording moves away from the regulation's, with the gold held fixed. Each paraphrase is paired with its v1 original, so the analysis can compare a method's rank of the same gold on the original and on the paraphrase. Only the wording changes between the two.
 
-**Size:** 184 records, two for each answerable v1 question (`q001`–`q092`), one per level.
+**Size:** 177 records, two for each answerable v1 question (`q001`–`q092`), one per level.
 
 **Ids:** `pa<NNN><level>`, where `NNN` is the v1 number and the level is `h` (heavy) or `u` (user_voice). For example, `pa071h` is the heavy paraphrase of `q071`.
 

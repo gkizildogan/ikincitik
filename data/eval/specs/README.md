@@ -11,12 +11,12 @@ Set 2 is written in four families. Each has its own spec; this file holds what t
 
 | family | file | spec | questions | what it measures |
 |---|---|---|---|---|
-| paraphrase | `set2/paraphrase.jsonl` | `paraphrase.md` | 184 (2 per answerable v1 question) | sensitivity to wording with the gold held fixed: BM25 vs dense and ColBERT, HyDE (Q1), keyword expansion (Q2), rerankers (RQ1, RQ3, RQ4) |
+| paraphrase | `set2/paraphrase.jsonl` | `paraphrase.md` | 177 (2 per answerable v1 question) | sensitivity to wording with the gold held fixed: BM25 vs dense and ColBERT, HyDE (Q1), keyword expansion (Q2), rerankers (RQ1, RQ3, RQ4) |
 | section_id | `set2/section_id.jsonl` | `section_id.md` | 50 | id lookup (T1), and how BM25 and dense handle id queries (RQ5) |
 | twin_topic | `set2/twin_topic.jsonl` | `twin_topic.md` | 60 (30 piston/turbine pairs) | engine-type filtering: F1 vs F0 vs H1, BM25 vs dense on near-identical texts (RQ5) |
 | multi_section | `set2/multi_section.jsonl` | `multi_section.md` | 90 | expansion T2, T3, T2+T3 and the agent T4; supporting recall and all-gold metrics (RQ6) |
 
-That is 384 questions in total.
+That is 377 questions in total.
 
 ## Rules for every family
 
