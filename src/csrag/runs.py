@@ -6,9 +6,11 @@ Caches (``data/cache/``, reused across runs; append-only JSONL, last write wins)
   rerank_bge.jsonl   (query_hash, unit_id) -> score            (pointwise)
   rerank_jina.jsonl  (query_hash, hash of ordered candidates) -> scores (listwise)
 
-Run records (``results/runs/<run_id>/``):
+Run records (``results/<experiment>/runs/<run_id>/``; the folder comes from the
+active experiment, see ``experiment.py``):
   config.json     retriever id, index, gate, full config, config_hash, params_version,
-                  corpus_version, model revisions from /health, start time, notes
+                  corpus_version, model revisions from /health, start time, notes,
+                  n_questions and questions_hash (the question set the run was made with)
   hits.parquet    question_id, rank, unit_id, section_id, score, stage, hop, n_tokens, in_context,
                   source (the hop-0 unit a hop-1 item was reached from)
   stats.jsonl     per question: latency by component, LLM tokens, context tokens, gate trace
@@ -25,8 +27,9 @@ import threading
 from pathlib import Path
 from typing import Callable, Iterable
 
+from . import experiment
+
 CACHE_DIR = Path(os.environ.get("CSRAG_CACHE_DIR", "data/cache"))
-RUNS_DIR = Path(os.environ.get("CSRAG_RUNS_DIR", "results/runs"))
 
 HIT_COLUMNS = ["question_id", "rank", "unit_id", "section_id", "score", "stage", "hop", "n_tokens", "in_context", "source"]
 
@@ -96,13 +99,35 @@ def run_id_of(cfg: dict) -> str:
     return "-".join(parts).replace("+", "")
 
 
+def runs_root(root: str | Path | None = None) -> Path:
+    """``root`` if given, else the active experiment's ``results/<name>/runs``."""
+    return Path(root) if root else experiment.active().runs_dir
+
+
 def run_dir(run_id: str, root: str | Path | None = None) -> Path:
-    return (Path(root) if root else RUNS_DIR) / run_id
+    return runs_root(root) / run_id
 
 
 def is_complete(run_id: str, root: str | Path | None = None) -> bool:
     d = run_dir(run_id, root)
     return (d / "hits.parquet").is_file() and (d / "config.json").is_file()
+
+
+def questions_hash(questions: Iterable[dict]) -> str:
+    """Identity of a question set: ids and texts, in order."""
+    return sha([[q["question_id"], q["question"]] for q in questions], 12)
+
+
+def same_questions(run_id: str, questions: list[dict], root: str | Path | None = None) -> bool:
+    """Was this completed run made with exactly these questions?
+
+    Run ids do not depend on the questions, so this is what keeps one question
+    set's results from being read as another's.
+    """
+    c = load_config(run_id, root)
+    if "questions_hash" in c:
+        return c["questions_hash"] == questions_hash(questions)
+    return c.get("n_questions") == len(questions)  # records written before questions_hash existed
 
 
 def execute(
@@ -118,13 +143,21 @@ def execute(
 
     ``retrieve(question_id, text) -> (hits, stats, trace)``. Questions already in
     ``partial.jsonl`` are skipped, so an interrupted run resumes; the caches make
-    a full re-run cheap as well.
+    a full re-run cheap as well. A completed run is returned as it is, unless it
+    was made with a different question set: that is an error, not a skip.
     """
     import pandas as pd
 
     rid = run_id_of(cfg)
     d = run_dir(rid, root)
+    qs = list(questions)
     if is_complete(rid, root) and not force:
+        if not same_questions(rid, qs, root):
+            raise RuntimeError(
+                f"{d} holds a completed run made with a different question set "
+                f"({load_config(rid, root).get('n_questions')} questions, now {len(qs)}). Run ids do not depend on the "
+                "questions: give the new question set its own experiment name in experiments.toml, or pass force=True "
+                "to overwrite this run.")
         return rid
     d.mkdir(parents=True, exist_ok=True)
     partial = d / "partial.jsonl"
@@ -138,7 +171,6 @@ def execute(
     elif partial.is_file():
         partial.unlink()
     started = _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds")
-    qs = list(questions)
     it = progress(qs, desc=rid) if progress else qs
     for q in it:
         qid = q["question_id"]
@@ -179,6 +211,7 @@ def execute(
         "started": started,
         "finished": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
         "n_questions": len(order),
+        "questions_hash": questions_hash(qs),
         "notes": cfg.get("notes"),
     }
     with open(d / "config.json", "w", encoding="utf-8") as f:
@@ -212,7 +245,7 @@ def load_trace(run_id: str, root: str | Path | None = None) -> list[dict]:
 
 
 def list_runs(root: str | Path | None = None, params_version: str | None = None) -> list[str]:
-    base = Path(root) if root else RUNS_DIR
+    base = runs_root(root)
     if not base.is_dir():
         return []
     out = []

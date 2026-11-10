@@ -1,0 +1,30 @@
+# Evaluation experiments (read by src/csrag/experiment.py; notebooks 06-09).
+#
+# An experiment is a name plus the question files it runs. The name is the results
+# folder: everything the experiment produces goes to results/<name>/ (run records,
+# qrels, metric tables, diagrams). Question files are concatenated in the order given.
+#
+# `active` selects the experiment that notebooks 06-09 work on. The environment
+# variable CSRAG_EXPERIMENT (shell or .env) overrides it for one session:
+#   CSRAG_EXPERIMENT=run1 uv run jupyter nbconvert --execute ...
+#
+# The name is not PARAMS_VERSION. One experiment holds the v1 runs and, later, the
+# v2 runs of the same questions. A different question set needs a different name,
+# because run ids do not depend on the questions.
+
+active = "run2"
+
+[experiments.run1]
+description = "Question set 1: 92 answerable + 8 unanswerable"
+questions = ["data/eval/questions.jsonl"]
+qrels = "data/eval/qrels.jsonl"  # the original location; the default is results/<name>/qrels.jsonl
+
+[experiments.run2]
+description = "Question set 1 + question set 2 (paraphrase, section_id, twin_topic, multi_section)"
+questions = [
+    "data/eval/questions.jsonl",
+    "data/eval/set2/paraphrase.jsonl",
+    "data/eval/set2/section_id.jsonl",
+    "data/eval/set2/twin_topic.jsonl",
+    "data/eval/set2/multi_section.jsonl",
+]

@@ -3,7 +3,7 @@
 Two parts:
 
 1. **Extraction (notebooks 00–03, `src/csparse/`).** Turns `cs-e_amendment_9.pdf` (EASA CS-E Amendment 9, with the header and footer cropped off) into retrieval units. There is one unit per `CS-E X` and one per `AMC E X…`, with lists, glossaries and tables kept intact across page breaks. `[Amdt No: …]` notes are removed and figures are skipped.
-2. **Retrieval experiments (notebooks 04–09, `src/csrag/`).** Compares retrieval methods for single-turn question answering over that text: lexical, learned sparse, dense, late interaction, hybrid fusion, metadata filters, LLM query rewriting, reranking, structural lookup and expansion (fixed rules and an agent), each with and without a score gate, on two chunkings. Qdrant is the only vector store, the JSONL corpus is loaded into memory, and every experiment record is a file under `results/`. The design is in `plan.md`.
+2. **Retrieval experiments (notebooks 04–09, `src/csrag/`).** Compares retrieval methods for single-turn question answering over that text: lexical, learned sparse, dense, late interaction, hybrid fusion, metadata filters, LLM query rewriting, reranking, structural lookup and expansion (fixed rules and an agent), each with and without a score gate, on two chunkings. Qdrant is the only vector store, the JSONL corpus is loaded into memory, and every experiment record is a file under `results/<experiment>/`. The design is in `plan.md`.
 
 ## Setup
 
@@ -41,7 +41,7 @@ docker compose stop encoder-gpu && docker compose up -d qdrant vllm && docker co
 
 **Why two phases.** The rerankers run ~8× faster on the GPU. Measured per question with 50 base units, fp32: bge takes 5.7 s on the GPU and 33 s on the CPU; jina takes 14.4 s and 141 s. That is ~1 h instead of ~9 h for X1 + X2, with the same scores (identical rankings, |Δ| ≤ 4e-5). No run needs a reranker and the LLM at the same time. In phase B the encoder only embeds short texts (HyDE passages, agent search queries), which takes seconds on the CPU. The device of each session is recorded in every run's `config.json`.
 
-**`.env` keys:** `VLLM_ENDPOINT`, `VLLM_API_KEY`, `VLLM_MODEL` (the vLLM container), `VLLM_CONFIG` (serve file), `ENCODER_URL` (default `http://127.0.0.1:8081`), `ENCODER_THREADS` (torch threads in the encoder, default 12 = physical cores), `QDRANT_URL` (default `http://127.0.0.1:6333`), `BGE_M3_TOKENIZER` (bge-m3 `tokenizer.json` for token counts).
+**`.env` keys:** `VLLM_ENDPOINT`, `VLLM_API_KEY`, `VLLM_MODEL` (the vLLM container), `VLLM_CONFIG` (serve file), `ENCODER_URL` (default `http://127.0.0.1:8081`), `ENCODER_THREADS` (torch threads in the encoder, default 12 = physical cores), `QDRANT_URL` (default `http://127.0.0.1:6333`), `BGE_M3_TOKENIZER` (bge-m3 `tokenizer.json` for token counts), and optionally `CSRAG_EXPERIMENT` (overrides `active` in `experiments.toml`, see [Experiments](#experiments-experimentstoml)).
 
 ### `encoder/`: the model container (CPU and GPU)
 
@@ -65,14 +65,43 @@ Endpoints:
 | `03_assemble_chunks` | stitch pages, rebuild nesting, write outputs, boundary checks | `data/sections.jsonl`, `groups.jsonl`, `chunks.jsonl` |
 | `04_enrich_window_embed` | engine_type, base-unit spans, cross-references; 500-token windows and their checks; bge-m3 (dense, sparse, ColBERT) and BM25 vectors for both indexes | `data/windows_500.jsonl`, `data/cross_refs.jsonl`, `data/embeddings/` |
 | `05_ingest_qdrant` | creates both collections, upserts, ingestion checks (count, ids, round-trip, self-retrieval), HNSW vs exact, ColBERT engine agreement, server-side BM25 comparison | Qdrant volume |
-| `06_load_questions` | validates the gold quotes, builds span-based qrels for both indexes | `data/eval/qrels.jsonl` |
-| `07_run_retrievers` | **phase A** (GPU encoder, vLLM stopped): question embeddings, each signal's top-50, the grid without LLM (L1 … T2+T3), the rerankers X1/X2, and the ANN, RRF and gate checks | `data/embeddings/queries_questions.npz`, `data/cache/search.jsonl`, `data/cache/rerank_*.jsonl`, `results/runs/` |
-| `08_llm_and_agent` | **phase B** (vLLM, CPU encoder): vLLM KV-cache check; HyDE passages (Q1), keyword expansions (Q2) and engine-type filters (F1); the Q1/Q2/F1 runs; the agent T4; reproducibility, label-leakage, one-hop and completeness checks | `data/cache/llm.jsonl`, `data/embeddings/queries_{hyde,agent}.npz`, `results/runs/` |
-| `09_analysis` | metrics, bootstrap CIs, paired randomisation tests with Holm, tables, plots, metrics files, diagrams, output checks | `results/run_metrics.parquet`, `results/question_metrics.parquet`, `results/{units,win500}/metrics.{csv,xlsx}`, `results/granularity.csv`, `results/diagrams/` |
+| `06_load_questions` | validates the gold quotes of the experiment's questions, builds span-based qrels for both indexes | `results/<experiment>/qrels.jsonl` (`run1`: `data/eval/qrels.jsonl`) |
+| `07_run_retrievers` | **phase A** (GPU encoder, vLLM stopped): question embeddings, each signal's top-50, the grid without LLM (L1 … T2+T3), the rerankers X1/X2, and the ANN, RRF and gate checks | `data/embeddings/queries_questions.npz`, `data/cache/search.jsonl`, `data/cache/rerank_*.jsonl`, `results/<experiment>/runs/` |
+| `08_llm_and_agent` | **phase B** (vLLM, CPU encoder): vLLM KV-cache check; HyDE passages (Q1), keyword expansions (Q2) and engine-type filters (F1); the Q1/Q2/F1 runs; the agent T4; reproducibility, label-leakage, one-hop and completeness checks | `data/cache/llm.jsonl`, `data/embeddings/queries_{hyde,agent}.npz`, `results/<experiment>/runs/` |
+| `09_analysis` | metrics, bootstrap CIs, paired randomisation tests with Holm, tables, plots, metrics files, diagrams, output checks | in `results/<experiment>/`: `run_metrics.parquet`, `question_metrics.parquet`, `{units,win500}/metrics.{csv,xlsx}`, `granularity.csv`, `diagrams/` |
 
-**Run order for the experiments:** phase A: 04 → 05 → 06 → 07 (`encoder-gpu`, **vLLM stopped**); swap; phase B: 08 (vLLM + CPU `encoder`); then 09 (no models). Approximate times: corpus embedding in 04 takes a few minutes on the GPU; the grid without LLM in 07 takes minutes; the rerankers in 07 take ~1 h on the GPU; the query-side LLM work in 08 takes ~10–25 min; the agent takes ~1–2 h. All of it is cached and resumable (a run continues from `results/runs/<run_id>/partial.jsonl`). For v2, run 07 and 08 again with `PARAMS_VERSION = "v2"`.
+**Run order for the experiments:** phase A: 04 → 05 → 06 → 07 (`encoder-gpu`, **vLLM stopped**); swap; phase B: 08 (vLLM + CPU `encoder`); then 09 (no models). Approximate times: corpus embedding in 04 takes a few minutes on the GPU; the grid without LLM in 07 takes minutes; the rerankers in 07 take ~1 h on the GPU; the query-side LLM work in 08 takes ~10–25 min; the agent takes ~1–2 h. These times are for 100 questions; the rerankers, the query-side LLM work and the agent scale with the number of questions that are not in the caches yet. All of it is cached and resumable (a run continues from `results/<experiment>/runs/<run_id>/partial.jsonl`). For v2, run 07 and 08 again with `PARAMS_VERSION = "v2"`.
+
+Notebooks 04 and 05 build the corpus side, which every experiment shares. Notebooks 06–09 work on the **active experiment** (next section) and print it in their first cell.
 
 The code lives in `src/`; the notebooks only call it and expose the parameters.
+
+## Experiments (`experiments.toml`)
+
+An experiment is a **name plus the question files it runs**. The name is the results folder: everything the experiment produces goes to `results/<name>/`. Experiments are declared in `experiments.toml` at the repo root:
+
+```toml
+active = "run2"
+
+[experiments.run1]
+description = "Question set 1: 92 answerable + 8 unanswerable"
+questions = ["data/eval/questions.jsonl"]
+qrels = "data/eval/qrels.jsonl"        # optional; the default is results/<name>/qrels.jsonl
+
+[experiments.run2]
+description = "Question set 1 + question set 2 (paraphrase, section_id, twin_topic, multi_section)"
+questions = ["data/eval/questions.jsonl", "data/eval/set2/paraphrase.jsonl", "data/eval/set2/section_id.jsonl",
+             "data/eval/set2/twin_topic.jsonl", "data/eval/set2/multi_section.jsonl"]
+```
+
+- **To choose the experiment**, set `active`. `CSRAG_EXPERIMENT=<name>` (shell or `.env`) overrides it for one session, e.g. `CSRAG_EXPERIMENT=run1 uv run jupyter nbconvert --execute …`. Nothing is set in the notebooks.
+- **To start a new experiment**, add a table with a new name and its question files, make it `active`, and run 06 → 07 → 08 → 09. The files are concatenated in the order given; no merged file is written. Question ids must be unique across the files.
+- **The name is not `PARAMS_VERSION`.** `PARAMS_VERSION` (notebooks 07 and 08) picks the parameter set. One experiment holds the v1 runs and, later, the v2 runs of the same questions, and notebook 09 reports both.
+- **One question set per folder.** A run id does not depend on the questions, so a completed run would otherwise be reused for another question set. Each run's `config.json` records `n_questions` and `questions_hash`; `runs.execute` raises if a completed run was made with other questions, and notebook 09 checks every run before it evaluates. To change an experiment's questions after it has runs, give it a new name.
+- **Shared by all experiments:** the corpus, the Qdrant collections, `data/embeddings/` and the caches in `data/cache/`. They are keyed by text, so questions that an earlier experiment already ran cost nothing again.
+- The process resolves the experiment once (`csrag.experiment.active()`), so editing `experiments.toml` does not move a running notebook to another folder. Restart the kernel to switch.
+
+The results of `run1` are not in `results/`: they were made under the earlier flat layout (`results/runs/…`, in the git history) and are kept locally in `run1resultarchive/` (gitignored). `mv run1resultarchive results/run1` makes them the `run1` experiment again; notebook 09 then reproduces its tables byte for byte.
 
 ## Code (src/)
 
@@ -87,7 +116,8 @@ The code lives in `src/`; the notebooks only call it and expose the parameters.
 | `enrich.py` | `engine_type`, whitespace normalisation with position maps, base-unit spans, cross-reference extraction and normalisation, point ids, `corpus_version` |
 | `embed.py` | encoder client (`/embed`, `/rerank`), fastembed BM25, the corpus embedding store and query-embedding caches |
 | `index.py` | Qdrant collections: create, upsert, ingestion checks, ColBERT engine check |
-| `runs.py` | caches (`llm`, `search`, `rerank_bge`, `rerank_jina`) and run records; `execute` runs one config, resumably |
+| `experiment.py` | experiments from `experiments.toml`: name, question files, results folder (`results/<name>/`), qrels path; `active()` is the experiment of the process |
+| `runs.py` | caches (`llm`, `search`, `rerank_bge`, `rerank_jina`) and run records in the active experiment's `runs/`; `execute` runs one config, resumably, and refuses a completed run made with other questions |
 | `gate.py` | the score gate (gate A on first stages, gate B after reranking) |
 | `retrievers/base.py` | `Hit`, the fixed parameters (`PARAMS["v1"]`), method configs and the run grid |
 | `retrievers/__init__.py` | `Pipeline` (interprets any config: query transform → first stages → gate A → fusion → filter → rerank → gate B → lookup → expansion) and `Resources` |
@@ -97,8 +127,9 @@ The code lives in `src/`; the notebooks only call it and expose the parameters.
 | `retrievers/rerank.py` | bge (pointwise, cached per query and unit) and jina (listwise, cached per query and ordered list) |
 | `retrievers/structural.py` | T1 id lookup; the budgeted context builder; T0, T2, T3 and T2+T3 |
 | `retrievers/agentic.py` | T4: the agent with `expand`, `follow_refs`, `search` and `done`, one JSON-schema LLM call per step |
-| `evaluate.py` | question validation, span-based qrels, metrics (incl. evidence recall, gate diagnostics, supporting recall, all-gold), bootstrap CIs, randomisation tests, Holm |
-| `report.py` | per-index `metrics.csv`/`metrics.xlsx`, `granularity.csv`, Mermaid pipeline diagrams |
+| `evaluate.py` | question loading (one file or several) and validation, span-based qrels, metrics (incl. evidence recall, gate diagnostics, supporting recall, all-gold), subsets (`all`, `mentions_section_id`, question families), bootstrap CIs, randomisation tests, Holm |
+| `report.py` | per-index `metrics.csv`/`metrics.xlsx`, `granularity.csv`, Mermaid pipeline diagrams, written to the active experiment's folder |
+| `qgen.py` | question set 2: `fill` (derived fields), `check` (schema, verbatim quotes, family rules, twin table), `pool` (candidates for the single-source judge: BM25 over sections plus structure), `stats`, `overlap`, `refs`; needs no services or tokenizer |
 
 ## Indexes (Qdrant)
 
@@ -126,7 +157,9 @@ Named vectors: `dense` (1024, Cosine), `colbert` (multivector, MAX_SIM, float16,
 | `windows_500.jsonl` | 500-token windows, the canonical text of `cse_win500_v1` | 04 | yes (deterministic) |
 | `cross_refs.jsonl` | `index, src_unit_id, src_section_id, dst_section_id, ref_text, order` | 04 | yes (deterministic) |
 | `eval/questions.jsonl` | 100 questions (92 answerable, 8 unanswerable); see `eval/README.md` | – | yes |
-| `eval/qrels.jsonl` | span-based qrels: unit level per index, section and group level | 06 | yes (deterministic) |
+| `eval/qrels.jsonl` | span-based qrels of question set 1 (experiment `run1`): unit level per index, section and group level. Other experiments write theirs to `results/<experiment>/qrels.jsonl` | 06 | yes (deterministic) |
+| `eval/specs/` | generation specs for question set 2 (four families, all answerable): rules, record format, judge checks, freeze procedure | – | yes |
+| `eval/set2/` | question set 2 (377 questions, all answerable), one file per family (`paraphrase` 177, `section_id` 50, `twin_topic` 60, `multi_section` 90), plus `pools/` for the single-source check; written from `eval/specs/`, checked with `csrag.qgen`. Each record has every field of set 1 plus `family` and family-specific fields | – | yes |
 | `embeddings/` | `<collection>.{npz,jsonl}` corpus vectors and `queries_*.npz` query vectors | 04, 08 | no (gitignored, large; regenerable with the encoder) |
 | `cache/` | `llm.jsonl` (every LLM output), `search.jsonl` (each signal's top-50), `rerank_bge.jsonl`, `rerank_jina.jsonl` | 07, 08 | yes (the LLM outputs make reruns exact) |
 
@@ -135,19 +168,24 @@ Record formats:
 - **windows_500.jsonl**: `window_id` (`<section_id>#w<n>`), `section_id`, `group_id`, `kind`, `subpart`, `engine_type`, `part_index`, `part_count`, `char_start`, `char_end` (span in the section's whitespace-normalised body), `page_start`, `page_end`, `breadcrumb`, `n_tokens_bge` (body only), `body`, `text` (header line + body).
 - **sections.jsonl**: the full, unsplit text of each section. **groups.jsonl**: one record per CS-E, with the CS text followed by all of its AMCs. `csparse.merge.Corpus(...).expand(chunk_id, to="group" | "section")` expands a retrieval hit; `csrag.Corpus` adds the windows, spans and cross-references.
 
-## Results (results/)
+## Results (results/<experiment>/)
+
+One folder per experiment (see [Experiments](#experiments-experimentstoml)), e.g. `results/run2/`. Paths below are relative to it.
 
 | path | what |
 |---|---|
-| `runs/<run_id>/` | one run: `config.json` (full config, `config_hash`, `params_version`, `corpus_version`, model revisions), `hits.parquet` (`question_id, rank, unit_id, section_id, score, stage, hop, n_tokens, in_context, source`), `stats.jsonl` (latency, LLM tokens, context tokens, gate trace per question), `trace.jsonl` (T4 agent steps) |
+| `qrels.jsonl` | the experiment's span-based qrels (notebook 06); `run1` keeps them in `data/eval/qrels.jsonl` |
+| `runs/<run_id>/` | one run: `config.json` (full config, `config_hash`, `params_version`, `corpus_version`, model revisions, `n_questions`, `questions_hash`), `hits.parquet` (`question_id, rank, unit_id, section_id, score, stage, hop, n_tokens, in_context, source`), `stats.jsonl` (latency, LLM tokens, context tokens, gate trace per question), `trace.jsonl` (T4 agent steps) |
 | `run_metrics.parquet` | `run_id, index, level, metric, value, subset, n, ci_lo, ci_hi` for every run |
 | `question_metrics.parquet` | the same metrics per question (input to the paired tests) |
-| `units/metrics.csv`, `win500/metrics.csv` | one row per run of that index: config, readable stages, every `level × metric`, the section nDCG@10 CI, gate diagnostics, multi-section metrics with their n, cost |
-| `units/metrics.xlsx`, `win500/metrics.xlsx` | the same table plus `by_question_type`, `by_engine_type`, `by_kind`, `mentions_section_id`, `length_bucket`, `significance`, `gate`, `per_question` and `unanswerable` sheets |
+| `units/metrics.csv`, `win500/metrics.csv` | one row per run of that index: `n_note` (the scored n), config, readable stages, every `level × metric`, the section nDCG@10 CI, section nDCG@10 per family (`section_ndcg@10_<family>`, when there is more than one), gate diagnostics, multi-section metrics with their n, cost |
+| `units/metrics.xlsx`, `win500/metrics.xlsx` | the same table plus `by_family`, `by_question_type`, `by_engine_type`, `by_kind`, `mentions_section_id`, `length_bucket`, `significance`, `gate`, `per_question` and `unanswerable` sheets |
 | `granularity.csv` | RQ7: windows vs units (gate off), section level and evidence recall, Holm-corrected |
 | `diagrams/<run_id>.md` | Mermaid flowchart of a run generated from its config, with its metric panel |
 
-Run ids read `<method>[-b<budget>]-<index>-gate<on|off>-<params_version>-<hash8>`. To regenerate: notebooks 07 and 08 (runs; they skip completed ones) and notebook 09 (all files under `results/` except `runs/`). Scored metrics use the 92 answerable questions; the 8 unanswerable ones are only listed in the `unanswerable` sheets. Tables are sorted by section nDCG@10 for readability only: no run is selected as a winner.
+Run ids read `<method>[-b<budget>]-<index>-gate<on|off>-<params_version>-<hash8>`. To regenerate: notebook 06 (qrels), notebooks 07 and 08 (runs; they skip completed ones) and notebook 09 (every other file of the folder). Only answerable questions are scored (`run1`: 92 of 100; `run2`: 469 of 477); the unanswerable ones are only listed in the `unanswerable` sheets. Tables are sorted by section nDCG@10 for readability only: no run is selected as a winner.
+
+**Question families.** A question's family is its `family` field (`paraphrase`, `section_id`, `twin_topic`, `multi_section`); question set 1 has none and is reported as `set1`. When an experiment has more than one family, `run_metrics.parquet` also holds every metric per family (`subset` = `family=<name>`, with n and a bootstrap CI), the metrics table gets one section nDCG@10 column per family, and the `by_family` sheet gives the key metrics per run and family. The pooled (`all`) figures weight each family by its size, and a paraphrase shares its gold with the question it rewrites, so pooled questions are not independent: the pooled CIs and tests are narrower than they should be. Quote the families separately.
 
 **Parameters.** `PARAMS["v1"]` in `src/csrag/retrievers/base.py` is fixed before any run. After reading all v1 metrics, the parameters are revised once, by hand, as `PARAMS["v2"]`, and the grid runs again (notebooks 07 and 08 with `PARAMS_VERSION = "v2"`). Both versions are kept and reported.
 

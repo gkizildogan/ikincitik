@@ -10,4 +10,5 @@ plan.md
 .cache/
 data/embeddings/
 # interrupted runs (completed runs keep hits.parquet + config.json)
-results/runs/*/partial.jsonl
+results/*/runs/*/partial.jsonl
+run1resultarchive/
