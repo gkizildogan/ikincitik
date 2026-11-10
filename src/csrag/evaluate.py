@@ -1,11 +1,15 @@
 """Evaluation (plan sections 2 and 6).
 
-- Scored questions: the 92 answerable ones only. The 8 unanswerable questions run
-  through every retriever but are never scored (they go to the ``unanswerable`` sheet).
+- Questions: the active experiment's question files (``experiment.py``), concatenated.
+  Only the answerable ones are scored. Unanswerable questions run through every
+  retriever but are never scored (they go to the ``unanswerable`` sheet).
+- Families: a record's ``family`` (question set 2: ``paraphrase``, ``section_id``,
+  ``twin_topic``, ``multi_section``); records without one are ``set1``. When an
+  experiment has more than one family, every metric is also reported per family.
 - Levels: ``unit`` (the index's own unit: base unit or window; per index only),
   ``section`` (hits deduplicated by section_id, first rank kept = MaxP) and
   ``group``. Section/group metrics and evidence recall compare across indexes.
-- Qrels come from character spans (``data/eval/qrels.jsonl``):
+- Qrels come from character spans (the experiment's ``qrels_path``):
   unit level   grade 2 = the unit contains the whole quote span; grade 1 = another
                unit of a gold section. If no unit of the gold section contains the
                whole span (a quote cut by a base-unit split), the units overlapping
@@ -32,19 +36,28 @@ from typing import Iterable
 import numpy as np
 
 from .enrich import normalize_ws
+from .experiment import read_questions
 from .runs import load_config, load_hits, load_stats
 
 KS = (1, 3, 5, 10, 20)
 LEVELS = ("unit", "section", "group")
 N_BOOT = 10_000
 SEED = 20261105
+DEFAULT_FAMILY = "set1"  # question set 1 has no ``family`` field
 
 # ---------------------------------------------------------------- questions and qrels
 
 
-def load_questions(path: str | Path, corpus) -> tuple[list[dict], dict]:
-    """Questions with validated gold quotes and their normalised spans (``_gold``)."""
-    qs = [json.loads(ln) for ln in open(path, encoding="utf-8") if ln.strip()]
+def family_of(q: dict) -> str:
+    return q.get("family") or DEFAULT_FAMILY
+
+
+def load_questions(path: str | Path | Iterable[str | Path], corpus) -> tuple[list[dict], dict]:
+    """Questions with validated gold quotes and their normalised spans (``_gold``).
+
+    ``path`` is one question file or several (an experiment's ``questions``), concatenated.
+    """
+    qs = read_questions(path)
     problems: dict[str, list] = {"duplicate_ids": [], "unknown_section": [], "quote_not_verbatim": [],
                                  "quote_not_in_normalised_body": [], "quote_ambiguous": [],
                                  "answerable_without_gold": [], "unanswerable_with_gold": []}
@@ -455,8 +468,10 @@ def evaluate_all(run_ids: list[str], questions: list[dict], qrels: list[dict], c
     """(per-question metrics, run_metrics, gate diagnostics, costs) for all runs.
 
     run_metrics columns: run_id, index, level, metric, value, subset, n, ci_lo, ci_hi.
-    Subsets: ``all`` and ``mentions_section_id=true|false``; every row states its n
-    (92 answerable for ``all``; the 8 unanswerable questions are never scored).
+    Subsets: ``all``, ``mentions_section_id=true|false`` and, when the questions come
+    from more than one family, ``family=<name>``. Every row states its n (the
+    answerable questions of the subset; unanswerable questions are never scored).
+    ``all`` and the family subsets have bootstrap CIs.
     """
     import pandas as pd
 
@@ -469,7 +484,11 @@ def evaluate_all(run_ids: list[str], questions: list[dict], qrels: list[dict], c
         "mentions_section_id=true": [q["question_id"] for q in answerable if q["mentions_section_id"]],
         "mentions_section_id=false": [q["question_id"] for q in answerable if not q["mentions_section_id"]],
     }
-    idx_all = boot_index(len(qids))
+    families = list(dict.fromkeys(family_of(q) for q in answerable))
+    if len(families) > 1:
+        for fam in families:
+            subsets[f"family={fam}"] = [q["question_id"] for q in answerable if family_of(q) == fam]
+    boot = {name: boot_index(len(ids)) for name, ids in subsets.items() if name == "all" or name.startswith("family=")}
     rows = []
     for (rid, index, level, metric), g in pq.groupby(["run_id", "index", "level", "metric"], sort=False):
         s = g.set_index("question_id")["value"]
@@ -477,7 +496,7 @@ def evaluate_all(run_ids: list[str], questions: list[dict], qrels: list[dict], c
             v = np.array([s.get(q, np.nan) for q in ids], float)
             n = int((~np.isnan(v)).sum())
             val = float(np.nanmean(v)) if n else float("nan")
-            lo, hi = bootstrap_ci(v, idx_all) if name == "all" and n else (float("nan"), float("nan"))
+            lo, hi = bootstrap_ci(v, boot[name]) if name in boot and n else (float("nan"), float("nan"))
             rows.append((rid, index, level, metric, val, name, n, lo, hi))
     rm = pd.DataFrame(rows, columns=["run_id", "index", "level", "metric", "value", "subset", "n", "ci_lo", "ci_hi"])
     gates = pd.DataFrame([g for r in run_ids for g in gate_diagnostics(r, questions, root)])

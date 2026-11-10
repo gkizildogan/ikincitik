@@ -42,11 +42,14 @@
 - **Engine:** turbine 50, all 26, piston 24.
 - **Difficulty:** easy 30, medium 56, hard 14.
 
-## Set 2 (in preparation)
-A second, harder question set, all answerable, is being written into `set2/` from the generation specs in `specs/`. It has four families:
+## Set 2
+A second, harder question set, all answerable (377 questions), is in `set2/`, written from the generation specs in `specs/`. It has four families:
 - paraphrases of the 92 answerable questions;
 - section-id queries;
 - piston/turbine twin pairs;
 - multi-section questions.
 
 `specs/README.md` has the shared rules, the record format, the judge checks and the freeze procedure. `src/csrag/qgen.py` checks the files (`uv run python -m csrag.qgen check data/eval/set2/<family>.jsonl`). v1 above is unchanged.
+
+## Which files an evaluation uses
+`experiments.toml` at the repo root lists the question files of each experiment (`run1`: `questions.jsonl`; `run2`: `questions.jsonl` plus the four `set2/` files). The files are concatenated as they are; no merged file is written. Records without a `family` field (this set) are reported as family `set1`. The qrels of `questions.jsonl` alone are `qrels.jsonl` here; other experiments write theirs to `results/<experiment>/qrels.jsonl`.

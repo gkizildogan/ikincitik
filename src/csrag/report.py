@@ -1,10 +1,13 @@
 """Outputs (plan section 6.1) and pipeline diagrams (6.2).
 
-- ``results/<index>/metrics.csv``: one row per run (UTF-8, one header row)
-- ``results/<index>/metrics.xlsx``: the same table + breakdowns, significance,
+Everything is written under the active experiment's folder, ``results/<experiment>/``
+(``experiment.py``):
+
+- ``<index>/metrics.csv``: one row per run (UTF-8, one header row)
+- ``<index>/metrics.xlsx``: the same table + breakdowns, significance,
   gate, per_question and unanswerable sheets
-- ``results/granularity.csv``: the RQ7 comparisons (windows vs units)
-- ``results/diagrams/<run_id>.md``: a Mermaid flowchart generated from the run's
+- ``granularity.csv``: the RQ7 comparisons (windows vs units)
+- ``diagrams/<run_id>.md``: a Mermaid flowchart generated from the run's
   stored config, with its metric panel
 
 Tables are sorted by section-level nDCG@10 for readability only; no metric is
@@ -17,7 +20,9 @@ from pathlib import Path
 
 import numpy as np
 
+from . import experiment
 from .corpus import COLLECTIONS
+from .evaluate import family_of
 from .runs import load_config, load_hits, load_stats
 
 SORT_KEY = "section_ndcg@10"
@@ -64,8 +69,18 @@ def readable_stages(cfg: dict) -> dict:
 # ---------------------------------------------------------------- tables
 
 
-def metrics_table(rm, runs, gates, costs, gate_overall, index: str):
-    """One row per run of one index, sorted by section nDCG@10."""
+def n_note(questions: list[dict]) -> str:
+    """The scored n, as stated in every metrics table."""
+    n = sum(bool(q["answerable"]) for q in questions)
+    return f"n = {n} answerable; {len(questions) - n} unanswerable excluded"
+
+
+def metrics_table(rm, runs, gates, costs, gate_overall, index: str, note: str | None = None, root=None):
+    """One row per run of one index, sorted by section nDCG@10.
+
+    With more than one question family, section nDCG@10 is also given per family
+    (``section_ndcg@10_<family>``); the ``by_family`` sheet has the other metrics.
+    """
     import pandas as pd
 
     r = runs[runs["index"] == index].copy()
@@ -78,6 +93,10 @@ def metrics_table(rm, runs, gates, costs, gate_overall, index: str):
     wide["section_ndcg@10_ci_hi"] = ci["ci_hi"]
     n = rm[(rm["subset"] == "all") & (rm["level"] == "section") & (rm["metric"] == "ndcg@10")].set_index("run_id")["n"]
     wide["n_scored"] = n
+    fam = rm[rm["subset"].str.startswith("family=") & (rm["level"] == "section") & (rm["metric"] == "ndcg@10")]
+    if not fam.empty:
+        fw = fam.pivot_table(index="run_id", columns="subset", values="value", aggfunc="first", sort=False)
+        wide = wide.join(fw.rename(columns=lambda c: f"{SORT_KEY}_{c.removeprefix('family=')}"))
     # multi-section metrics with their n
     multi = rm[(rm["subset"] == "all") & rm["level"].str.startswith("multi")].copy()
     if not multi.empty:
@@ -97,10 +116,11 @@ def metrics_table(rm, runs, gates, costs, gate_overall, index: str):
     if gate_overall is not None and not gate_overall.empty:
         wide = wide.join(gate_overall.set_index("run_id")[["gate_loss_overall"]])
     wide = wide.join(costs.set_index("run_id"))
-    stages = pd.DataFrame([{"run_id": rid, **readable_stages(load_config(rid)["config"])} for rid in r["run_id"]]).set_index("run_id")
+    stages = pd.DataFrame([{"run_id": rid, **readable_stages(load_config(rid, root)["config"])} for rid in r["run_id"]]).set_index("run_id")
     out = r.set_index("run_id")[["config_hash", "params_version", "index", "gate", "method", "budget"]].join(stages).join(wide)
     out = out.reset_index().sort_values(SORT_KEY, ascending=False, na_position="last")
-    out.insert(0, "n_note", "n = 92 answerable; 8 unanswerable excluded")
+    if note:
+        out.insert(0, "n_note", note)
     return out
 
 
@@ -114,7 +134,8 @@ def _question_frame(questions, corpus):
         prim = next((g for g in q["_gold"] if g["role"] == "primary"), q["_gold"][0])
         n = corpus.n_tokens(corpus.sections[prim["section_id"]]["body"])
         rows.append({
-            "question_id": q["question_id"], "question_type": q["question_type"], "engine_type": q["engine_type"],
+            "question_id": q["question_id"], "family": family_of(q), "question_type": q["question_type"],
+            "engine_type": q["engine_type"],
             "subpart": q.get("subpart"), "kind": q.get("gold_kind") or corpus.sections[prim["section_id"]]["kind"],
             "mentions_section_id": bool(q["mentions_section_id"]),
             "length_bucket": "≤500" if n <= 500 else ("501–1500" if n <= 1500 else ">1500"),
@@ -123,7 +144,7 @@ def _question_frame(questions, corpus):
 
 
 def breakdowns(pq, questions, corpus, runs, index: str) -> dict:
-    """``by_question_type``, ``by_engine_type``, ``by_kind``, ``mentions_section_id``, ``length_bucket``."""
+    """``by_family``, ``by_question_type``, ``by_engine_type``, ``by_kind``, ``mentions_section_id``, ``length_bucket``."""
     qf = _question_frame(questions, corpus)
     p = pq[pq["index"] == index].copy()
     p["col"] = np.where(p["level"] == "evidence", p["metric"], p["level"] + "_" + p["metric"])
@@ -131,8 +152,8 @@ def breakdowns(pq, questions, corpus, runs, index: str) -> dict:
     wide = p.pivot_table(index=["run_id", "question_id"], columns="col", values="value", aggfunc="first").reset_index()
     wide = wide.merge(qf, on="question_id").merge(runs[["run_id", "method", "gate", "budget", "params_version"]], on="run_id")
     out = {}
-    for sheet, by in [("by_question_type", "question_type"), ("by_engine_type", "engine_type"), ("by_kind", "kind"),
-                      ("mentions_section_id", "mentions_section_id"), ("length_bucket", "length_bucket")]:
+    for sheet, by in [("by_family", "family"), ("by_question_type", "question_type"), ("by_engine_type", "engine_type"),
+                      ("by_kind", "kind"), ("mentions_section_id", "mentions_section_id"), ("length_bucket", "length_bucket")]:
         cols = [c for c in KEY_METRICS if c in wide.columns]
         g = wide.groupby(["run_id", "method", "gate", "budget", "params_version", by], dropna=False)
         t = g[cols].mean()
@@ -148,7 +169,7 @@ def per_question_ranks(pq, runs, index: str):
 
 
 def unanswerable_sheet(run_ids: list[str], questions: list[dict], corpus, root=None):
-    """Retrieved sections for the 8 unanswerable questions, per run (inspection only, not scored)."""
+    """Retrieved sections for the unanswerable questions, per run (inspection only, not scored)."""
     import pandas as pd
 
     un = [q for q in questions if not q["answerable"]]
@@ -175,13 +196,13 @@ def unanswerable_sheet(run_ids: list[str], questions: list[dict], corpus, root=N
 
 
 def write_index_files(index: str, rm, pq, runs, gates, costs, gate_overall, sig, questions, corpus,
-                      out_root: str | Path = "results", root=None) -> dict:
-    """``results/<index>/metrics.csv`` and ``metrics.xlsx``."""
+                      out_root: str | Path | None = None, root=None) -> dict:
+    """``<index>/metrics.csv`` and ``metrics.xlsx`` under ``out_root`` (default: the active experiment's folder)."""
     import pandas as pd
 
-    d = Path(out_root) / index
+    d = (Path(out_root) if out_root else experiment.active().dir) / index
     d.mkdir(parents=True, exist_ok=True)
-    table = metrics_table(rm, runs, gates, costs, gate_overall, index)
+    table = metrics_table(rm, runs, gates, costs, gate_overall, index, note=n_note(questions), root=root)
     table.to_csv(d / "metrics.csv", index=False, encoding="utf-8")
     run_ids = list(runs.loc[runs["index"] == index, "run_id"])
     sheets = {"metrics": table, **breakdowns(pq, questions, corpus, runs, index)}
@@ -196,10 +217,11 @@ def write_index_files(index: str, rm, pq, runs, gates, costs, gate_overall, sig,
     return {"csv": d / "metrics.csv", "xlsx": d / "metrics.xlsx", "runs": len(table)}
 
 
-def write_granularity(sig_rq7, path: str | Path = "results/granularity.csv"):
-    Path(path).parent.mkdir(parents=True, exist_ok=True)
+def write_granularity(sig_rq7, path: str | Path | None = None):
+    path = Path(path) if path else experiment.active().dir / "granularity.csv"
+    path.parent.mkdir(parents=True, exist_ok=True)
     sig_rq7.to_csv(path, index=False, encoding="utf-8")
-    return Path(path)
+    return path
 
 
 # ---------------------------------------------------------------- Mermaid diagrams
@@ -323,12 +345,13 @@ def _panel(run_id: str, rm, gates, costs) -> str:
         cc = costs[costs["run_id"] == run_id]
         if not cc.empty:
             out.append(f"latency {cc['latency_total_s'].iloc[0]:.2f} s/question")
-    out.append("n = 92 answerable")
+    if nd is not None:
+        out.append(f"n = {int(nd['n'])} answerable")
     return "<br/>".join(out)
 
 
-def write_diagram(run_id: str, out_dir: str | Path = "results/diagrams", **kw) -> Path:
-    d = Path(out_dir)
+def write_diagram(run_id: str, out_dir: str | Path | None = None, **kw) -> Path:
+    d = Path(out_dir) if out_dir else experiment.active().dir / "diagrams"
     d.mkdir(parents=True, exist_ok=True)
     p = d / f"{run_id}.md"
     p.write_text(pipeline_diagram(run_id, **kw), encoding="utf-8")

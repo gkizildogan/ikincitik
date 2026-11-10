@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A research project. It has two parts:
 1. **Extraction:** notebooks 00–03 and `src/csparse/` turn `cs-e_amendment_9.pdf` (EASA CS-E Amendment 9) into section-bounded Markdown retrieval units, using Qwen as a VLM.
-2. **Retrieval experiments:** notebooks 04–09 and `src/csrag/` compare retrieval methods over that corpus on 100 questions (92 answerable, 8 unanswerable).
+2. **Retrieval experiments:** notebooks 04–09 and `src/csrag/` compare retrieval methods over that corpus. Question set 1 has 100 questions (92 answerable, 8 unanswerable); question set 2 (`data/eval/set2/`) adds 377 answerable questions in four families. Which files an evaluation runs, and where its results go, is set by the experiment in `experiments.toml`.
 
 `README.md` is the reference for services, files, record formats and results. `plan.md` is the design document; it is gitignored but present locally. Section numbers in code comments ("plan 4.8", "plan section 5") refer to `plan.md`. When behaviour changes, update both documents, because the user keeps them in sync with the code.
 
@@ -19,7 +19,7 @@ To add more documents (e.g. CS-27) or update stored ones for production, follow 
 ```bash
 uv sync                                    # deps; csparse and csrag are installed from src/ (uv_build, two modules)
 uv run jupyter lab                         # kernel "ikincitik (uv)"; kernel name: ikincitik
-# headless notebook run (from notebooks/):
+# headless notebook run (from notebooks/); CSRAG_EXPERIMENT=<name> in front overrides `active` in experiments.toml:
 uv run jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.kernel_name=ikincitik --ExecutePreprocessor.timeout=-1 07_run_retrievers.ipynb
 # lint (no config in pyproject; this is the invocation used so far):
 uvx ruff@0.14.0 check --select F,E9 --line-length 140 src encoder
@@ -27,7 +27,7 @@ uvx ruff@0.14.0 check --select F,E9 --line-length 140 src encoder
 
 There is no test suite. Verification happens in the notebooks: each one ends with assertion-style checks (coverage, ingestion round-trip, ANN vs exact, RRF vs Qdrant RRF, ColBERT engine agreement, reproducibility, label leakage). Run the relevant notebook to verify a change.
 
-Notebooks `chdir` to the repo root in their first cell, so every path in `src/` is relative to the repo root (`data/`, `results/`). The notebooks only call into `src/` and expose parameters; put logic in `src/`, not in notebook cells.
+Notebooks `chdir` to the repo root in their first cell, so every path in `src/` is relative to the repo root (`data/`, `results/`, `experiments.toml`). The notebooks only call into `src/` and expose parameters; put logic in `src/`, not in notebook cells.
 
 ## GPU and services (single RTX 3090, ~21 GB usable)
 
@@ -46,20 +46,30 @@ docker compose stop encoder-gpu && docker compose up -d qdrant vllm && docker co
 - Keep n-gram speculative decoding off; it corrupts greedy output on this model.
 - `encoder/` is a separate Docker image (FastAPI: `/embed`, `/rerank`, `/tokens`, `/health`) with its own fully pinned `requirements.txt`, compiled from `requirements.in`. Models load offline from pinned snapshot paths. Its dependencies are not in `pyproject.toml`.
 
+## Experiments and results folders
+
+- An experiment is a name plus question files, declared in `experiments.toml` (`[experiments.<name>]`: `questions`, optional `description` and `qrels`). `src/csrag/experiment.py` loads it. **Everything it produces goes to `results/<name>/`**: `runs/`, `qrels.jsonl`, the metrics files and `diagrams/`. Never write results directly into `results/`.
+- The active experiment is `active` in `experiments.toml`; the `CSRAG_EXPERIMENT` environment variable (shell or `.env`) overrides it. Notebooks 06–09 get it from `experiment.active()` in their first cell (`EXP`, `RESULTS = EXP.dir`) and don't name a folder themselves. `runs.py` and `report.py` default to the active experiment's folder, so pass `root=` / `out_root=` only to work somewhere else (the reproducibility check in notebook 08 does).
+- The experiment name is not `PARAMS_VERSION`. One experiment holds the v1 and, later, the v2 runs of the same questions. A new question set gets a new experiment name; don't add question files to an experiment that already has runs.
+- Run ids don't depend on the questions. `config.json` therefore records `n_questions` and `questions_hash`, and `runs.execute` raises when a completed run was made with other questions (`runs.same_questions`). Don't weaken this check.
+- Defined now: `run1` (question set 1; qrels stay in `data/eval/qrels.jsonl`) and `run2` (set 1 + the four set 2 files, 477 questions, 469 answerable). The `run1` results were moved out of `results/` into `run1resultarchive/` (gitignored); `mv run1resultarchive results/run1` restores them, and notebook 09 then reproduces the archived tables byte for byte. Use this as the regression check after changing `evaluate.py` or `report.py`, on a copy, without overwriting the archive.
+- Question families: `family` in a question record, `set1` when absent (`evaluate.family_of`). With more than one family, `evaluate_all` adds `family=<name>` subsets (with CIs) and `report.py` adds per-family columns; the `by_family` sheet is always written. The statistics still treat questions as independent, although a paraphrase shares its gold with its original, so pooled CIs and tests are too narrow.
+- Nothing in the code may hardcode the number of questions (92, 8, 100): take it from the questions.
+
 ## csrag architecture
 
 - **Config-driven pipeline.** `retrievers/base.py` defines every method (L1, S1, D1, C1, H1, H2, M1, F0, F1, T1, Q1, Q2, X1, X2, T0, T2, T3, T2+T3, T4) as a plain config dict from `method_config()`. `grid()` expands these across index × gate × budget. A single `Pipeline` in `retrievers/__init__.py` interprets any config in this order: query_transform → first stages → gate A → fusion → filter → ColBERT rerank / rerank → gate B → lookup → expansion. To add a method, add a config branch. Don't add a new retriever class.
 - **Run identity.** The config, including the hashes of the prompts from `query_llm.prompt_hashes()`, is hashed into `config_hash`. The run id is `<method>[-b<budget>]-<index>-gate<on|off>-<params_version>-<hash8>`. Editing a prompt or a parameter therefore creates new runs instead of overwriting old ones.
 - **Parameters are frozen.** `PARAMS["v1"]` must not be tuned. The plan allows exactly one hand revision, `PARAMS["v2"] = revise("v1", ...)`, after reading all v1 metrics. Both versions are reported.
 - **Labels never reach retrievers.** `retrieve(question_id, text, k)` receives only the question text. The one exception is F0, the oracle filter, which gets `engine_type` labels at construction. Notebook 08 checks for label leakage.
-- **Caches make reruns exact and resumable.** `runs.py` defines append-only JSONL caches in `data/cache/` (`llm`, `search`, `rerank_bge`, `rerank_jina`; last write wins), and they are committed to git. `runs.execute` skips completed runs and resumes from `results/runs/<id>/partial.jsonl`. LLM calls are keyed by a hash of the full request.
+- **Caches make reruns exact and resumable.** `runs.py` defines append-only JSONL caches in `data/cache/` (`llm`, `search`, `rerank_bge`, `rerank_jina`; last write wins), and they are committed to git. They are shared by all experiments. `runs.execute` skips completed runs and resumes from `results/<experiment>/runs/<id>/partial.jsonl`. LLM calls are keyed by a hash of the full request.
 - **Two indexes over the same text:** `units` → Qdrant `cse_units_v1` (252 base units from `chunks.jsonl`) and `win500` → `cse_win500_v1` (436 windows of 500 bge-m3 tokens). Evaluation is span-based (`evaluate.py`), so both indexes are scored against the same gold character spans, at unit, section and group level.
 - **ColBERT runs client-side.** Qdrant caps a multivector at 1023 vectors, and 60 base units exceed that. C1 and M1 therefore compute MaxSim client-side (`ColbertIndex`) from the cached vectors in `data/embeddings/`, for both indexes.
 - **Corpus in memory.** `csrag.Corpus` extends `csparse.merge.Corpus`. Expansion (T2, T3, T4) fetches parent sections and cross-referenced sections from memory, not from Qdrant.
-- **Notebook split by phase.** Notebook 07 (phase A) runs everything that needs no LLM, including the X1/X2 rerankers, and asserts that vLLM is down. Notebook 08 (phase B) runs Q1, Q2, F1 and T4 and needs vLLM. Notebook 09 needs no models and writes every file under `results/` except `runs/`.
+- **Notebook split by phase.** Notebook 07 (phase A) runs everything that needs no LLM, including the X1/X2 rerankers, and asserts that vLLM is down. Notebook 08 (phase B) runs Q1, Q2, F1 and T4 and needs vLLM. Notebook 09 needs no models and writes every file under `results/<experiment>/` except `runs/` and `qrels.jsonl` (notebook 06). Notebooks 04 and 05 are the corpus side and don't depend on the experiment.
 
 ## csparse notes
 
 - VLM output is accepted only if it matches the PDF text layer word for word (recall and precision ≥ 0.995, no missing numbers). Otherwise it retries once, then falls back to the text layer. `rescore_cache()` re-applies changed scoring rules without calling the model.
 - List nesting is rebuilt from the markers in `merge.indent_markers`, which handles CS-E's 5-level `(a)(1)(i)(A)(1)` scheme and the ambiguity between `(i)`, `(v)` and `(x)` as letters or roman numerals. It is not taken from the model.
-- `data/sections.jsonl`, `groups.jsonl`, `chunks.jsonl`, `windows_500.jsonl`, `cross_refs.jsonl` and `eval/qrels.jsonl` are deterministic outputs committed to git. `data/vlm_cache/` and `data/embeddings/` are gitignored and can be regenerated.
+- `data/sections.jsonl`, `groups.jsonl`, `chunks.jsonl`, `windows_500.jsonl`, `cross_refs.jsonl` and `eval/qrels.jsonl` (the qrels of question set 1; other experiments keep theirs in `results/<experiment>/qrels.jsonl`) are deterministic outputs committed to git. `data/vlm_cache/` and `data/embeddings/` are gitignored and can be regenerated.
