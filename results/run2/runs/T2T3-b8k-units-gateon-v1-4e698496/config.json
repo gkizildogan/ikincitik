@@ -1,0 +1,102 @@
+{
+  "run_id": "T2T3-b8k-units-gateon-v1-4e698496",
+  "retriever": "T2+T3",
+  "index": "units",
+  "gate": true,
+  "params_version": "v1",
+  "config_hash": "4e698496ee23",
+  "config": {
+    "method": "T2+T3",
+    "description": "H1 -> parent section + cross-references",
+    "index": "units",
+    "gate": true,
+    "params_version": "v1",
+    "k": 20,
+    "candidates": 50,
+    "query_transform": null,
+    "first_stages": [
+      "bm25",
+      "dense"
+    ],
+    "gate_a": {
+      "tau": 0.4,
+      "delta": 0.3,
+      "min_keep": 5,
+      "max_keep": 50
+    },
+    "fusion": {
+      "type": "rrf",
+      "k": 60
+    },
+    "filter": null,
+    "colbert_rerank": null,
+    "rerank": null,
+    "gate_b": null,
+    "lookup": null,
+    "expansion": {
+      "rule": "parent+refs",
+      "budget": 8192,
+      "hops": 1,
+      "to": "section",
+      "pool": "H1 fused list"
+    },
+    "bm25": {
+      "k1": 1.2,
+      "b": 0.75
+    },
+    "llm": null
+  },
+  "corpus_version": "sha256:7a8a726c1198e965fc1467dcbf59dfcacac17309bcb94e8f293ebe70a0b5ce46",
+  "models": {
+    "llm": {
+      "model": "RedHatAI/Qwen3.8-27B-INT4",
+      "serve_config": "serve.retrieval.yaml"
+    },
+    "encoder": {
+      "models": {
+        "bge_m3": {
+          "repo": "BAAI/bge-m3",
+          "revision": "5617a9f61b028005a4858fdac845db406aefb181"
+        },
+        "bge_reranker": {
+          "repo": "BAAI/bge-reranker-v2-m3",
+          "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e"
+        },
+        "jina_reranker": {
+          "repo": "jinaai/jina-reranker-v3",
+          "revision": "d7d7e73b6ea138ced340b83865931b5dfb6c97aa"
+        }
+      },
+      "device": "cuda",
+      "gpu": "NVIDIA GeForce RTX 3090",
+      "dtype": "float32",
+      "versions": {
+        "torch": "2.14.1+cu126",
+        "transformers": "5.22.1",
+        "FlagEmbedding": "1.4.2",
+        "tokenizers": "0.23.3",
+        "fastapi": "0.162.0"
+      },
+      "limits": {
+        "bge_m3_max_length": 8192,
+        "bge_rerank_max_length": 8192,
+        "jina_max_docs": 64,
+        "jina_max_doc_tokens": 8192,
+        "jina_max_query_tokens": 1024
+      }
+    },
+    "qdrant": "1.18.3",
+    "bm25": {
+      "model": "Qdrant/bm25",
+      "k1": 1.2,
+      "b": 0.75,
+      "avg_len": 256.0,
+      "note": "query side; avg_len lives in the stored document vectors"
+    }
+  },
+  "started": "2026-11-10T21:00:06+00:00",
+  "finished": "2026-11-10T21:00:07+00:00",
+  "n_questions": 477,
+  "questions_hash": "2a6dcc0502af",
+  "notes": null
+}
