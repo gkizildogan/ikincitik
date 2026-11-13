@@ -259,19 +259,21 @@ class Pipeline:
 
 
 def check_rrf(p: Pipeline, text: str, flt: dict | None = None) -> dict:
-    """Client-side RRF on the gate-off lists vs Qdrant's server-side RRF with k = 61 (plan 8)."""
+    """Client-side RRF on the gate-off lists vs Qdrant's server-side RRF (plan 8). Qdrant counts
+    ranks from 0, so its k is the pipeline's k + 1: 61 for v1 (k = 60), 11 for v2 (k = 10)."""
+    k = (p.cfg.get("fusion") or {}).get("k", 60)
     q = p._query(text)
     raw = []
     for sig in ("bm25", "dense"):
         r = p.searcher.search(p.index, sig, q, flt, 50)
         raw.append([(u, s) for u, s in r["hits"]])
-    mine = rrf(raw, 60)
+    mine = rrf(raw, k)
     bm = p.res.bm25.embed_query(q.bm25_text)
     from qdrant_client import models as m
 
     server = qdrant_rrf(p.res.client, p.index,
                         [("bm25", m.SparseVector(indices=bm.indices.tolist(), values=bm.values.tolist())),
-                         ("dense", np.asarray(q.dense, np.float32).tolist())], limit=50, k=61, out_limit=len(mine))
+                         ("dense", np.asarray(q.dense, np.float32).tolist())], limit=50, k=k + 1, out_limit=len(mine))
     same_scores = len(mine) == len(server) and all(abs(a[1] - b[1]) < 1e-6 for a, b in zip(sorted(mine), sorted(server)))
     # Qdrant computes in float32: equal ranks give equal scores within 1e-6, so compare the score sequences
     same_order = len(mine) == len(server) and all(abs(a[1] - b[1]) < 1e-6 for a, b in zip(mine, server))

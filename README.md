@@ -119,10 +119,10 @@ The results of `run1` are not in `results/`: they were made under the earlier fl
 | `experiment.py` | experiments from `experiments.toml`: name, question files, results folder (`results/<name>/`), qrels path; `active()` is the experiment of the process |
 | `runs.py` | caches (`llm`, `search`, `rerank_bge`, `rerank_jina`) and run records in the active experiment's `runs/`; `execute` runs one config, resumably, and refuses a completed run made with other questions |
 | `gate.py` | the score gate (gate A on first stages, gate B after reranking) |
-| `retrievers/base.py` | `Hit`, the fixed parameters (`PARAMS["v1"]`), method configs and the run grid |
+| `retrievers/base.py` | `Hit`, the fixed parameters (`PARAMS["v1"]` and the one revision `PARAMS["v2"]`), method configs and the run grid |
 | `retrievers/__init__.py` | `Pipeline` (interprets any config: query transform → first stages → gate A → fusion → filter → rerank → gate B → lookup → expansion) and `Resources` |
 | `retrievers/qdrant_search.py` | cached Qdrant search per signal, and the client-side ColBERT MaxSim (`ColbertIndex`) |
-| `retrievers/fusion.py` | client-side RRF (k = 60, ranks from 1) and Qdrant's server-side RRF for the check |
+| `retrievers/fusion.py` | client-side RRF (ranks from 1; k = 60 in v1, 10 in v2) and Qdrant's server-side RRF for the check |
 | `retrievers/query_llm.py` | vLLM client with a request-hash cache; HyDE, keyword expansion, filter extraction |
 | `retrievers/rerank.py` | bge (pointwise, cached per query and unit) and jina (listwise, cached per query and ordered list) |
 | `retrievers/structural.py` | T1 id lookup; the budgeted context builder; T0, T2, T3 and T2+T3 |
@@ -188,6 +188,17 @@ Run ids read `<method>[-b<budget>]-<index>-gate<on|off>-<params_version>-<hash8>
 **Question families.** A question's family is its `family` field (`paraphrase`, `section_id`, `twin_topic`, `multi_section`); question set 1 has none and is reported as `set1`. When an experiment has more than one family, `run_metrics.parquet` also holds every metric per family (`subset` = `family=<name>`, with n and a bootstrap CI), the metrics table gets one section nDCG@10 column per family, and the `by_family` sheet gives the key metrics per run and family. The pooled (`all`) figures weight each family by its size, and a paraphrase shares its gold with the question it rewrites, so pooled questions are not independent: the pooled CIs and tests are narrower than they should be. Quote the families separately.
 
 **Parameters.** `PARAMS["v1"]` in `src/csrag/retrievers/base.py` is fixed before any run. After reading all v1 metrics, the parameters are revised once, by hand, as `PARAMS["v2"]`, and the grid runs again (notebooks 07 and 08 with `PARAMS_VERSION = "v2"`). Both versions are kept and reported.
+
+`PARAMS["v2"]` is defined. It was written after the v1 metrics of `run2` and changes four values; `plan.md` section 4.8 gives the reasons. No v2 run exists yet.
+
+| parameter | v1 | v2 |
+|---|---|---|
+| RRF constant (`rrf_k`) | 60 | 10 |
+| gate A (first-stage lists) | τ 0.4, δ 0.3, keep 5–50 | τ 0.4, δ 0.3, keep 20–50 |
+| gate B (after reranking) | τ 0.2, δ 0.5, keep 5–20 | τ 0.2, δ 0.5, keep 8–20 |
+| agent starting hits | 5 | 8 |
+
+`rrf_k` also changes the gate-off runs of every method built on H1, and it changes the candidate order, so all jina-reranker-v3 (X2) runs are recomputed for v2. With a gate A floor of 20, a gated single-signal list equals its gate-off list.
 
 ## Notes
 

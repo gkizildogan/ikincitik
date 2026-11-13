@@ -72,19 +72,49 @@ PARAMS: dict[str, dict] = {
     },
 }
 
-# v2 is written here by hand, once, after reading all v1 metrics (plan section 4.8):
-#   PARAMS["v2"] = revise("v1", gate_a=GateParams(...), ...)
-
-
 def revise(base: str, **changes) -> dict:
     p = copy.deepcopy(PARAMS[base])
     p.update(changes)
     return p
 
 
+# v2: the single hand revision the plan allows (section 4.8), written after reading the v1
+# metrics of experiment run2 (477 questions; project_run2_output.md). It was chosen on those
+# questions, so it is reported next to v1 as the revised result, never instead of it. The
+# values were set by reasoning from the v1 tables; no v2 candidate was simulated or run first.
+# Everything not listed keeps its v1 value. Like v1, it is frozen: there is no v3.
+PARAMS["v2"] = revise(
+    "v1",
+    # RRF. With k = 60 over top-50 lists, a unit at rank 50 in BOTH lists scores 2/110 = 0.0182
+    # and outranks a unit at rank 1 in ONE list (1/61 = 0.0164): "in both lists" became a hard
+    # priority class. v1 showed the symptoms: H1 fell below dense on paraphrases (MRR -0.10 to
+    # -0.12), and H1 was better with gate A on (lists cut to ~5 first: Hit@3 +0.04 to +0.05).
+    # With k = 10 a lone rank-1 hit ties with agreement at rank 12 in both lists, so agreement
+    # near the top still wins and agreement deep in the lists no longer does.
+    rrf_k=10,
+    # Gate A. Its median kept length was min_keep (5) for every signal, and it cut a gold
+    # section that was in the top 50 on 7-11% of questions, which capped reranker evidence at
+    # 0.92-0.95 (0.98-0.99 with the gate off). The gate-off lists still gain ~5 points of
+    # evidence between rank 10 and rank 20 (dense 0.89-0.91 -> 0.95-0.96), so the floor moves
+    # to 20. tau and delta are unchanged. Consequence: at k = 20 a gated single-signal list
+    # equals the gate-off list; gate A now only limits what fusion and the rerankers see.
+    gate_a=GateParams(tau=0.4, delta=0.3, min_keep=20, max_keep=50),
+    # Gate B. With a deeper candidate pool it decides the output length. X2's gate-off evidence
+    # by cut-off flattens at 8 hits (windows 0.963 / 0.980 / 0.981 at top 5 / 8 / 10; units
+    # 0.982 / 0.987 / 0.987); v1 kept a median of 6-7.
+    gate_b=GateParams(tau=0.2, delta=0.5, min_keep=8, max_keep=20),
+    # Agent. It called done at its first step on 80-85% of answerable questions, so its
+    # starting context decides most outcomes, and its evidence in context (0.94-0.95) stayed
+    # below X2's. H1's gate-on evidence was 0.85-0.88 at 5 hits and 0.90-0.92 at 8. Eight hits
+    # are ~3.0k tokens on windows and ~5.6k on units, which still leaves room in the 8k budget
+    # (ten units would nearly fill it).
+    agent_initial_hits=8,
+)
+
+
 def get_params(version: str) -> dict:
     if version not in PARAMS:
-        raise KeyError(f"params_version {version!r} is not defined; v2 is set by hand after reading v1 (plan 4.8)")
+        raise KeyError(f"params_version {version!r} is not defined; the plan allows v1 and one hand revision, v2 (plan 4.8)")
     return PARAMS[version]
 
 

@@ -1,9 +1,10 @@
 """Client-side reciprocal rank fusion (Cormack et al.), and its check against Qdrant.
 
-score(d) = sum over lists of 1 / (k + rank_d), rank from 1, k = 60.
+score(d) = sum over lists of 1 / (k + rank_d), rank from 1. k is the run's
+``rrf_k``: 60 in params v1, 10 in v2.
 
-Qdrant's own RRF counts ranks from 0 and defaults to k = 2, so ``k = 61``
-there reproduces these scores (plan sections 4.0 and 8).
+Qdrant's own RRF counts ranks from 0 and defaults to k = 2, so ``k + 1``
+there (61 for v1, 11 for v2) reproduces these scores (plan sections 4.0 and 8).
 """
 
 from __future__ import annotations
