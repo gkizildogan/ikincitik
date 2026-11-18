@@ -289,9 +289,9 @@ def pipeline_diagram(run_id: str, rm=None, sig=None, gates=None, costs=None, roo
             lines.append(f'  GB{{"gate B<br/>τ {g["tau"]} δ {g["delta"]}<br/>keep {g["min_keep"]}–{g["max_keep"]}"}}')
             link(prev, "GB")
             prev = ["GB"]
-        if cfg.get("cut"):  # X3: a fixed score cut-off instead of gate B
-            c = cfg["cut"]
-            lines.append(f'  CT{{"score cut<br/>score ≥ {c["min_score"]}<br/>keep {c["min_keep"]}–{c["max_keep"]}"}}')
+        if cfg.get("cut"):  # X3: a fixed score cut-off instead of gate B (not `c`: that is the loaded config.json below)
+            cut = cfg["cut"]
+            lines.append(f'  CT{{"score cut<br/>score ≥ {cut["min_score"]}<br/>keep {cut["min_keep"]}–{cut["max_keep"]}"}}')
             link(prev, "CT")
             prev = ["CT"]
     if cfg.get("lookup"):

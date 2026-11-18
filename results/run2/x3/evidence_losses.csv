@@ -1,0 +1,11 @@
+question_id,family,evidence_x2,evidence_x3,evidence_in_candidates,detected,cause,question
+pa019u,paraphrase,1.0,0.0,0.0,,candidates,"During certification runs, how long do I have to hold off after engine conditions change before the readings count toward performance?"
+pa056h,paraphrase,1.0,0.0,0.0,turbine,candidates,"If the cranking motor is listed as belonging to a gas turbine, what occurrence must its layout and linkage rule out?"
+pa066h,paraphrase,1.0,0.0,1.0,,cut,"When trying to relight the powerplant in the air, what should pilots be capable of doing with the mechanism that holds its spinning shafts still?"
+id016,section_id,1.0,0.5,1.0,,cut,Write an extensive summary of cs-e 510.
+ms038,multi_section,1.0,0.6666666666666666,1.0,turbine,cut,"If an aeroplane turbine engine is controlled manually within its limitations, what must be shown about inadvertent opening of the throttle, and how is that throttle slam case then demonstrated?"
+ms043,multi_section,1.0,0.5,0.5,,candidates,"As part of the engine control system's safety assessment, which installation errors must be assessed, and what must the assessment identify regarding faults?"
+ms052,multi_section,1.0,0.5,1.0,,cut,"What is the Approved Life of an Engine Critical Part meant to ensure, and in what part of the instructions for continued airworthiness must it appear and how must that part be presented?"
+ms072,multi_section,1.0,0.5,1.0,,cut,What criterion must the failure analysis apply to the worst failure consequences on a piston engine compared with a turbine engine?
+ms079,multi_section,1.0,0.5,1.0,,cut,How does the rotational speed range to be covered differ between the calibration guidance for piston engines and for turbine engines?
+ms089,multi_section,1.0,0.5,1.0,,cut,"In broad terms, how does the treatment of ice differ between a piston engine's induction system and a turbine engine operated in icing conditions?"
