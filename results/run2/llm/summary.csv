@@ -1,0 +1,5 @@
+llm,prompt,records,answerable,unanswerable,abstained_answerable,abstained_unanswerable,truncated,errors,prompt_tokens,completion_tokens,seconds
+qwen3.8-27b-int4,simple,477,469,8,0,0,0,0,1731.51,167.79,17.28
+qwen3.8-27b-int4,robust,477,469,8,45,8,0,0,2330.51,89.85,15.05
+gemma-4-26b-a4b-qat-int4,simple,477,469,8,0,0,0,0,1742.72,127.79,6.35
+gemma-4-26b-a4b-qat-int4,robust,477,469,8,42,8,0,0,2344.72,135.74,6.71

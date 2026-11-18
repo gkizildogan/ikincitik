@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A research project. It has two parts:
 1. **Extraction:** notebooks 00–03 and `src/csparse/` turn `cs-e_amendment_9.pdf` (EASA CS-E Amendment 9) into section-bounded Markdown retrieval units, using Qwen as a VLM.
-2. **Retrieval experiments:** notebooks 04–10 and `src/csrag/` compare retrieval methods over that corpus, and notebook 10 runs the final pipeline X3 (`x2_to_x3_plan.md`, gitignored like `plan.md`). Question set 1 has 100 questions (92 answerable, 8 unanswerable); question set 2 (`data/eval/set2/`) adds 377 answerable questions in four families. Which files an evaluation runs, and where its results go, is set by the experiment in `experiments.toml`.
+2. **Retrieval experiments:** notebooks 04–10 and `src/csrag/` compare retrieval methods over that corpus, and notebook 10 runs the final pipeline X3 (`x2_to_x3_plan.md`, gitignored like `plan.md`). Notebook 11 generates answers from the X3 contexts with two LLMs × two prompts (`x3_to_llm.md`). Question set 1 has 100 questions (92 answerable, 8 unanswerable); question set 2 (`data/eval/set2/`) adds 377 answerable questions in four families. Which files an evaluation runs, and where its results go, is set by the experiment in `experiments.toml`.
 
 `README.md` is the reference for services, files, record formats and results. `plan.md` is the design document; it is gitignored but present locally. Section numbers in code comments ("plan 4.8", "plan section 5") refer to `plan.md`. When behaviour changes, update both documents, because the user keeps them in sync with the code.
 
@@ -38,25 +38,28 @@ Notebooks `chdir` to the repo root in their first cell, so every path in `src/` 
 docker compose stop vllm encoder && docker compose up -d qdrant && docker compose up -d --force-recreate encoder-gpu
 # phase B, notebook 08: vLLM + CPU encoder
 docker compose stop encoder-gpu && docker compose up -d qdrant vllm && docker compose up -d --force-recreate encoder
-# generation notebooks after notebook 10 read results/<experiment>/x3/contexts.jsonl and need only vLLM
-docker compose stop encoder-gpu && docker compose up -d vllm
+# notebook 11 (generation) reads results/<experiment>/x3/contexts.jsonl and needs only vLLM, one model at a time:
+docker compose stop vllm encoder-gpu && docker compose up -d vllm      # Qwen
+docker compose stop vllm && VLLM_MODEL_ID=cyankiwi/gemma-4-26B-A4B-it-qat-AWQ-INT4 VLLM_CONFIG=serve.gemma.yaml docker compose up -d vllm   # Gemma
 ```
 
 - Encoders need `--force-recreate`: a failed start (port taken) leaves a container with no published port.
 - Other vLLM stacks on this machine (skyrag-vllm, aviation-vllm*) must be stopped first.
 - `VLLM_CONFIG` selects the serve file: `vllm/serve.yaml` is the extraction config (vision) and is kept unchanged for reproducibility; `vllm/serve.retrieval.yaml` is the experiments config (text-only, 32k context, `gpu-memory-utilization 0.80`). Don't raise the memory setting: 0.85 OOMs next to the desktop's ~3 GB.
+- `compose.yaml` takes the vLLM model from `VLLM_MODEL_ID` (default Qwen3.8-27B-INT4); `vllm/serve.gemma.yaml` serves Gemma 4 26B-A4B (QAT 4-bit, `cyankiwi/gemma-4-26B-A4B-it-qat-AWQ-INT4`) under the same settings as Qwen. Gemma 4 31B does not fit next to the desktop (vLLM allocates a throw-away 2.6 GiB `lm_head` while building it); don't pull it again.
 - Keep n-gram speculative decoding off; it corrupts greedy output on this model.
 - `encoder/` is a separate Docker image (FastAPI: `/embed`, `/rerank`, `/tokens`, `/health`) with its own fully pinned `requirements.txt`, compiled from `requirements.in`. Models load offline from pinned snapshot paths. Its dependencies are not in `pyproject.toml`.
 
 ## Experiments and results folders
 
 - An experiment is a name plus question files, declared in `experiments.toml` (`[experiments.<name>]`: `questions`, optional `description` and `qrels`). `src/csrag/experiment.py` loads it. **Everything it produces goes to `results/<name>/`**: `runs/`, `qrels.jsonl`, the metrics files and `diagrams/`. Never write results directly into `results/`.
-- The active experiment is `active` in `experiments.toml`; the `CSRAG_EXPERIMENT` environment variable (shell or `.env`) overrides it. Notebooks 06–10 get it from `experiment.active()` in their first cell (`EXP`, `RESULTS = EXP.dir`) and don't name a folder themselves. `runs.py` and `report.py` default to the active experiment's folder, so pass `root=` / `out_root=` only to work somewhere else (the reproducibility check in notebook 08 does).
+- The active experiment is `active` in `experiments.toml`; the `CSRAG_EXPERIMENT` environment variable (shell or `.env`) overrides it. Notebooks 06–11 get it from `experiment.active()` in their first cell (`EXP`, `RESULTS = EXP.dir`) and don't name a folder themselves. `runs.py` and `report.py` default to the active experiment's folder, so pass `root=` / `out_root=` only to work somewhere else (the reproducibility check in notebook 08 does).
 - The experiment name is not `PARAMS_VERSION`. One experiment holds the v1 runs and, later, the v2 runs and the X3 run (v3) of the same questions. A new question set gets a new experiment name; don't add question files to an experiment that already has runs.
 - Run ids don't depend on the questions. `config.json` therefore records `n_questions` and `questions_hash`, and `runs.execute` raises when a completed run was made with other questions (`runs.same_questions`). Don't weaken this check.
 - Defined now: `run1` (question set 1; qrels stay in `data/eval/qrels.jsonl`) and `run2` (set 1 + the four set 2 files, 477 questions, 469 answerable). The `run1` results were moved out of `results/` into `run1resultarchive/` (gitignored); `mv run1resultarchive results/run1` restores them, and notebook 09 then reproduces the archived tables byte for byte. Use this as the regression check after changing `evaluate.py` or `report.py`, on a copy, without overwriting the archive.
 - Question families: `family` in a question record, `set1` when absent (`evaluate.family_of`). With more than one family, `evaluate_all` adds `family=<name>` subsets (with CIs) and `report.py` adds per-family columns; the `by_family` sheet is always written. The statistics still treat questions as independent, although a paraphrase shares its gold with its original, so pooled CIs and tests are too narrow.
 - Nothing in the code may hardcode the number of questions (92, 8, 100): take it from the questions.
+- **`llm/` is notebook 11's folder** (`rag_<llm>__<prompt>.jsonl`, `rag_output.jsonl`, `summary.csv`); notebook 09 does not write it.
 - **`x3/` is notebook 10's folder.** The X3 run record is in `results/<experiment>/runs/` like every run, and everything else the final pipeline produces (`contexts.jsonl`, its own copies of the standard metric files for X3 and the baselines, the X2 vs X3 tables, the cut-off sweep, the keyword report, its diagram) is in `results/<experiment>/x3/`. Notebook 09 does not write it. `final.write_metric_files` uses the same code as notebook 09, so X3's rows equal what notebook 09 would give.
 
 ## csrag architecture
@@ -69,6 +72,7 @@ docker compose stop encoder-gpu && docker compose up -d vllm
 - **Caches make reruns exact and resumable.** `runs.py` defines append-only JSONL caches in `data/cache/` (`llm`, `search`, `rerank_bge`, `rerank_jina`; last write wins), and they are committed to git. They are shared by all experiments. `runs.execute` skips completed runs and resumes from `results/<experiment>/runs/<id>/partial.jsonl`. LLM calls are keyed by a hash of the full request.
 - **Two indexes over the same text:** `units` → Qdrant `cse_units_v1` (252 base units from `chunks.jsonl`) and `win500` → `cse_win500_v1` (436 windows of 500 bge-m3 tokens). Evaluation is span-based (`evaluate.py`), so both indexes are scored against the same gold character spans, at unit, section and group level.
 - **ColBERT runs client-side.** Qdrant caps a multivector at 1023 vectors, and 60 base units exceed that. C1 and M1 therefore compute MaxSim client-side (`ColbertIndex`) from the cached vectors in `data/embeddings/`, for both indexes.
+- **Generation (notebook 11).** `rag_prompts.py` holds the prompts (the user edits the texts there; `prompt_hash` is stored in every record), `rag_generate.py` the vLLM client and the resumable per-(LLM, prompt) runs. The notebook needs only vLLM, never Qdrant or the encoder, and each run cell checks that vLLM serves *its* model. Generation results are not written into the documents (result write-ups are about retrieval).
 - **Corpus in memory.** `csrag.Corpus` extends `csparse.merge.Corpus`. Expansion (T2, T3, T4) fetches parent sections and cross-referenced sections from memory, not from Qdrant.
 - **Notebook split by phase.** Notebook 07 (phase A) runs everything that needs no LLM, including the X1/X2 rerankers, and asserts that vLLM is down. Notebook 08 (phase B) runs Q1, Q2, F1 and T4 and needs vLLM. Notebook 09 needs no models and writes every file under `results/<experiment>/` except `runs/`, `qrels.jsonl` (notebook 06) and `x3/`. Notebook 10 (phase A again: `qdrant` + `encoder-gpu`, vLLM stopped, no LLM) runs X3 and writes `x3/`; with `SERVICES = False` it works from the caches alone. Notebooks 04 and 05 are the corpus side and don't depend on the experiment.
 

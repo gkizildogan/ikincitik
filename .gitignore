@@ -13,3 +13,4 @@ data/embeddings/
 results/*/runs/*/partial.jsonl
 run1resultarchive/
 x2_to_x3_plan.md
+x3_to_llm.md

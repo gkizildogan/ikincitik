@@ -5,6 +5,10 @@
 #                Serve options: ./vllm/${VLLM_CONFIG}
 #                  serve.yaml            page extraction (vision on, max-model-len 12288)
 #                  serve.retrieval.yaml  retrieval experiments (language-model-only, 32768)
+#                  serve.gemma.yaml      Gemma 4 26B-A4B QAT (4-bit) for the generation experiments (notebook 11);
+#                                        needs VLLM_MODEL_ID=cyankiwi/gemma-4-26B-A4B-it-qat-AWQ-INT4
+#                The model is ${VLLM_MODEL_ID}, Qwen3.8-27B-INT4 when unset (so nothing changes for the
+#                retrieval notebooks).
 #                Only one vLLM fits on the card: stop skyrag-vllm / aviation-vllm* first.
 # - qdrant:      the only vector store (CPU).
 # - encoder:     bge-m3 + bge-reranker-v2-m3 + jina-reranker-v3 on the CPU (./encoder).
@@ -63,7 +67,7 @@ services:
       - "8000:8000"
     # Image entrypoint is already `vllm serve`
     command:
-      - RedHatAI/Qwen3.8-27B-INT4
+      - ${VLLM_MODEL_ID:-RedHatAI/Qwen3.8-27B-INT4}
       - --config
       - /config/${VLLM_CONFIG:-serve.yaml}
     deploy:

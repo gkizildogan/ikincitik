@@ -1,0 +1,32 @@
+# vLLM serve options for Gemma 4 26B-A4B (a mixture-of-experts model: 25B parameters, 4B active
+# per token) used by the generation experiments (notebook 11, x3_to_llm.md) next to Qwen.
+# Checkpoint: cyankiwi/gemma-4-26B-A4B-it-qat-AWQ-INT4, made from Google's quantisation-aware-trained
+# Gemma 4 26B-A4B; 4-bit weights, group size 32, compressed-tensors format (the same family of
+# format as the Qwen INT4 checkpoint), 16 GiB on disk including a ~1 GiB vision tower.
+#
+# Start it with (the model id is read by compose.yaml, the serve file by VLLM_CONFIG):
+#   VLLM_MODEL_ID=cyankiwi/gemma-4-26B-A4B-it-qat-AWQ-INT4 VLLM_CONFIG=serve.gemma.yaml docker compose up -d vllm
+# and Qwen again with the defaults of .env (serve.retrieval.yaml, RedHatAI/Qwen3.8-27B-INT4).
+# Only one vLLM fits on the card: `docker compose stop vllm` first.
+#
+# Everything below is chosen like serve.retrieval.yaml (language-model-only, 32768 tokens,
+# 4 sequences, 0.80 of the card because the desktop holds ~2.4-3 GiB of it, eager mode), so the
+# two models are served under the same conditions.
+
+revision: 76373001e106330a6815f237ef00838c7fed9356
+tokenizer-revision: 76373001e106330a6815f237ef00838c7fed9356
+served-model-name: cyankiwi/gemma-4-26B-A4B-it-qat-AWQ-INT4
+
+language-model-only: true
+
+# Gemma is trained in bfloat16; the checkpoint config says float16. The 4-bit layers are
+# dequantised to the compute dtype either way, so use the dtype the model was trained in.
+dtype: bfloat16
+
+max-model-len: 32768
+max-num-seqs: 4
+gpu-memory-utilization: 0.80
+enforce-eager: true
+
+# No reasoning parser: thinking is off in every request (chat_template_kwargs
+# enable_thinking false, which is also Gemma 4's default), so the answer is the plain content.

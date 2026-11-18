@@ -3,7 +3,7 @@
 Two parts:
 
 1. **Extraction (notebooks 00–03, `src/csparse/`).** Turns `cs-e_amendment_9.pdf` (EASA CS-E Amendment 9, with the header and footer cropped off) into retrieval units. There is one unit per `CS-E X` and one per `AMC E X…`, with lists, glossaries and tables kept intact across page breaks. `[Amdt No: …]` notes are removed and figures are skipped.
-2. **Retrieval experiments (notebooks 04–10, `src/csrag/`).** Compares retrieval methods for single-turn question answering over that text: lexical, learned sparse, dense, late interaction, hybrid fusion, metadata filters, LLM query rewriting, reranking, structural lookup and expansion (fixed rules and an agent), each with and without a score gate, on two chunkings. Notebook 10 then runs the final pipeline X3 (hybrid retrieval, a keyword engine-type filter, jina reranking and a score cut-off) and saves its contexts for the generation experiments. Qdrant is the only vector store, the JSONL corpus is loaded into memory, and every experiment record is a file under `results/<experiment>/`. The design is in `plan.md`.
+2. **Retrieval experiments (notebooks 04–10, `src/csrag/`), and generation from their contexts (notebook 11).** Compares retrieval methods for single-turn question answering over that text: lexical, learned sparse, dense, late interaction, hybrid fusion, metadata filters, LLM query rewriting, reranking, structural lookup and expansion (fixed rules and an agent), each with and without a score gate, on two chunkings. Notebook 10 then runs the final pipeline X3 (hybrid retrieval, a keyword engine-type filter, jina reranking and a score cut-off) and saves its contexts for the generation experiments. Qdrant is the only vector store, the JSONL corpus is loaded into memory, and every experiment record is a file under `results/<experiment>/`. The design is in `plan.md`.
 
 ## Setup
 
@@ -23,8 +23,9 @@ The retrieval experiments time-share the GPU in **two phases** (one swap; stop o
 docker compose stop vllm encoder && docker compose up -d qdrant && docker compose up -d --force-recreate encoder-gpu
 # phase B, notebook 08: vLLM on the GPU (VLLM_CONFIG=serve.retrieval.yaml in .env), encoder on the CPU
 docker compose stop encoder-gpu && docker compose up -d qdrant vllm && docker compose up -d --force-recreate encoder
-# after notebook 10, the generation notebooks need only vLLM (they read results/<experiment>/x3/contexts.jsonl)
-docker compose stop encoder-gpu && docker compose up -d vllm
+# generation, notebook 11: vLLM only (it reads results/<experiment>/x3/contexts.jsonl), one model at a time
+docker compose stop vllm encoder-gpu && docker compose up -d vllm        # Qwen
+docker compose stop vllm && VLLM_MODEL_ID=cyankiwi/gemma-4-26B-A4B-it-qat-AWQ-INT4 VLLM_CONFIG=serve.gemma.yaml docker compose up -d vllm   # Gemma (the switch in the middle of notebook 11)
 ```
 
 ### Services (`compose.yaml`)
@@ -36,14 +37,15 @@ docker compose stop encoder-gpu && docker compose up -d vllm
 | `encoder` | CPU, no GPU devices (phase B) | Built from `encoder/`: bge-m3, bge-reranker-v2-m3 and jina-reranker-v3, port 8081. |
 | `encoder-gpu` | GPU (phase A; compose profile `gpu`) | The same image and API on the GPU, also port 8081, so only one encoder runs at a time. **Never together with vLLM.** |
 
-**Two vLLM serve configs**, chosen with `VLLM_CONFIG` (in `.env` or on the command line; the default is `serve.yaml`):
+**Three vLLM serve configs**, chosen with `VLLM_CONFIG` (in `.env` or on the command line; the default is `serve.yaml`):
 - `vllm/serve.yaml`: page extraction (vision on, `max-model-len 12288`). It stays unchanged, so the extraction run remains reproducible.
 - `vllm/serve.retrieval.yaml`: retrieval experiments (`language-model-only`, `max-model-len 32768`, `gpu-memory-utilization 0.80`). Its KV cache holds 43,690 tokens, 1.33 × a full 32,768-token request (notebook 08 checks the startup log), and an 18k-token prompt (the agent's worst case) runs. 0.85 left no headroom next to the desktop's ~3 GB on the same card, and the first request died with CUDA OOM. At 0.82 the memory profile varied between starts.
-- N-gram speculative decoding is **off** in both: on this hybrid model it corrupted greedy output.
+- `vllm/serve.gemma.yaml`: Gemma 4 26B-A4B for the generation experiments (notebook 11), served under the same conditions as Qwen (`language-model-only`, 32768 tokens, 4 sequences, 0.80, eager). The checkpoint is `cyankiwi/gemma-4-26B-A4B-it-qat-AWQ-INT4` (Google's QAT weights as compressed-tensors 4-bit, 16 GiB, pinned revision); it needs `VLLM_MODEL_ID=cyankiwi/gemma-4-26B-A4B-it-qat-AWQ-INT4`, because `compose.yaml` takes the model from `VLLM_MODEL_ID` (Qwen when unset). Gemma 4 31B was tried and does not fit next to the desktop: vLLM allocates a throw-away 2.6 GiB `lm_head` while building the model, and the peak (~21.3 GiB) exceeds what the card has left.
+- N-gram speculative decoding is **off** in all: on the Qwen hybrid model it corrupted greedy output.
 
 **Why two phases.** The rerankers run ~8× faster on the GPU. Measured per question with 50 base units, fp32: bge takes 5.7 s on the GPU and 33 s on the CPU; jina takes 14.4 s and 141 s. That is ~1 h instead of ~9 h for X1 + X2, with the same scores (identical rankings, |Δ| ≤ 4e-5). No run needs a reranker and the LLM at the same time. In phase B the encoder only embeds short texts (HyDE passages, agent search queries), which takes seconds on the CPU. The device of each session is recorded in every run's `config.json`.
 
-**`.env` keys:** `VLLM_ENDPOINT`, `VLLM_API_KEY`, `VLLM_MODEL` (the vLLM container), `VLLM_CONFIG` (serve file), `ENCODER_URL` (default `http://127.0.0.1:8081`), `ENCODER_THREADS` (torch threads in the encoder, default 12 = physical cores), `QDRANT_URL` (default `http://127.0.0.1:6333`), `BGE_M3_TOKENIZER` (bge-m3 `tokenizer.json` for token counts), and optionally `CSRAG_EXPERIMENT` (overrides `active` in `experiments.toml`, see [Experiments](#experiments-experimentstoml)).
+**`.env` keys:** `VLLM_ENDPOINT`, `VLLM_API_KEY`, `VLLM_MODEL` (the model name the clients ask for), `VLLM_CONFIG` (serve file), `VLLM_MODEL_ID` (read by `compose.yaml`: the model vLLM loads; unset = Qwen3.8-27B-INT4), `ENCODER_URL` (default `http://127.0.0.1:8081`), `ENCODER_THREADS` (torch threads in the encoder, default 12 = physical cores), `QDRANT_URL` (default `http://127.0.0.1:6333`), `BGE_M3_TOKENIZER` (bge-m3 `tokenizer.json` for token counts), and optionally `CSRAG_EXPERIMENT` (overrides `active` in `experiments.toml`, see [Experiments](#experiments-experimentstoml)).
 
 ### `encoder/`: the model container (CPU and GPU)
 
@@ -72,10 +74,11 @@ Endpoints:
 | `08_llm_and_agent` | **phase B** (vLLM, CPU encoder): vLLM KV-cache check; HyDE passages (Q1), keyword expansions (Q2) and engine-type filters (F1); the Q1/Q2/F1 runs; the agent T4; reproducibility, label-leakage, one-hop and completeness checks | `data/cache/llm.jsonl`, `data/embeddings/queries_{hyde,agent}.npz`, `results/<experiment>/runs/` |
 | `09_analysis` | metrics, bootstrap CIs, paired randomisation tests with Holm, tables, plots, metrics files, diagrams, output checks | in `results/<experiment>/`: `run_metrics.parquet`, `question_metrics.parquet`, `{units,win500}/metrics.{csv,xlsx}`, `granularity.csv`, `diagrams/` |
 | `10_x3_pipeline` | **phase A** (GPU encoder, vLLM stopped; `SERVICES = False` re-runs the later steps from the caches): the keyword rule against the labels, the X3 run (jina on the GPU), the standard metric files for X3 and the baselines, X2 vs X3 with CIs and paired differences, a cut-off sweep, checks, and the hand-off file | `results/<experiment>/runs/` (the X3 run), `results/<experiment>/x3/` (see Results) |
+| `11_generate_answers` | **vLLM only** (no Qdrant, no encoder): answers every question from the X3 contexts with two LLMs (Qwen3.8-27B INT4, Gemma 4 26B-A4B QAT 4-bit) × two prompts (`simple`, `robust`, in `src/csrag/rag_prompts.py`); a "try one question" cell, one resumable cell per (LLM, prompt), a terminal switch of vLLM from Qwen to Gemma in the middle, then the combine cell with checks | `results/<experiment>/llm/`: `rag_<llm>__<prompt>.jsonl` (four), `rag_output.jsonl` (question, answer, gold, retrieved parts, LLM, prompt), `summary.csv` |
 
 **Run order for the experiments:** phase A: 04 → 05 → 06 → 07 (`encoder-gpu`, **vLLM stopped**); swap; phase B: 08 (vLLM + CPU `encoder`); then 09 (no models). The final pipeline, notebook 10, needs the phase A services again (`encoder-gpu`, vLLM stopped) and no LLM: run it before the swap, or swap back; it reads its baselines (X2 gate off and on, H1; all v1) from the runs that notebook 07 wrote. Approximate times: corpus embedding in 04 takes a few minutes on the GPU; the grid without LLM in 07 takes minutes; the rerankers in 07 take ~1 h on the GPU; the query-side LLM work in 08 takes ~10–25 min; the agent takes ~1–2 h. These times are for 100 questions; the rerankers, the query-side LLM work and the agent scale with the number of questions that are not in the caches yet. All of it is cached and resumable (a run continues from `results/<experiment>/runs/<run_id>/partial.jsonl`). For v2, run 07 and 08 again with `PARAMS_VERSION = "v2"`.
 
-Notebooks 04 and 05 build the corpus side, which every experiment shares. Notebooks 06–10 work on the **active experiment** (next section) and print it in their first cell.
+Notebooks 04 and 05 build the corpus side, which every experiment shares. Notebooks 06–11 work on the **active experiment** (next section) and print it in their first cell.
 
 The code lives in `src/`; the notebooks only call it and expose the parameters.
 
@@ -133,6 +136,8 @@ The results of `run1` are not in `results/`: they were made under the earlier fl
 | `retrievers/structural.py` | T1 id lookup; the budgeted context builder; T0, T2, T3 and T2+T3 |
 | `retrievers/agentic.py` | T4: the agent with `expand`, `follow_refs`, `search` and `done`, one JSON-schema LLM call per step |
 | `evaluate.py` | question loading (one file or several) and validation, span-based qrels, metrics (incl. evidence recall, gate diagnostics, supporting recall, all-gold), subsets (`all`, `mentions_section_id`, question families), bootstrap CIs, randomisation tests, Holm |
+| `rag_prompts.py` | the prompts of notebook 11 (`simple`, `robust`; edit the texts there), how a retrieved window is shown, `build_messages`, `prompt_hash` |
+| `rag_generate.py` | notebook 11: the vLLM client, resumable generation per (LLM, prompt) into JSONL, the checks, the combined output file and the summary; no cache, the output files are the record |
 | `report.py` | per-index `metrics.csv`/`metrics.xlsx`, `granularity.csv`, Mermaid pipeline diagrams, written to the active experiment's folder (notebook 10 calls the same functions for `x3/`) |
 | `qgen.py` | question set 2: `fill` (derived fields), `check` (schema, verbatim quotes, family rules, twin table), `pool` (candidates for the single-source judge: BM25 over sections plus structure), `stats`, `overlap`, `refs`; needs no services or tokenizer |
 
@@ -187,6 +192,7 @@ One folder per experiment (see [Experiments](#experiments-experimentstoml)), e.g
 | `units/metrics.xlsx`, `win500/metrics.xlsx` | the same table plus `by_family`, `by_question_type`, `by_engine_type`, `by_kind`, `mentions_section_id`, `length_bucket`, `significance`, `gate`, `per_question` and `unanswerable` sheets |
 | `granularity.csv` | RQ7: windows vs units (gate off), section level and evidence recall, Holm-corrected |
 | `diagrams/<run_id>.md` | Mermaid flowchart of a run generated from its config, with its metric panel |
+| `llm/` | notebook 11: `rag_<llm>__<prompt>.jsonl` (one per LLM and prompt, one record per question), **`rag_output.jsonl`** (the four combined: question, generated answer, gold sections, reference answer, retrieved parts, LLM, prompt and its hash, tokens, seconds, parameters) and `summary.csv` |
 | `x3/` | notebook 10, the final pipeline X3 (its run record is in `runs/`): `contexts.jsonl` (the hand-off for the generation notebooks: per question the kept windows with their text, and every reranked candidate with its jina score), `run_metrics.parquet`, `question_metrics.parquet` and `win500/metrics.{csv,xlsx}` (the same files and sheets as above, for X3 and the baselines X2 gate off and on and H1), `comparison.csv` and `by_family.csv` (X2 vs X3), `paired.csv` (paired differences), `evidence_losses.csv` (where X3 has less evidence than X2, with the cause), `cut_sweep.csv` (other cut-offs), `keyword_rule.csv` (the rule against the labels), `diagrams/` |
 
 Run ids read `<method>[-b<budget>]-<index>-gate<on|off>-<params_version>-<hash8>`. To regenerate: notebook 06 (qrels), notebooks 07 and 08 (runs; they skip completed ones), notebook 09 (every other file of the folder except `x3/`) and notebook 10 (the X3 run and `x3/`). Only answerable questions are scored (`run1`: 92 of 100; `run2`: 469 of 477); the unanswerable ones are only listed in the `unanswerable` sheets. Tables are sorted by section nDCG@10 for readability only: no run is selected as a winner.
