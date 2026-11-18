@@ -12,3 +12,4 @@ data/embeddings/
 # interrupted runs (completed runs keep hits.parquet + config.json)
 results/*/runs/*/partial.jsonl
 run1resultarchive/
+x2_to_x3_plan.md

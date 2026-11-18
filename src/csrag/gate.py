@@ -12,6 +12,9 @@ For one list with scores s1 >= s2 >= ... >= sn:
 One rule for every scorer: BM25 sums, sparse dot products, cosines, ColBERT
 MaxSim sums and reranker logits are all measured against their own list.
 The gate always returns a prefix of its input.
+
+``score_cut`` is the other way to shorten a list (X3): a fixed score threshold for the reranker's
+scores instead of a threshold relative to the list itself.
 """
 
 from __future__ import annotations
@@ -53,6 +56,24 @@ def gate_keep(scores: list[float], p: GateParams) -> int:
             keep = i
             break
     return int(min(max(keep, p.min_keep), p.max_keep, n))
+
+
+def score_cut(scores: list[float], min_score: float, min_keep: int, max_keep: int) -> int:
+    """Number of leading hits to keep: all with score >= ``min_score``, at least ``min_keep``, at most ``max_keep``.
+
+    The cut-off of X3 (``cut`` in the run config), applied to the reranker's scores. Unlike the gate it
+    compares each score with a fixed threshold, not with its own list. ``scores`` must be sorted in
+    descending order, so the hits at or above the threshold are a prefix; the result is a prefix length.
+    """
+    if min_keep > max_keep:
+        raise ValueError(f"min_keep ({min_keep}) is larger than max_keep ({max_keep})")
+    n = len(scores)
+    if n == 0:
+        return 0
+    s = np.asarray(scores, dtype=np.float64)
+    if np.any(np.diff(s) > 1e-12):
+        raise ValueError("score_cut expects scores sorted in descending order")
+    return int(min(max(int(np.sum(s >= min_score)), min_keep), max_keep, n))
 
 
 def apply_gate(hits: list, p: GateParams | None, score=lambda h: h[1]) -> tuple[list, dict]:

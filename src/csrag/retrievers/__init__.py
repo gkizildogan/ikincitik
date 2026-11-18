@@ -7,7 +7,7 @@
     runs.execute(cfg, p.run, questions, res.meta(cfg["index"]))
 
 Stages: query_transform -> first_stage(s) -> gate A -> fusion -> filter (inside each
-search) -> ColBERT rerank / rerank -> gate B -> lookup -> expansion.
+search) -> ColBERT rerank / rerank -> gate B (X3: score cut) -> lookup -> expansion.
 """
 
 from __future__ import annotations
@@ -17,14 +17,15 @@ from pathlib import Path
 
 import numpy as np
 
+from .. import engine_rule
 from ..corpus import UNIT_FILES, Corpus
 from ..embed import BM25, EncoderClient, QueryEmbeddings
 from ..enrich import corpus_version
-from ..gate import GateParams, apply_gate
+from ..gate import GateParams, apply_gate, score_cut
 from ..runs import Caches
 from .agentic import Agent
-from .base import (ALL_METHODS, DESCRIPTIONS, EXPANSION_METHODS, PARAMS, RANKED_METHODS, Hit, get_params, grid,
-                   method_config, revise)
+from .base import (ALL_METHODS, DESCRIPTIONS, EXPANSION_METHODS, FINAL_METHODS, PARAMS, RANKED_METHODS, Hit, get_params,
+                   grid, method_config, revise)
 from .fusion import qdrant_rrf, rrf
 from .qdrant_search import ColbertIndex, Query, Searcher, engine_filter
 from .query_llm import LLM, prompt_hashes, usage_of
@@ -32,8 +33,8 @@ from .rerank import bge_scores, jina_scores
 from .structural import expand_fixed, id_lookup, lookup_then
 
 __all__ = [
-    "ALL_METHODS", "DESCRIPTIONS", "EXPANSION_METHODS", "PARAMS", "RANKED_METHODS", "Hit", "Pipeline", "Resources",
-    "get_params", "grid", "method_config", "prompt_hashes", "revise", "rrf",
+    "ALL_METHODS", "DESCRIPTIONS", "EXPANSION_METHODS", "FINAL_METHODS", "PARAMS", "RANKED_METHODS", "Hit", "Pipeline",
+    "Resources", "get_params", "grid", "method_config", "prompt_hashes", "revise", "rrf",
 ]
 
 
@@ -96,7 +97,7 @@ def _uniq_sections(units: dict, ids) -> list[str]:
 
 
 class Pipeline:
-    def __init__(self, cfg: dict, res: Resources, labels: dict[str, str] | None = None):
+    def __init__(self, cfg: dict, res: Resources, labels: dict[str, str] | None = None, engine_rules: dict | None = None):
         self.cfg = cfg
         self.res = res
         self.index = cfg["index"]
@@ -110,6 +111,14 @@ class Pipeline:
         self.labels = labels if flt.get("type") == "oracle" else None
         if flt.get("type") == "oracle" and labels is None:
             raise ValueError("F0 (oracle filter) needs the engine_type labels")
+        # X3's keyword filter reads the question text and the keyword lists, never a label.
+        self.engine_rules = engine_rules if flt.get("type") == "keywords" else None
+        if flt.get("type") == "keywords":
+            if engine_rules is None:
+                raise ValueError("X3 (keyword filter) needs the engine rules: Pipeline(cfg, res, engine_rules=engine_rule.load())")
+            if engine_rule.rules_hash(engine_rules) != flt.get("rules_hash"):
+                raise ValueError(f"the engine rules (hash {engine_rule.rules_hash(engine_rules)}) are not the ones this config "
+                                 f"was made with ({flt.get('rules_hash')}): build the config with the hash of the rules in use")
         self.searcher = Searcher(res.client, res.caches.search, res.bm25, res.colbert, cfg.get("colbert_engine") or "client")
 
     # ------------------------------------------------------------ public interface
@@ -155,6 +164,20 @@ class Pipeline:
             })
         return kept[: self.k]
 
+    def _score_cut(self, reranked: list[tuple[str, float]], stats: dict) -> list[tuple[str, float]]:
+        """X3: keep the reranked hits with score >= ``min_score`` (at least ``min_keep``, at most ``max_keep``).
+
+        ``stats["cut"]`` has the shape of a gate trace; ``stats["reranked"]`` is the whole reranked list, so a
+        threshold can be tried later without calling the reranker again."""
+        c = self.cfg["cut"]
+        n = score_cut([s for _, s in reranked], c["min_score"], c["min_keep"], c["max_keep"])
+        kept = reranked[:n]
+        ks = _uniq_sections(self.units, [u for u, _ in kept])
+        stats["cut"] = {"n_in": len(reranked), "n_kept": n, "kept_sections": ks,
+                        "cut_sections": [s for s in _uniq_sections(self.units, [u for u, _ in reranked[n:]]) if s not in ks]}
+        stats["reranked"] = [[u, float(s)] for u, s in reranked]
+        return kept
+
     def _hits(self, ranked: list[tuple[str, float]], stage: str) -> list[Hit]:
         return [Hit(u, self.units[u]["section_id"], s, stage, 0, {}, self.units[u]["n_tokens_bge"]) for u, s in ranked]
 
@@ -186,16 +209,21 @@ class Pipeline:
             q.bm25_text = (text + " " + " ".join(terms)).strip()
             stats["query_transform"] = {"type": "keywords", "terms": terms}
 
-        # filter (F0 oracle, F1 LLM): applied inside each signal's search, before gate A
+        # filter (F0 oracle, F1 LLM, X3 keywords): applied inside each signal's search, before gate A
         flt = None
         if cfg.get("filter"):
+            extra: dict = {}
             if cfg["filter"]["type"] == "oracle":
                 engine = self.labels.get(question_id)
+            elif cfg["filter"]["type"] == "keywords":
+                d = engine_rule.detect(text, self.engine_rules)  # the question text only
+                engine = d.engine_type
+                extra = {"matched": d.matched, "reason": d.reason}
             else:
                 engine, r = res.llm.extract_filter(text)
                 llm_rs.append(r)
             flt = engine_filter(engine)
-            stats["filter"] = {"engine_type": engine, "qdrant_filter": flt}
+            stats["filter"] = {"engine_type": engine, **extra, "qdrant_filter": flt}
 
         # first stage(s) -> gate A -> fusion
         lists = self._first_stages(cfg["first_stages"], q, flt, stats)
@@ -217,7 +245,11 @@ class Pipeline:
             scores, secs = fn(res.encoder, cache, text, docs)
             stats["latency"]["rerank"] += secs
             order = sorted(range(len(cands)), key=lambda i: (-scores[i], i))
-            hits = self._hits(self._gate_b([(cands[i][0], scores[i]) for i in order], stats), "reranked")
+            ranked = [(cands[i][0], scores[i]) for i in order]
+            if cfg.get("cut"):  # X3: a score cut-off instead of gate B
+                hits = self._hits(self._score_cut(ranked, stats), "reranked")
+            else:
+                hits = self._hits(self._gate_b(ranked, stats), "reranked")
         elif cfg.get("lookup"):  # T1
             ids = id_lookup(text, self.corpus)
             stats["lookup"] = ids

@@ -82,7 +82,7 @@ def revise(base: str, **changes) -> dict:
 # metrics of experiment run2 (477 questions; project_run2_output.md). It was chosen on those
 # questions, so it is reported next to v1 as the revised result, never instead of it. The
 # values were set by reasoning from the v1 tables; no v2 candidate was simulated or run first.
-# Everything not listed keeps its v1 value. Like v1, it is frozen: there is no v3.
+# Everything not listed keeps its v1 value. Like v1, it is frozen.
 PARAMS["v2"] = revise(
     "v1",
     # RRF. With k = 60 over top-50 lists, a unit at rank 50 in BOTH lists scores 2/110 = 0.0182
@@ -111,10 +111,22 @@ PARAMS["v2"] = revise(
     agent_initial_hits=8,
 )
 
+# v3: the parameters of X3, the final pipeline (x2_to_x3_plan.md), written after v1 and its replays
+# on the saved run2 caches, built on v1 (v2 was never run). They belong to X3 only: the `cut` entry
+# is what makes them different, and `grid()` refuses them. Frozen like the others. Everything not
+# listed keeps its v1 value.
+PARAMS["v3"] = revise(
+    "v1",
+    rrf_k=10,  # as in v2; a replay with 30 candidates found no gain from 20 or 30 (plan section 4)
+    rerank_input=30,  # candidates to jina (v1: 50); the fused top 30 has evidence ceiling 0.984 with the filter
+    k=8,  # the longest list X3 returns (= cut.max_keep)
+    cut={"min_score": 0.0, "min_keep": 1, "max_keep": 8},  # jina scores are not probabilities: about -0.13 to 0.73
+)
+
 
 def get_params(version: str) -> dict:
     if version not in PARAMS:
-        raise KeyError(f"params_version {version!r} is not defined; the plan allows v1 and one hand revision, v2 (plan 4.8)")
+        raise KeyError(f"params_version {version!r} is not defined; defined: {sorted(PARAMS)}")
     return PARAMS[version]
 
 
@@ -124,6 +136,9 @@ SINGLE = {"L1": "bm25", "S1": "bge_sparse", "D1": "dense", "C1": "colbert"}
 RANKED_METHODS = ["L1", "S1", "D1", "C1", "H1", "H2", "M1", "F0", "F1", "T1", "Q1", "Q2", "X1", "X2"]
 EXPANSION_METHODS = ["T0", "T2", "T3", "T2+T3", "T4"]
 ALL_METHODS = RANKED_METHODS + EXPANSION_METHODS
+# The final pipeline. Not in ALL_METHODS: `grid()` and notebooks 07-08 expand ALL_METHODS with v1/v2
+# parameters, which have no `cut`. X3 is built with `method_config("X3", ...)` and params v3 (notebook 10).
+FINAL_METHODS = ["X3"]
 
 DESCRIPTIONS = {
     "L1": "BM25",
@@ -140,6 +155,7 @@ DESCRIPTIONS = {
     "Q2": "LLM keyword expansion (BM25)",
     "X1": "H1 -> bge-reranker-v2-m3",
     "X2": "H1 -> jina-reranker-v3",
+    "X3": "H1 + keyword engine-type filter -> jina-reranker-v3 -> score cut",
     "T0": "H1, no expansion (budgeted)",
     "T2": "H1 -> parent section (small-to-big)",
     "T3": "H1 -> follow cross-references (1 hop)",
@@ -149,10 +165,16 @@ DESCRIPTIONS = {
 
 
 def method_config(method: str, index: str, gate: bool, params_version: str = "v1",
-                  budget: int | None = None, params: dict | None = None, prompts: dict | None = None) -> dict:
+                  budget: int | None = None, params: dict | None = None, prompts: dict | None = None,
+                  engine_rules_hash: str | None = None) -> dict:
     """The full, readable config of one run. ``prompts`` maps prompt name -> hash
-    (from ``query_llm.prompt_hashes()``), so editing a prompt changes ``config_hash``."""
-    if method not in ALL_METHODS:
+    (from ``query_llm.prompt_hashes()``), so editing a prompt changes ``config_hash``;
+    ``engine_rules_hash`` (X3 only, from ``engine_rule.rules_hash``) does the same for the keyword lists.
+
+    The config of an existing method must not change by a single key: ``config_hash`` is computed
+    from the whole dict, so a new key in the shared base dict would rename every stored run.
+    New keys go into the branch of the new method only."""
+    if method not in ALL_METHODS + FINAL_METHODS:
         raise ValueError(f"unknown method {method!r}")
     P = params or get_params(params_version)
     if method == "T4" and not gate:
@@ -208,6 +230,17 @@ def method_config(method: str, index: str, gate: bool, params_version: str = "v1
     elif method in ("X1", "X2"):
         model = "bge" if method == "X1" else "jina"
         cfg.update(h1, rerank={"model": model, "input": P["rerank_input"], "top": P["k"]}, gate_b=gb)
+    elif method == "X3":
+        if gate:
+            raise ValueError("X3 runs with the gate off only")
+        if "cut" not in P:
+            raise ValueError("X3 needs params with a `cut` entry (v3)")
+        if not engine_rules_hash:
+            raise ValueError("X3 needs engine_rules_hash (csrag.engine_rule.rules_hash(engine_rule.load()))")
+        cfg.update(h1,
+                   filter={"type": "keywords", "field": "engine_type", "rules_hash": engine_rules_hash},
+                   rerank={"model": "jina", "input": P["rerank_input"], "top": P["cut"]["max_keep"]},
+                   cut=dict(P["cut"]))
     elif method in ("T0", "T2", "T3", "T2+T3"):
         rule = {"T0": "none", "T2": "parent", "T3": "refs", "T2+T3": "parent+refs"}[method]
         cfg.update(h1, expansion={"rule": rule, "budget": int(budget), "hops": P["hops"], "to": P["t2_to"],
@@ -226,6 +259,9 @@ def grid(params_version: str = "v1", indexes=("units", "win500"), prompts: dict 
     """Every configuration of the run plan (plan 4.8): every method on both
     indexes, gate off and on (T4 gate on only), expansion methods at every budget."""
     P = params or get_params(params_version)
+    if "cut" in P:
+        raise ValueError("params with a `cut` entry (v3) belong to X3 only and have no grid: "
+                         "build X3 with method_config('X3', ...)")
     out = []
     for m in methods or ALL_METHODS:
         for index in indexes:

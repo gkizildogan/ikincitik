@@ -3,7 +3,7 @@
 Two parts:
 
 1. **Extraction (notebooks 00–03, `src/csparse/`).** Turns `cs-e_amendment_9.pdf` (EASA CS-E Amendment 9, with the header and footer cropped off) into retrieval units. There is one unit per `CS-E X` and one per `AMC E X…`, with lists, glossaries and tables kept intact across page breaks. `[Amdt No: …]` notes are removed and figures are skipped.
-2. **Retrieval experiments (notebooks 04–09, `src/csrag/`).** Compares retrieval methods for single-turn question answering over that text: lexical, learned sparse, dense, late interaction, hybrid fusion, metadata filters, LLM query rewriting, reranking, structural lookup and expansion (fixed rules and an agent), each with and without a score gate, on two chunkings. Qdrant is the only vector store, the JSONL corpus is loaded into memory, and every experiment record is a file under `results/<experiment>/`. The design is in `plan.md`.
+2. **Retrieval experiments (notebooks 04–10, `src/csrag/`).** Compares retrieval methods for single-turn question answering over that text: lexical, learned sparse, dense, late interaction, hybrid fusion, metadata filters, LLM query rewriting, reranking, structural lookup and expansion (fixed rules and an agent), each with and without a score gate, on two chunkings. Notebook 10 then runs the final pipeline X3 (hybrid retrieval, a keyword engine-type filter, jina reranking and a score cut-off) and saves its contexts for the generation experiments. Qdrant is the only vector store, the JSONL corpus is loaded into memory, and every experiment record is a file under `results/<experiment>/`. The design is in `plan.md`.
 
 ## Setup
 
@@ -19,10 +19,12 @@ uv run jupyter lab                                         # pick the "ikincitik
 The retrieval experiments time-share the GPU in **two phases** (one swap; stop other vLLMs such as skyrag-vllm or aviation-vllm* first):
 
 ```bash
-# phase A, notebooks 04-07: encoder on the GPU, vLLM STOPPED
+# phase A, notebooks 04-07 and 10: encoder on the GPU, vLLM STOPPED
 docker compose stop vllm encoder && docker compose up -d qdrant && docker compose up -d --force-recreate encoder-gpu
 # phase B, notebook 08: vLLM on the GPU (VLLM_CONFIG=serve.retrieval.yaml in .env), encoder on the CPU
 docker compose stop encoder-gpu && docker compose up -d qdrant vllm && docker compose up -d --force-recreate encoder
+# after notebook 10, the generation notebooks need only vLLM (they read results/<experiment>/x3/contexts.jsonl)
+docker compose stop encoder-gpu && docker compose up -d vllm
 ```
 
 ### Services (`compose.yaml`)
@@ -69,10 +71,11 @@ Endpoints:
 | `07_run_retrievers` | **phase A** (GPU encoder, vLLM stopped): question embeddings, each signal's top-50, the grid without LLM (L1 … T2+T3), the rerankers X1/X2, and the ANN, RRF and gate checks | `data/embeddings/queries_questions.npz`, `data/cache/search.jsonl`, `data/cache/rerank_*.jsonl`, `results/<experiment>/runs/` |
 | `08_llm_and_agent` | **phase B** (vLLM, CPU encoder): vLLM KV-cache check; HyDE passages (Q1), keyword expansions (Q2) and engine-type filters (F1); the Q1/Q2/F1 runs; the agent T4; reproducibility, label-leakage, one-hop and completeness checks | `data/cache/llm.jsonl`, `data/embeddings/queries_{hyde,agent}.npz`, `results/<experiment>/runs/` |
 | `09_analysis` | metrics, bootstrap CIs, paired randomisation tests with Holm, tables, plots, metrics files, diagrams, output checks | in `results/<experiment>/`: `run_metrics.parquet`, `question_metrics.parquet`, `{units,win500}/metrics.{csv,xlsx}`, `granularity.csv`, `diagrams/` |
+| `10_x3_pipeline` | **phase A** (GPU encoder, vLLM stopped; `SERVICES = False` re-runs the later steps from the caches): the keyword rule against the labels, the X3 run (jina on the GPU), the standard metric files for X3 and the baselines, X2 vs X3 with CIs and paired differences, a cut-off sweep, checks, and the hand-off file | `results/<experiment>/runs/` (the X3 run), `results/<experiment>/x3/` (see Results) |
 
-**Run order for the experiments:** phase A: 04 → 05 → 06 → 07 (`encoder-gpu`, **vLLM stopped**); swap; phase B: 08 (vLLM + CPU `encoder`); then 09 (no models). Approximate times: corpus embedding in 04 takes a few minutes on the GPU; the grid without LLM in 07 takes minutes; the rerankers in 07 take ~1 h on the GPU; the query-side LLM work in 08 takes ~10–25 min; the agent takes ~1–2 h. These times are for 100 questions; the rerankers, the query-side LLM work and the agent scale with the number of questions that are not in the caches yet. All of it is cached and resumable (a run continues from `results/<experiment>/runs/<run_id>/partial.jsonl`). For v2, run 07 and 08 again with `PARAMS_VERSION = "v2"`.
+**Run order for the experiments:** phase A: 04 → 05 → 06 → 07 (`encoder-gpu`, **vLLM stopped**); swap; phase B: 08 (vLLM + CPU `encoder`); then 09 (no models). The final pipeline, notebook 10, needs the phase A services again (`encoder-gpu`, vLLM stopped) and no LLM: run it before the swap, or swap back; it reads its baselines (X2 gate off and on, H1; all v1) from the runs that notebook 07 wrote. Approximate times: corpus embedding in 04 takes a few minutes on the GPU; the grid without LLM in 07 takes minutes; the rerankers in 07 take ~1 h on the GPU; the query-side LLM work in 08 takes ~10–25 min; the agent takes ~1–2 h. These times are for 100 questions; the rerankers, the query-side LLM work and the agent scale with the number of questions that are not in the caches yet. All of it is cached and resumable (a run continues from `results/<experiment>/runs/<run_id>/partial.jsonl`). For v2, run 07 and 08 again with `PARAMS_VERSION = "v2"`.
 
-Notebooks 04 and 05 build the corpus side, which every experiment shares. Notebooks 06–09 work on the **active experiment** (next section) and print it in their first cell.
+Notebooks 04 and 05 build the corpus side, which every experiment shares. Notebooks 06–10 work on the **active experiment** (next section) and print it in their first cell.
 
 The code lives in `src/`; the notebooks only call it and expose the parameters.
 
@@ -96,7 +99,7 @@ questions = ["data/eval/questions.jsonl", "data/eval/set2/paraphrase.jsonl", "da
 
 - **To choose the experiment**, set `active`. `CSRAG_EXPERIMENT=<name>` (shell or `.env`) overrides it for one session, e.g. `CSRAG_EXPERIMENT=run1 uv run jupyter nbconvert --execute …`. Nothing is set in the notebooks.
 - **To start a new experiment**, add a table with a new name and its question files, make it `active`, and run 06 → 07 → 08 → 09. The files are concatenated in the order given; no merged file is written. Question ids must be unique across the files.
-- **The name is not `PARAMS_VERSION`.** `PARAMS_VERSION` (notebooks 07 and 08) picks the parameter set. One experiment holds the v1 runs and, later, the v2 runs of the same questions, and notebook 09 reports both.
+- **The name is not `PARAMS_VERSION`.** `PARAMS_VERSION` (notebooks 07 and 08) picks the parameter set. One experiment holds the v1 runs and, later, the v2 runs and the X3 run (v3) of the same questions; notebook 09 reports the grid runs, and notebook 10 reports X3 next to its baselines.
 - **One question set per folder.** A run id does not depend on the questions, so a completed run would otherwise be reused for another question set. Each run's `config.json` records `n_questions` and `questions_hash`; `runs.execute` raises if a completed run was made with other questions, and notebook 09 checks every run before it evaluates. To change an experiment's questions after it has runs, give it a new name.
 - **Shared by all experiments:** the corpus, the Qdrant collections, `data/embeddings/` and the caches in `data/cache/`. They are keyed by text, so questions that an earlier experiment already ran cost nothing again.
 - The process resolves the experiment once (`csrag.experiment.active()`), so editing `experiments.toml` does not move a running notebook to another folder. Restart the kernel to switch.
@@ -118,9 +121,11 @@ The results of `run1` are not in `results/`: they were made under the earlier fl
 | `index.py` | Qdrant collections: create, upsert, ingestion checks, ColBERT engine check |
 | `experiment.py` | experiments from `experiments.toml`: name, question files, results folder (`results/<name>/`), qrels path; `active()` is the experiment of the process |
 | `runs.py` | caches (`llm`, `search`, `rerank_bge`, `rerank_jina`) and run records in the active experiment's `runs/`; `execute` runs one config, resumably, and refuses a completed run made with other questions |
-| `gate.py` | the score gate (gate A on first stages, gate B after reranking) |
-| `retrievers/base.py` | `Hit`, the fixed parameters (`PARAMS["v1"]` and the one revision `PARAMS["v2"]`), method configs and the run grid |
-| `retrievers/__init__.py` | `Pipeline` (interprets any config: query transform → first stages → gate A → fusion → filter → rerank → gate B → lookup → expansion) and `Resources` |
+| `gate.py` | the score gate (gate A on first stages, gate B after reranking) and `score_cut`, X3's fixed score cut-off |
+| `engine_rule.py` | X3's engine-type keyword rule: reads `engine_keywords.toml`, validates and normalises it, `detect(question, rules)` (question text only), `rules_hash` |
+| `final.py` | X3 (notebook 10): replays of a cut-off on stored runs, per-question metrics and the X2 vs X3 tables, the standard metric files for chosen runs, the keyword report, the checks, and the hand-off file (`write_contexts`, `read_contexts`) |
+| `retrievers/base.py` | `Hit`, the fixed parameters (`PARAMS["v1"]`, the revision `PARAMS["v2"]` and X3's `PARAMS["v3"]`), method configs (X3 only in `FINAL_METHODS`) and the run grid |
+| `retrievers/__init__.py` | `Pipeline` (interprets any config: query transform → first stages → gate A → fusion → filter → rerank → gate B or X3's score cut → lookup → expansion) and `Resources` |
 | `retrievers/qdrant_search.py` | cached Qdrant search per signal, and the client-side ColBERT MaxSim (`ColbertIndex`) |
 | `retrievers/fusion.py` | client-side RRF (ranks from 1; k = 60 in v1, 10 in v2) and Qdrant's server-side RRF for the check |
 | `retrievers/query_llm.py` | vLLM client with a request-hash cache; HyDE, keyword expansion, filter extraction |
@@ -128,7 +133,7 @@ The results of `run1` are not in `results/`: they were made under the earlier fl
 | `retrievers/structural.py` | T1 id lookup; the budgeted context builder; T0, T2, T3 and T2+T3 |
 | `retrievers/agentic.py` | T4: the agent with `expand`, `follow_refs`, `search` and `done`, one JSON-schema LLM call per step |
 | `evaluate.py` | question loading (one file or several) and validation, span-based qrels, metrics (incl. evidence recall, gate diagnostics, supporting recall, all-gold), subsets (`all`, `mentions_section_id`, question families), bootstrap CIs, randomisation tests, Holm |
-| `report.py` | per-index `metrics.csv`/`metrics.xlsx`, `granularity.csv`, Mermaid pipeline diagrams, written to the active experiment's folder |
+| `report.py` | per-index `metrics.csv`/`metrics.xlsx`, `granularity.csv`, Mermaid pipeline diagrams, written to the active experiment's folder (notebook 10 calls the same functions for `x3/`) |
 | `qgen.py` | question set 2: `fill` (derived fields), `check` (schema, verbatim quotes, family rules, twin table), `pool` (candidates for the single-source judge: BM25 over sections plus structure), `stats`, `overlap`, `refs`; needs no services or tokenizer |
 
 ## Indexes (Qdrant)
@@ -182,8 +187,9 @@ One folder per experiment (see [Experiments](#experiments-experimentstoml)), e.g
 | `units/metrics.xlsx`, `win500/metrics.xlsx` | the same table plus `by_family`, `by_question_type`, `by_engine_type`, `by_kind`, `mentions_section_id`, `length_bucket`, `significance`, `gate`, `per_question` and `unanswerable` sheets |
 | `granularity.csv` | RQ7: windows vs units (gate off), section level and evidence recall, Holm-corrected |
 | `diagrams/<run_id>.md` | Mermaid flowchart of a run generated from its config, with its metric panel |
+| `x3/` | notebook 10, the final pipeline X3 (its run record is in `runs/`): `contexts.jsonl` (the hand-off for the generation notebooks: per question the kept windows with their text, and every reranked candidate with its jina score), `run_metrics.parquet`, `question_metrics.parquet` and `win500/metrics.{csv,xlsx}` (the same files and sheets as above, for X3 and the baselines X2 gate off and on and H1), `comparison.csv` and `by_family.csv` (X2 vs X3), `paired.csv` (paired differences), `evidence_losses.csv` (where X3 has less evidence than X2, with the cause), `cut_sweep.csv` (other cut-offs), `keyword_rule.csv` (the rule against the labels), `diagrams/` |
 
-Run ids read `<method>[-b<budget>]-<index>-gate<on|off>-<params_version>-<hash8>`. To regenerate: notebook 06 (qrels), notebooks 07 and 08 (runs; they skip completed ones) and notebook 09 (every other file of the folder). Only answerable questions are scored (`run1`: 92 of 100; `run2`: 469 of 477); the unanswerable ones are only listed in the `unanswerable` sheets. Tables are sorted by section nDCG@10 for readability only: no run is selected as a winner.
+Run ids read `<method>[-b<budget>]-<index>-gate<on|off>-<params_version>-<hash8>`. To regenerate: notebook 06 (qrels), notebooks 07 and 08 (runs; they skip completed ones), notebook 09 (every other file of the folder except `x3/`) and notebook 10 (the X3 run and `x3/`). Only answerable questions are scored (`run1`: 92 of 100; `run2`: 469 of 477); the unanswerable ones are only listed in the `unanswerable` sheets. Tables are sorted by section nDCG@10 for readability only: no run is selected as a winner.
 
 **Question families.** A question's family is its `family` field (`paraphrase`, `section_id`, `twin_topic`, `multi_section`); question set 1 has none and is reported as `set1`. When an experiment has more than one family, `run_metrics.parquet` also holds every metric per family (`subset` = `family=<name>`, with n and a bootstrap CI), the metrics table gets one section nDCG@10 column per family, and the `by_family` sheet gives the key metrics per run and family. The pooled (`all`) figures weight each family by its size, and a paraphrase shares its gold with the question it rewrites, so pooled questions are not independent: the pooled CIs and tests are narrower than they should be. Quote the families separately.
 
@@ -199,6 +205,17 @@ Run ids read `<method>[-b<budget>]-<index>-gate<on|off>-<params_version>-<hash8>
 | agent starting hits | 5 | 8 |
 
 `rrf_k` also changes the gate-off runs of every method built on H1, and it changes the candidate order, so all jina-reranker-v3 (X2) runs are recomputed for v2. With a gate A floor of 20, a gated single-signal list equals its gate-off list.
+
+**The final pipeline X3 and `PARAMS["v3"]`.** X3 = H1 → keyword engine-type filter → jina on 30 candidates → score cut-off, on the windows index with the gate off (`x2_to_x3_plan.md` has the design, the replay numbers and the reasons). `PARAMS["v3"]` is built on v1 (v2 was not run) and belongs to X3 only; `grid()` refuses it.
+
+| parameter | v1 (X2) | v3 (X3) |
+|---|---|---|
+| RRF constant (`rrf_k`) | 60 | 10 |
+| candidates to jina (`rerank_input`) | 50 | 30 |
+| engine-type filter | none | keyword rule (`engine_keywords.toml`) |
+| output | top 20, or gate B | jina score ≥ 0.0, at least 1 and at most 8 windows (`k` = 8) |
+
+**`engine_keywords.toml`** is yours to edit: one keyword list per engine type (`piston`, `turbine`) and phrases to ignore. A question with keywords of exactly one type is searched in that type's subparts and Subpart A only; no keyword, or both types: no filter. Matching is on whole words (optional plural), lower-case, hyphens as spaces. The hash of the normalised lists is part of the run config, so an edited file gives a new run id and never overwrites a run, and no re-ingestion is needed (every chunk already has `engine_type`). Keep out words that occur for both types: a missed cue costs nothing, a wrong cue removes the answer from the search. Notebook 10 lists the gold sections the rule would remove.
 
 ## Notes
 

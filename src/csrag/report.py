@@ -45,6 +45,9 @@ def readable_stages(cfg: dict) -> dict:
         rerank = f"ColBERT MaxSim (dense candidates, {cfg.get('colbert_engine', 'client')})"
     elif cfg.get("rerank"):
         rerank = {"bge": "bge-reranker-v2-m3", "jina": "jina-reranker-v3"}[cfg["rerank"]["model"]] + f" (top {cfg['rerank']['input']})"
+        if cfg.get("cut"):  # X3; no new key in the dict, which would add a column to every existing table
+            c = cfg["cut"]
+            rerank += f", cut score ≥ {c['min_score']} keep {c['min_keep']}–{c['max_keep']}"
     else:
         rerank = "-"
     if ex:
@@ -250,7 +253,7 @@ def pipeline_diagram(run_id: str, rm=None, sig=None, gates=None, costs=None, roo
         prev = ["QT"]
     flt = cfg.get("filter")
     if flt:
-        src = "label (oracle)" if flt["type"] == "oracle" else "Qwen JSON"
+        src = {"oracle": "label (oracle)", "keywords": "keyword list"}.get(flt["type"], "Qwen JSON")
         lines.append(f'  FL{{"filter<br/>engine_type ∈ {{x, all}}<br/>{src}"}}')
         link(prev, "FL")
         prev = ["FL"]
@@ -276,7 +279,8 @@ def pipeline_diagram(run_id: str, rm=None, sig=None, gates=None, costs=None, roo
         prev = ["FU"]
     if cfg.get("colbert_rerank") or cfg.get("rerank"):
         label = f"ColBERT MaxSim rerank<br/>{cfg.get('colbert_engine', 'client')}, exact" if cfg.get("colbert_rerank") else (
-            ("X1 bge-reranker-v2-m3" if cfg["rerank"]["model"] == "bge" else "X2 jina-reranker-v3") + f"<br/>top {cfg['rerank']['input']} in")
+            f"{cfg['method']} " + ("bge-reranker-v2-m3" if cfg["rerank"]["model"] == "bge" else "jina-reranker-v3")
+            + f"<br/>top {cfg['rerank']['input']} in")
         lines.append(f'  RR["{label}"]')
         link(prev, "RR")
         prev = ["RR"]
@@ -285,6 +289,11 @@ def pipeline_diagram(run_id: str, rm=None, sig=None, gates=None, costs=None, roo
             lines.append(f'  GB{{"gate B<br/>τ {g["tau"]} δ {g["delta"]}<br/>keep {g["min_keep"]}–{g["max_keep"]}"}}')
             link(prev, "GB")
             prev = ["GB"]
+        if cfg.get("cut"):  # X3: a fixed score cut-off instead of gate B
+            c = cfg["cut"]
+            lines.append(f'  CT{{"score cut<br/>score ≥ {c["min_score"]}<br/>keep {c["min_keep"]}–{c["max_keep"]}"}}')
+            link(prev, "CT")
+            prev = ["CT"]
     if cfg.get("lookup"):
         lines.append('  LK["T1 section-id lookup<br/>named sections first"]')
         link(prev, "LK")
@@ -367,6 +376,7 @@ def diagram_matches_config(run_id: str, root=None) -> bool:
                                   "colbert": "ColBERT MaxSim"}[x] for x in cfg["first_stages"]]),
         ("gate A" in text) == bool(cfg.get("gate_a")),
         ("gate B" in text) == bool(cfg.get("gate_b")),
+        ("score cut" in text) == bool(cfg.get("cut")),
         ("RRF" in text) == bool(cfg.get("fusion")),
         ("filter" in text) == bool(cfg.get("filter")),
         ("lookup" in text) == bool(cfg.get("lookup")),

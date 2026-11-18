@@ -1,0 +1,48 @@
+# Engine-type keyword rule for X3 (read by src/csrag/engine_rule.py; notebook 10).
+#
+# A question that names turbine terms (and no piston terms) is searched in the
+# turbine subparts and Subpart A only; one that names piston terms only, in the
+# piston subparts and Subpart A only. No keyword, or keywords of both types: no
+# filter, and the question runs exactly like X2. Subpart A (engine_type "all")
+# always passes. No LLM is involved.
+#
+# Edit the lists freely. How a keyword is matched:
+#   - lower case, hyphens read as spaces ("turbo-shaft" matches "turbo shaft");
+#   - whole words only, with an optional plural "s" or "es" ("turbine" matches
+#     "turbines" but not "turbocharger");
+#   - a keyword may have several words ("gas turbine").
+# The joined and the split spelling of a word are separate entries.
+#
+# Rules for the lists:
+#   - A table name must be a value of the `engine_type` payload: "piston" or
+#     "turbine". "all" is not a table.
+#   - A list must not be empty, and the same keyword must not be in both lists.
+#     The file is refused otherwise.
+#   - Keep out words that occur for both types ("compressor", "valve",
+#     "propeller", "oil", "ignition"). A missed cue costs nothing; a wrong cue
+#     removes the answer from the search.
+#
+# Editing this file changes the rule's hash, which is part of the run config:
+# the next run gets a new run id and never overwrites an old one. No
+# re-ingestion is needed, because every chunk already carries its engine type.
+
+[engine_types.turbine]
+keywords = [
+    "turbine", "turbine engine", "gas turbine", "turbine powered",
+    "turbojet", "turbofan", "turboprop", "turboshaft", "turbo shaft",
+    "jet engine", "jet", "ramjet",
+]
+
+[engine_types.piston]
+keywords = [
+    "piston", "piston engine", "reciprocating",
+    "cylinder", "crankshaft",
+    "spark ignition", "compression ignition", "diesel",
+]
+
+[ignore]
+# Phrases removed from the question before matching, for words that would
+# otherwise point to the wrong type. Example: a turbocharger's turbine belongs
+# to a piston engine. (Plain text removal, after lower-casing and hyphen
+# replacement.)
+phrases = ["turbocharger turbine"]
